@@ -1,11 +1,10 @@
 import sys
 import os
-from directory_tree import DisplayTree
-
 
 def list_files(startpath):
     for root, dirs, files in os.walk(startpath):
-        dirs.sort()
+        all_items = dirs + files  # Combine files and dirs
+        all_items.sort()
         level = root.replace(startpath, '').count(os.sep)
         if(level == 0):
             continue
@@ -18,8 +17,12 @@ def list_files(startpath):
             continue
         print('{}- [{}]({}/index.md) '.format(indent, basename, relpath, basename))
         subindent = ' ' * 2 * (level)
-        files.sort()
-        for f in files:
+
+        for item in all_items:
+            if os.path.isdir(os.path.join(root,item)):
+               continue #Directory - Skip printing here, it will be printed in the next loop of os.walk
+
+            f = os.path.basename(item)  # Extract filename from the path
             if "d_" == f[:2]:
                 continue
             if "index.md" in f:
@@ -31,6 +34,7 @@ def list_files(startpath):
 
 def main() -> int:
     # print("Any Header content\n")
+    print("- [Introduction](introduction.md)\n")
     list_files('./docs')
     return 0
 
