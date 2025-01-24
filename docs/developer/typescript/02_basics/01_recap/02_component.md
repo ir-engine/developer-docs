@@ -1,5 +1,5 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Defining a Custom Component
 The `defineComponent` function accepts a `ComponentPartial` that has multiple fields available.  

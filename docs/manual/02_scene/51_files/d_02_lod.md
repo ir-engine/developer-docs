@@ -1,2 +1,1 @@
-
 # Variants & LODs

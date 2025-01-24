@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # State Management
 <!--
@@ -11,4 +10,4 @@ Move the in-depth explanations into this section.
 - [ ] New synchronous state API
 -->
 
-<DocCardList />
+<!-- <DocCardList /> -->

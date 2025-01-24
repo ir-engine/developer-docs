@@ -1,4 +1,3 @@
-
 # Debugging
 ## Using iR Engine's Debugger with `\``
 <!-- TODO: Link the issue to the getting started guide -->

@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Admin Panel Overview
 The iR Engine's `Admin Panel` is a graphical interface (GUI) tool for managing administration tasks of an iR Engine deployment.
@@ -7,4 +6,4 @@ The iR Engine's `Admin Panel` is a graphical interface (GUI) tool for managing a
 The Admin Panel can be accessed by navigating to the `/admin` route of the desired deployment.  
 _eg: `https://localhost:3000/admin` when working with a local deployment_
 
-<DocCardList />
+<!-- <DocCardList /> -->

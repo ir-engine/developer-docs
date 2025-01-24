@@ -2,7 +2,7 @@
 pagination_next: developer/typescript/basics/recap/index
 title: What's Next
 ---
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # 🎉 Congratulations! 🎉
 You have just learned the minimal basics of working with iR Engine using TypeScript!  

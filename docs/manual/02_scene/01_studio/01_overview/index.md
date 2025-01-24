@@ -1,5 +1,5 @@
-import DocCardList from '@theme/DocCardList'
-import StudioOverview from './_studio_overview.md'
+<!-- import DocCardList from '@theme/DocCardList' -->
+<!-- import StudioOverview from './_studio_overview.md' -->
 
 # Studio Overview
 
@@ -13,7 +13,7 @@ A wide range of other integrations are also supported _(eg: portals to let you t
 
 Scenes can be saved by pressing `Ctrl+S` in your keyboard, or by navigating to the save option in the Hamburger menu located at the top-left of the editor's screen.
 
-<StudioOverview />
+<!-- Missing partial file for tag: StudioOverview -->
 
 1. [Toolbar](./01_toolbar.md)  
 2. [Scene and Files Directory](./02_files.md)  
@@ -24,4 +24,4 @@ Scenes can be saved by pressing `Ctrl+S` in your keyboard, or by navigating to t
 7. [Assembly Menu](./07_assembly.md)  
 8. [User Profile](./08_profile.md)  
 
-<DocCardList />
+<!-- <DocCardList /> -->

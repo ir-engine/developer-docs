@@ -1,4 +1,3 @@
-
 # Mocap
 
 ## Overview

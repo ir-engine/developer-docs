@@ -1,7 +1,7 @@
-import StudioOverview from './_studio_overview.md'
+<!-- import StudioOverview from './_studio_overview.md' -->
 
 # 1. Toolbar
-<StudioOverview />
+<!-- Missing partial file for tag: StudioOverview -->
 
 ## 1.1. File Menu
 Create new scenes, import files, and save or export existing scenes.  

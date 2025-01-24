@@ -1,7 +1,7 @@
-import StudioOverview from './_studio_overview.md'
+<!-- import StudioOverview from './_studio_overview.md' -->
 
 # 5. Hierarchy & Material Library
-<StudioOverview />
+<!-- Missing partial file for tag: StudioOverview -->
 
 ## Hierarchy
 The scene Hierarchy contains all element currently in your scene (assets, lighting, items from the tool menu, etc).

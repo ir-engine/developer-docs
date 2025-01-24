@@ -1,4 +1,3 @@
-
 # Animation System
 <!--
 TODO:

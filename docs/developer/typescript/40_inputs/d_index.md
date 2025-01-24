@@ -1,4 +1,3 @@
-
 # Input Management
 <!--
 TODO:

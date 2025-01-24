@@ -1,5 +1,10 @@
-import Intro from '@site/docs/_partials/host/intro.md'
+<!-- import Intro from '@site/docs/_partials/host/intro.md' -->
 
 # Host your own World
-<Intro />
+<!-- Start of partial: Intro -->
+<!--
+TODO
+-->
+
+<!-- End of partial: Intro -->
 

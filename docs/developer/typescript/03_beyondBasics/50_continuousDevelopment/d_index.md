@@ -1,4 +1,3 @@
-
 # Continuous Development
 <!--
 TODO: Continuous Development (CI/CD)

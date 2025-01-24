@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Data Driven Development
 <!--
@@ -11,4 +10,4 @@ Data Driven Development
   Write code that is DD
 -->
 
-<DocCardList />
+<!-- <DocCardList /> -->

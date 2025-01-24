@@ -1,4 +1,4 @@
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Studio
-<DocCardList />
+<!-- <DocCardList /> -->

@@ -1,5 +1,5 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Systems
 If you have a keen eye you may have noticed something really important.  

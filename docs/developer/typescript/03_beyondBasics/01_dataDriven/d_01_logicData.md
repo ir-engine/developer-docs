@@ -1,4 +1,3 @@
-
 # Logic vs Data
 <!--
 TODO

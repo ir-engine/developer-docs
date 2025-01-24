@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Advanced Networking Guide
 <!--
@@ -8,6 +7,6 @@ Advanced Networking Guide
 Explaining each of the concepts used in Anselm's `Basic` networked example/tutorial individually.
 Goal: Build knowledge on how to create customized networking code.
 
-<DocCardList />
+<!-- <DocCardList /> -->
 -->
 

@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList';
+<!-- import DocCardList from '@theme/DocCardList'; -->
 
 # Engine Modules Guide
 <!--
@@ -9,6 +8,6 @@ Meant to be a introduction to how the `Manual` is structured.
 Core Goal:
 - Help the reader transition from Intermediate to Advanced.
 
-<DocCardList />
+<!-- <DocCardList /> -->
 -->
 
