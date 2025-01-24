@@ -1,4 +1,3 @@
-
 # Hero Project
 <!--
 NOTE: This page should contain:

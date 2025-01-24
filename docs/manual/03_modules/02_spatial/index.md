@@ -1,4 +1,4 @@
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Spatial Module
-<DocCardList />
+<!-- <DocCardList /> -->

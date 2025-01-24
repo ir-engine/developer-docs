@@ -1,7 +1,7 @@
-import StudioOverview from './_studio_overview.md'
+<!-- import StudioOverview from './_studio_overview.md' -->
 
 # 7. Assembly Menu
-<StudioOverview />
+<!-- Missing partial file for tag: StudioOverview -->
 
 ## Files
 - **Model**: Creates objects in the hierarchy. Drag a model from the assets folder into the URL box or drag assets directly from project files into the hierarchy

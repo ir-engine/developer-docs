@@ -1,4 +1,3 @@
-
 # Avatars
 An avatar is an animated humanoid model that represents a user.
 

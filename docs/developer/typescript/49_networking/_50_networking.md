@@ -1,5 +1,5 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Networking
 We're going to add networking to the `basic` example from the previous section.  

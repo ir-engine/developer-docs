@@ -1,8 +1,7 @@
-
-import StepAuthentication from '../_partials/controlCenter/step_authentication.md'
-import StepConfigurations from '../_partials/controlCenter/step_configurations.md'
-import StepVariables from '../_partials/controlCenter/step_variables.md'
-import StepSummary from '../_partials/controlCenter/step_summary.md'
+<!-- import StepAuthentication from '../_partials/controlCenter/step_authentication.md' -->
+<!-- import StepConfigurations from '../_partials/controlCenter/step_configurations.md' -->
+<!-- import StepVariables from '../_partials/controlCenter/step_variables.md' -->
+<!-- import StepSummary from '../_partials/controlCenter/step_summary.md' -->
 
 # Control Center: Getting Started
 iR Engine's Control Center is a self-contained Metaverse world in a box. Take what you need or launch the full stack.  
@@ -80,25 +79,77 @@ You will see the options below if you selected your cluster type as MicroK8s or 
 ### 2.2.1. Authentication
 ![Create Cluster - Authentication](../images/controlCenter/create-cluster-2.jpg)
 
-<StepAuthentication />
+<!-- Start of partial: StepAuthentication -->
+In this step you will need to provide sudo password for your linux terminal.  
+This is because the Control Center App will perform various actions on your system that require administration privileges.
+
+:::info[windows]
+This is the password of your WSL Ubuntu distribution's sudo user.
+:::
+
+<!-- End of partial: StepAuthentication -->
 
 ### 2.2.2. Configurations
 
 ![Create Cluster - Configurations](../images/controlCenter/create-cluster-3.jpg)
 
-<StepConfigurations />
+<!-- Start of partial: StepConfigurations -->
+In this step you will need to provide the following information:
+
+- **Engine Path:**  
+  This is the location of iR Engine source code repo.  
+  If the path does not contain the source code, then it will be [cloned](https://github.com/EtherealEngine/etherealengine) by the Control Center App.
+  :::info[windows]
+  The path must be inside your WSL Ubuntu distribution.
+  :::
+
+- **Ops Path:**  
+  This is the location of iR Engine ops source code repo.  
+  If the path does not contain the source code, then it will be [cloned](https://github.com/EtherealEngine/ethereal-engine-ops) by Control Center App.
+  :::info[windows]
+  The path must be inside your WSL Ubuntu distribution.
+  :::
+
+- **Enable Ripple Stack:**  
+  By default you should keep this option as off unless you want to have IPFS & rippled server running in your local K8s deployment.
+
+- **Force DB Refresh:**  
+  This will truncate database tables & repopulate them with seed data.
+  :::note
+  The Control Center App will force populate the database if its empty.
+  :::
+
+<!-- End of partial: StepConfigurations -->
 
 ### 2.2.3. Variables
 
 ![Create Cluster - Variables](../images/controlCenter/create-cluster-4.jpg)
 
-<StepVariables />
+<!-- Start of partial: StepVariables -->
+- Regular setup:  
+  Use the default values and leave all fields as they are.  
+  This is the best choice for most users.  
+
+- Advanced setup:  
+  You can provide values to configure oAuth, S3 file storage, email, SMS support in this step.  
+
+<!-- End of partial: StepVariables -->
 
 ### 2.2.4. Summary
 
 ![Create Cluster - Summary](../images/controlCenter/create-cluster-5.jpg)
 
-<StepSummary />
+<!-- Start of partial: StepSummary -->
+This step shows a summary of all of the previous steps.  
+Please review them before proceeding ahead.
+
+:::important
+Make sure to read all of the `Note`s on this screen.
+:::
+
+These are your options to proceed ahead:  
+
+<!-- End of partial: StepSummary -->
 
 1. **Create:**  
    Will create the cluster entry and show the [cluster screen](#3-cluster-screen) of this cluster.  
@@ -142,7 +193,9 @@ In this step you will need to provide the following deployment information:
 ### 2.3.3. Summary
 ![Create Cluster - Summary](../images/controlCenter/create-cluster-8.jpg)
 
-<StepSummary />
+<!-- Start of partial: StepSummary -->
+<!-- Circular import detected: C:/Users/EpicKatif/Documents/Repos/developer-docs/docs/manual/d__partials/controlCenter/step_summary.md -->
+<!-- End of partial: StepSummary -->
 
 - **Create:**  
   Will create the cluster entry and show the [workloads screen](#6-workloads) of this cluster.
@@ -292,25 +345,33 @@ Always clear your logs before running the configure script to trace its output e
 
 ![Configure Cluster - Authentication](../images/controlCenter/configure-cluster-1.jpg)
 
-<StepAuthentication />
+<!-- Start of partial: StepAuthentication -->
+<!-- Circular import detected: C:/Users/EpicKatif/Documents/Repos/developer-docs/docs/manual/d__partials/controlCenter/step_authentication.md -->
+<!-- End of partial: StepAuthentication -->
 
 ### 4.2. Configurations
 
 ![Configure Cluster - Configurations](../images/controlCenter/configure-cluster-2.jpg)
 
-<StepConfigurations />
+<!-- Start of partial: StepConfigurations -->
+<!-- Circular import detected: C:/Users/EpicKatif/Documents/Repos/developer-docs/docs/manual/d__partials/controlCenter/step_configurations.md -->
+<!-- End of partial: StepConfigurations -->
 
 ### 4.3. Variables
 
 ![Configure Cluster - Variables](../images/controlCenter/configure-cluster-3.jpg)
 
-<StepVariables />
+<!-- Start of partial: StepVariables -->
+<!-- Circular import detected: C:/Users/EpicKatif/Documents/Repos/developer-docs/docs/manual/d__partials/controlCenter/step_variables.md -->
+<!-- End of partial: StepVariables -->
 
 ### 4.4. Summary
 
 ![Configure Cluster - Summary](../images/controlCenter/configure-cluster-4.jpg)
 
-<StepSummary />
+<!-- Start of partial: StepSummary -->
+<!-- Circular import detected: C:/Users/EpicKatif/Documents/Repos/developer-docs/docs/manual/d__partials/controlCenter/step_summary.md -->
+<!-- End of partial: StepSummary -->
 
 - **Configure:**  
   This will start the configuration script which will ensure that things are correctly setup.  

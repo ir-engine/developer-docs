@@ -1,7 +1,7 @@
-import DocCardList from '@theme/DocCardList'
+<!-- import DocCardList from '@theme/DocCardList' -->
 
 # Instances Module
 <!--
 TODO: Uncomment to enable the DocCardList for the subfolder
-<DocCardList />
+<!-- <DocCardList /> -->
 -->

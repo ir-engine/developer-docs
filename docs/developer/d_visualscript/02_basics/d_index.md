@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList';
+<!-- import DocCardList from '@theme/DocCardList'; -->
 
 # iR Engine Basics
 This guide is a continuation of the [Hello World Tutorial](../gettingStarted/hello).  
@@ -10,4 +9,4 @@ NOTE: This section should contain:
 - Hero Project: Showcase for iR Engine's development tools and workflows.
 -->
 
-<DocCardList />
+<!-- <DocCardList /> -->

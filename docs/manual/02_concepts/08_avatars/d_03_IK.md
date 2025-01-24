@@ -1,4 +1,3 @@
-
 # Inverse Kinematics
 
 ## Overview

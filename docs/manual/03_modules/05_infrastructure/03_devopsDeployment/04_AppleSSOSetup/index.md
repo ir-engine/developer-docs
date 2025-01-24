@@ -1,4 +1,3 @@
-
 # Set up Apple SSO for users
 
 Just as we have other OAuth providers that allow users to sign in using their accounts created on other well known platforms, we also have enabled Apple SSO support for IR Studio. This guide lays out the blueprints to enable it for any particular application.

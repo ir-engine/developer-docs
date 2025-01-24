@@ -1,10 +1,10 @@
-import StudioOverview from './_studio_overview.md'
+<!-- import StudioOverview from './_studio_overview.md' -->
 
 # 6. Properties
 The properties panel allows you to access and edit detailed information about any object in your scene.  
 Select an object in the Hierarchy to view its Properties.
 
-<StudioOverview />
+<!-- Missing partial file for tag: StudioOverview -->
 
 This panel supports editing and adding actions to objects:
 - Keying transforms,

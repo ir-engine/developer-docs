@@ -1,15 +1,46 @@
-import UbuntuInstall from '../../../_partials/installUbuntu.md'
-import DefaultProjects from '../../../_partials/defaultProjects.md'
+<!-- import UbuntuInstall from '../../../_partials/installUbuntu.md' -->
+<!-- import DefaultProjects from '../../../_partials/defaultProjects.md' -->
 
 # TypeScript Quickstart
 This QuickStart guide will teach you the basics of iR Engine, and how to run the engine for the first time.  
 
 ## Installation
-<UbuntuInstall />
+<!-- Start of partial: UbuntuInstall -->
+:::important
+Ethereal Engine is a web application.  
+We are going to install and run a local version of the engine.  
+But this setup might not reflect how you will use the engine on a day to day basis.  
+:::
+
+:::note
+These installation instructions assume you are using Ubuntu Linux.  
+You can find alternative _(and more advanced)_ installation instructions for [Windows](/manual/install/windowsWSL), [Mac](/manual/install/macOSX) and [Linux](/manual/install/linux) in the Manual.
+:::
+
+If you are on Ubuntu Linux, there is an automatic installation script to setup and run a local version of Ethereal Engine.  
+Open a terminal window and run these two lines:  
+> Make sure that you open the terminal in the folder where you want to install the engine
+```bash
+wget https://raw.githubusercontent.com/EtherealEngine/etherealengine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
+npm run reinit && npm run dev
+```
+You can now open Ethereal Engine on your web browser by navigating to https://localhost:3000
+
+<!-- End of partial: UbuntuInstall -->
 
 ## Projects
 ### Default Projects
-<DefaultProjects />
+<!-- Start of partial: DefaultProjects -->
+Ethereal Engine has a few scenes that are installed by default.  
+With the engine running, open the Studio by navigating to https://localhost:3000/studio, and you will see the engine's default project listed in that page.  
+
+Lets give it a test run:
+- Open the default project by clicking on its card
+- Click on one of the scenes to open it
+- Click on the `Play` button to enter the scene with an Avatar
+- Move around the scene with `WASD` and/or clicking on the ground
+
+<!-- End of partial: DefaultProjects -->
 
 ### Install and Run the tutorial project
 Whether you installed the engine with method above, or with the installation instructions for your specific system, your next step will be to install the tutorial project.

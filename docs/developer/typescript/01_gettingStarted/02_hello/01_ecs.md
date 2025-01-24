@@ -1,4 +1,4 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 
 # The ECS Pattern
 The [Entity Component System](https://en.wikipedia.org/wiki/Entity_component_system) is a pattern used to organize our code when writing software.  

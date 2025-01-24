@@ -1,6 +1,5 @@
-
-import DocCardList from '@theme/DocCardList'
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
+<!-- import DocCardList from '@theme/DocCardList' -->
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 
 # Systems Execution Guide
 ## Update Loop
@@ -16,7 +15,7 @@ iR Engine implements this feature through system **pipelines**, which are collec
 
 
 ## Execution Order
-<DocCardList />
+<!-- <DocCardList /> -->
 
 <TechnicalNote title="Definitions">
 

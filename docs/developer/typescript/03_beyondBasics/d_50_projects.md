@@ -1,4 +1,3 @@
-
 # Project Management
 <!--
 ## Project Configuration

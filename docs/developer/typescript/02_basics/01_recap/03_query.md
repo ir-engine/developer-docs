@@ -1,5 +1,5 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Define a Query
 Queries are the simplest concept to explain out of everything we have dealt with so far.  

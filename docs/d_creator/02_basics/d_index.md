@@ -1,5 +1,4 @@
-
-import DocCardList from '@theme/DocCardList';
+<!-- import DocCardList from '@theme/DocCardList'; -->
 
 # Ethereal Engine Basics
 This guide is a continuation of the [Hello World Tutorial](../gettingStarted/hello).  
@@ -10,4 +9,4 @@ NOTE: This section should contain:
 - Hero Project: Showcase for Ethereal Engine's development tools and workflows.
 -->
 
-<DocCardList />
+<!-- <DocCardList /> -->

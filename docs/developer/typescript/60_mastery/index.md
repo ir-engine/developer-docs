@@ -1,4 +1,4 @@
-import DocCardList from '@theme/DocCardList';
+<!-- import DocCardList from '@theme/DocCardList'; -->
 
 # Mastery Toolkit
 <!--
@@ -8,4 +8,4 @@ Up until this section, the reader has been relying on Guided Learning.
 This section's goal is to give autonomy to the reader.
 -->
 
-<DocCardList />
+<!-- <DocCardList /> -->

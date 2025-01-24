@@ -1,5 +1,5 @@
-import { TechnicalNote } from '@site/src/components/TechnicalNote';
-import { UnstyledDetails } from '@site/src/components/UnstyledDetails';
+<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
+<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Working with iR Engine
 You will need three very important steps for creating a project with iR Engine:

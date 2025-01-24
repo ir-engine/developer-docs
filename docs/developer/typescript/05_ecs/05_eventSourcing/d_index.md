@@ -1,4 +1,3 @@
-
 # Event Sourcing
 <!--
 TODO:
