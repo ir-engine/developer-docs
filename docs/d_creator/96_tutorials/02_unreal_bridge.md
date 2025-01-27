@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 # iR Engine Bridge - Unreal
 
-https://github.com/EtherealEngine/EE-Bridge-Unreal
+https://github.com/ir-engine/EE-Bridge-Unreal
 
 Unreal SDK iR Engine Alpha
 - User Management API
@@ -18,7 +18,7 @@ Unreal SDK iR Engine Alpha
 
 CMS and marketplace services coming soon
 
-EXAMPLE https://github.com/EtherealEngine/EE-Bridge-Unreal-Example
+EXAMPLE https://github.com/ir-engine/EE-Bridge-Unreal-Example
 
 ![Screenshot 2022-06-06 193750](https://user-images.githubusercontent.com/5104160/172299848-3e1c6a5f-ecd2-4562-a894-0d8b55e5b9e5.png)
 
@@ -65,7 +65,7 @@ Targeting support for 4.26 and 4.27
 
 Trial implementations on epic games unreal examples for the iR Engine bridge for Unreal
 
-https://github.com/EtherealEngine/EE-Bridge-Unreal
+https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 
@@ -85,8 +85,8 @@ All K8 control plane systems can be access via rest calls to the local network o
 
 The iR Engine matchmaker service exposes the default endopints for open match.
 
-https://github.com/EtherealEngine/ethereal-engine-ops/tree/master/open-match/templates/01-open-match-core.yaml
-https://github.com/EtherealEngine/ethereal-engine-ops/tree/master/open-match/templates/07-open-match-default-evaluator.yaml
+https://github.com/ir-engine/ir-engine-ops/tree/master/open-match/templates/01-open-match-core.yaml
+https://github.com/ir-engine/ir-engine-ops/tree/master/open-match/templates/07-open-match-default-evaluator.yaml
 
 REST API local call access docs
 
@@ -123,7 +123,7 @@ Agones Actions
 
 # Ethereal-Engine-Bridge-Unreal-Example
 
-https://github.com/EtherealEngine/EE-Bridge-Unreal-Example
+https://github.com/ir-engine/EE-Bridge-Unreal-Example
 
 Preinstall Requirements
 
@@ -141,7 +141,7 @@ Targeting support for 4.26 and 4.27
 
 Trial implementations on epic games unreal examples for the iR Engine bridge for Unreal
 
-https://github.com/EtherealEngine/EE-Bridge-Unreal
+https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 

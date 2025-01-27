@@ -44,7 +44,7 @@ user has all of the required policies/permissions, up to and including the Admin
 for other users to have access to the cluster, the aws-auth ConfigMap in the cluster needs to be
 modified to explicitly grant them permission to access the cluster.
 
-There is an [`aws-auth.yaml`](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/aws-auth-template.yml) file template in the configs folder of the [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops/) repository.  
+There is an [`aws-auth.yaml`](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/aws-auth-template.yml) file template in the configs folder of the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repository.  
 Make a copy of this template, shorten its name to `aws-auth.yml`, and run this command to get the current copy of the aws-auth ConfigMap:
 ```bash
 kubectl describe configmap aws-auth -n kube-system

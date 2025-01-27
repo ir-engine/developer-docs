@@ -55,7 +55,7 @@ We will explore them further in later sections of the tutorial.
 The data used to create a Component with `defineComponent` is declared by the `ComponentPartial` interface.
 This type exists so that some of the properties of Components are optional when defining them, but required during normal use.  
 
-This is the shape of the `ComponentPartial` interface, defined in the [`ComponentFunctions.ts`](https://github.com/EtherealEngine/etherealengine/blob/dev/packages/ecs/src/ComponentFunctions.ts) file:
+This is the shape of the `ComponentPartial` interface, defined in the [`ComponentFunctions.ts`](https://github.com/ir-engine/ir-engine/blob/dev/packages/ecs/src/ComponentFunctions.ts) file:
 ```ts
 {
   name: string

@@ -6,7 +6,7 @@ It gives a progress report for how a deployment is performing over a certain per
 
 ## Usage Dashboard
 The usage section shows a snapshot about the current usage of a deployment.
-<img width="1280" alt="image" src="https://github.com/EtherealEngine/etherealengine-docs/assets/92340542/f0282bf5-36ec-4220-85fa-636ba156689e" />
+<img width="1280" alt="image" src="https://github.com/ir-engine/developer-docs/assets/92340542/f0282bf5-36ec-4220-85fa-636ba156689e" />
 
 It shows the status of:
 - Active Parties
@@ -18,7 +18,7 @@ It shows the status of:
 
 ## Usage Time Series
 This section shows a time series of the information in the snapshot over a customizable period of time  
-<img width="1207" alt="image" src="https://github.com/EtherealEngine/etherealengine-docs/assets/92340542/f623fa0f-72a0-49c8-82e1-51f8ddc7485b" />
+<img width="1207" alt="image" src="https://github.com/ir-engine/developer-docs/assets/92340542/f623fa0f-72a0-49c8-82e1-51f8ddc7485b" />
 
 The information is split between activity and user data.  
 The time period is set to the last 30 days by default, but it can be changed to start and end at any arbitrary date.  

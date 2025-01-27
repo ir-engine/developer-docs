@@ -43,8 +43,8 @@ Talk about the engine with people you know. Let them know about those cool proje
 
 ## Contribute to iR Engine's development
 <!-- Start of partial: Develop -->
-iR Engine is an open-source project, based on the [CPAL](https://github.com/EtherealEngine/etherealengine/blob/dev/LICENSE) license.
-You can find the source code of the engine on iR Engine's [GitHub](https://github.com/EtherealEngine/etherealengine) repository, and some guidelines on how to contribute to its codebase in the [Contributing](https://github.com/EtherealEngine/etherealengine#contributing) section of the repository's readme.
+iR Engine is an open-source project, based on the [CPAL](https://github.com/ir-engine/ir-engine/blob/dev/LICENSE) license.
+You can find the source code of the engine on iR Engine's [GitHub](https://github.com/ir-engine/ir-engine) repository, and some guidelines on how to contribute to its codebase in the [Contributing](https://github.com/ir-engine/etherealengine#contributing) section of the repository's readme.
 
 <!-- End of partial: Develop -->
 
@@ -53,7 +53,7 @@ You can find the source code of the engine on iR Engine's [GitHub](https://githu
 Our team is constantly on the lookout for potential issues during development, and we have a really high standard for Code Reviewing and QA _(Quality Assurance)_. But sometimes bugs can go unnoticed and sneak into release versions of the codebase.
 Because of this, another great way to contribute is by reporting errors, problems or issues that may show up in different versions of iR Engine.
 
-Search for the issue in our [Issues List](https://github.com/EtherealEngine/etherealengine/issues), and open a new one if you think that what you found has not been reported yet.
+Search for the issue in our [Issues List](https://github.com/ir-engine/ir-engine/issues), and open a new one if you think that what you found has not been reported yet.
 
 <!-- End of partial: Test -->
 
@@ -61,9 +61,9 @@ Search for the issue in our [Issues List](https://github.com/EtherealEngine/ethe
 <!-- Start of partial: Documentation -->
 Documentation tasks are a great way to get started if you are new to the engine and/or development in general.  
 
-If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/EtherealEngine/etherealengine).  
+If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/ir-engine/ir-engine).  
 
-For an easier task, the documentation website you are reading right now is maintained from its own [GitHub repository](https://github.com/EtherealEngine/etherealengine-docs). Find something that you think could be improved in this website, and either open an issue or send a PR with your proposed changes.
+For an easier task, the documentation website you are reading right now is maintained from its own [GitHub repository](https://github.com/ir-engine/developer-docs). Find something that you think could be improved in this website, and either open an issue or send a PR with your proposed changes.
 
 Get started by reading the [Get Involved: Documentation Guidelines](/manual/contributing/documentation).
 

@@ -82,6 +82,6 @@ Entities without it would not have any [3D geometry](https://en.wikipedia.org/wi
 ```ts
 ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 ```
-> The `1` here means that we are creating a [`SphereGeometry`](https://github.com/EtherealEngine/etherealengine/blob/dev/packages/engine/src/scene/constants/GeometryTypeEnum.ts#L28) object.  
+> The `1` here means that we are creating a [`SphereGeometry`](https://github.com/ir-engine/ir-engine/blob/dev/packages/engine/src/scene/constants/GeometryTypeEnum.ts#L28) object.  
 > We will create the component using a more readable name in the next section of the tutorial.
 

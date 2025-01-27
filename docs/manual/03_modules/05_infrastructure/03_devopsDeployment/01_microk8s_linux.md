@@ -193,7 +193,7 @@ helm install local-redis redis/redis
 ```
 > Important:  
 > Make sure to change `/path/to/agones-default-values.yaml` with the actual path of the file.  
-> The [agones-default-values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/agones-default-values.yaml) file can be found in the [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repository.
+> The [agones-default-values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/agones-default-values.yaml) file can be found in the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repository.
 
 After a minute or so, all of these pods should be in the `Running` state.
 You can run this command to list all of the pods running in MicroK8s.
@@ -248,7 +248,7 @@ Edit the file `local.microk8s.template.values.yaml` and update the env variable 
 ```bash
 http://<username>:<password>@<host>:<port>
 ```
-> The file [local.microk8s.template.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in the [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> The file [local.microk8s.template.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 ## Build MicroK8s
 Run the following command from the root of the iR Engine repository after MicroK8s is running:
@@ -280,7 +280,7 @@ You can verify that the images are pushed correctly by visiting http://localhost
 
 ## Update Helm Values File
 This will use a Helm config file titled `local.values.yaml` to configure the deployment.  
-There is a [template](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) for this file in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+There is a [template](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) for this file in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 If you are using a local file server, as explained in one of the previous steps, you will need to update the variable `api.fileServer.hostUploadFolder` in the `local.values.yaml` file with a value similar to `ENGINE_FULL_PATH/packages/server/upload`.  
 _e.g. `/home/username/etherealengine/packages/server/upload`._  
@@ -293,7 +293,7 @@ helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values
 ```
 > Important:  
 > Make sure to change `/path/to/local.values.yaml` and `/path/to/db-refresh-true.values.yaml` with the actual path of the files.  
-> The file [db-refresh-true.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/db-refresh-true.values.yaml) can be found in the [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repository.
+> The file [db-refresh-true.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-true.values.yaml) can be found in the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repository.
 
 After a minute or so, running `kubectl get pods` should show one or more instanceservers, one or more api servers, and one client server in the Running state.
 
@@ -304,7 +304,7 @@ helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local eth
 ```
 > Important:  
 > Make sure to change `/path/to/db-refresh-true.values.yaml` with the actual path of the file.  
-> The file [db-refresh-false.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/db-refresh-false.values.yaml) can be found in the [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repository.
+> The file [db-refresh-false.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-false.values.yaml) can be found in the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repository.
 
 
 ## Accept invalid certs

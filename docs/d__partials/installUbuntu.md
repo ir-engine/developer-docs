@@ -13,7 +13,7 @@ If you are on Ubuntu Linux, there is an automatic installation script to setup a
 Open a terminal window and run these two lines:  
 > Make sure that you open the terminal in the folder where you want to install the engine
 ```bash
-wget https://raw.githubusercontent.com/EtherealEngine/etherealengine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
+wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
 npm run reinit && npm run dev
 ```
 You can now open iR Engine on your web browser by navigating to https://localhost:3000
