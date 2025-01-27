@@ -82,7 +82,7 @@ Redis should get its own nodegroup to isolate it from any other changes that mig
 As with the instanceserver nodegroup, it's not strictly necessary, but can prevent various other things from
 going down due to the redis servers getting interrupted.
 
-Back at the Compute tab, click on Add Node Group. Pick a name (the default config in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/local.minikube.template.values.yaml) assumes
+Back at the Compute tab, click on Add Node Group. Pick a name (the default config in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.minikube.template.values.yaml) assumes
 a name of 'ng-redis-1'), select the IAM role that was created with the cluster 
 (it should be something like ```eksctl-<cluster_name>-node-NodeInstanceRole-<jumble_of_characters>```),
 toggle the Use Launch Template toggle and select the launch template used to make the initial nodegroup,

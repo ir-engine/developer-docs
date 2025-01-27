@@ -278,7 +278,7 @@ Make sure that kubectl is pointed at MicroK8s by running `kubectl config current
 
 Once kubectl is pointed to microk8s, from the top of the iR Engine repo, run `helm install -f </path/to/agones-default-values.yaml> agones agones/agones` to install Agones and `helm install local-redis redis/redis` to install redis.
 
-> [agones-default-values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/agones-default-values.yaml) can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> [agones-default-values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/agones-default-values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 You can run `kubectl get pods -A` to list all of the pods running in microk8s. After a minute or so, all of these pods should be in the Running state.
 
@@ -308,7 +308,7 @@ After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by ty
 
 In order to connect logger with elasticsearch, update `local.microk8s.template.values.yaml` env `api.extraEnv.ELASTIC_HOST` for e.g. `http://<username>:<password>@<host>:<port>`
 
-> [local.microk8s.template.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> [local.microk8s.template.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 ## Run build_microk8s.sh
 
@@ -336,7 +336,7 @@ Once the images are build. It will push it to MicroK8s local registry. You can v
 ## Update Helm Values File
 
 This will use a Helm config file titled 'local.values.yaml' to configure the deployment. There is
-a [template](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) for this file in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+a [template](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) for this file in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 If you are using local file server as explained couple of steps earlier then, update 'local.values.yaml' variable `api.fileServer.hostUploadFolder` with value similar to '\<ENGINE_FULL_PATH\>/packages/server/upload' e.g. '/home/\<OS_USER_NAME\>/\<ENGINE_FOLDER\>/packages/server/upload'. Its mandatory to point to `/packages/server/upload` folder of your engine folder.
 
@@ -354,11 +354,11 @@ Run the following command:
 helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values.yaml> local etherealengine/etherealengine
 ```
 
-> [db-refresh-true.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/db-refresh-true.values.yaml) can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> [db-refresh-true.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-true.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 After a minute or so, running `kubectl get pods` should show one or more instanceservers, one or more api servers, and one client server in the Running state. Setting `FORCE_DB_REFRESH=true` made the api servers (re)initialize the database. Since you don't want that to happen every time a new api pod starts, run `helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local etherealengine/etherealengine`. The API pods will restart and will now not attempt to reinit the database on boot.
 
-> [db-refresh-false.values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/db-refresh-false.values.yaml) can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> [db-refresh-false.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-false.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 ## Accept invalid certs
 

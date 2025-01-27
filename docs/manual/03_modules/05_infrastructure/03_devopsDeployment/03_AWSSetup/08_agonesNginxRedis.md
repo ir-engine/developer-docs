@@ -16,7 +16,7 @@ If you ever suspect that a chart is out-of-date, run ```helm repo update``` to u
 ### Install Agones
 From the top level of this repo, run ```helm install -f </path/to/agones-default-values.yaml> agones agones/agones```.
 This says to install a service called 'agones' from the 'agones' package in the 'agones' chart, and to configure it with
-[agones-default-values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/agones-default-values.yaml) that can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+[agones-default-values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/agones-default-values.yaml) that can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 ### Install redis for each deployment
 
@@ -28,7 +28,7 @@ iR Engine deployment named 'dev', the corresponding redis deployment would need 
 Run ```helm install -f </path/to/redis-values.yaml> <RELEASE_NAME>-redis redis/redis``` to install, e.g.
 ```helm install -f </path/to/redis-values.yaml> dev-redis redis/redis```.
 
-> [redis-values.yaml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/redis-values.yaml) can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+> [redis-values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/redis-values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 If you named the redis nodegroup something other than 'ng-redis-1', you'll have to alter the value in
 `redis-values.yaml` in two places to your redis nodegroup name.
@@ -48,7 +48,7 @@ will immediately go down.
 
 ### Install ingress-nginx
 **This step cannot finish until the associated ACM Certificate is fully validated** 
-Open local version of [nginx-ingress-aws-values.yml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/nginx-ingress-aws-values.yml) file. Take note of the line
+Open local version of [nginx-ingress-aws-values.yml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/nginx-ingress-aws-values.yml) file. Take note of the line
 ```service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "<ACM Certificate ARN for SSL>"```
 Replace the bit in angle brackets, including the angle brackets, with the ARN of the certificate
 you made for the top-level domain and all wildcarded subdomains, e.g.
@@ -59,4 +59,4 @@ to the state it was committed in.
 
 From the top level of this repo, run ```helm install -f </path/to/nginx-ingress-aws-values.yml> nginx ingress-nginx/ingress-nginx```
 This says to install a service called 'nginx' from the 'ingress-nginx' package in the 'ingress-nginx' chart, and to configure it with
-a file found at [nginx-ingress-aws-values.yml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/nginx-ingress-aws-values.yml).
+a file found at [nginx-ingress-aws-values.yml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/nginx-ingress-aws-values.yml).

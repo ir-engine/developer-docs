@@ -35,7 +35,7 @@ They are equivalent to the concept of "projects" in other engines, except they a
 The engine scans for projects mounted in the `/packages/projects/projects` sub-folder.  
 This means that we can install and run new projects by executing the following commands inside our iR Engine installation folder:
 ```bash
-git clone https://github.com/EtherealEngine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
+git clone https://github.com/ir-engine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
 npm run dev
 ```
 :::note
@@ -47,7 +47,7 @@ Please note that, in the [Quickstart](../quickstart) guide, we cloned the `Step0
 We did this by adding `-b Step0` to the `git clone` command:
 
 ```bash
-git clone -b Step0 https://github.com/EtherealEngine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
+git clone -b Step0 https://github.com/ir-engine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
 ```
 
 This step won't be needed for your own projects.

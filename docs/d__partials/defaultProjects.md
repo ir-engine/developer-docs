@@ -1,4 +1,4 @@
-Ethereal Engine has a few scenes that are installed by default.  
+iR Engine has a few scenes that are installed by default.  
 With the engine running, open the Studio by navigating to https://localhost:3000/studio, and you will see the engine's default project listed in that page.  
 
 Lets give it a test run:

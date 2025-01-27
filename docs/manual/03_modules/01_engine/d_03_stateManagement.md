@@ -2,5 +2,5 @@
 <!--
 TODO:
 Explain how Hyperflux, etc works internally
-Task: https://github.com/EtherealEngine/etherealengine-docs/issues/72
+Task: https://github.com/ir-engine/developer-docs/issues/72
 -->

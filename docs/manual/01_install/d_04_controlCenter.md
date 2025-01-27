@@ -20,11 +20,11 @@ The iR Engine Control Center app provides access to various functionalities whic
 - See realtime logs of different actions being performed.
 
 ## 1. Downloading Control Center App
-In order to download iR Engine Control Center App, navigate to [releases](https://github.com/EtherealEngine/etherealengine-control-center/releases) page and download the latest version of the App.
+In order to download iR Engine Control Center App, navigate to [releases](https://github.com/ir-engine/etherealengine-control-center/releases) page and download the latest version of the App.
 - **Windows** _(and WSL)_: Download the `.exe` file
 
   > You will need to allow permission for executing ps1 scripts.  
-  > You can do so by running following command in Powershell with admin privileges ([reference](https://github.com/EtherealEngine/etherealengine-control-center#2-windows-permission-to-run-ps1-scripts)).  
+  > You can do so by running following command in Powershell with admin privileges ([reference](https://github.com/ir-engine/etherealengine-control-center#2-windows-permission-to-run-ps1-scripts)).  
   > ```Powershell
   > Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   >```
@@ -35,7 +35,7 @@ In order to download iR Engine Control Center App, navigate to [releases](https:
   > Afterwards, double click on AppImage to launch the app.
 
   > Ubuntu 22.04 or later:  
-  > If you are unable to launch the AppImage, you might have to install Fuse with the following command _([reference](https://github.com/EtherealEngine/etherealengine-control-center#1-app-not-launching-in-ubuntu-2204))_.
+  > If you are unable to launch the AppImage, you might have to install Fuse with the following command _([reference](https://github.com/ir-engine/etherealengine-control-center#1-app-not-launching-in-ubuntu-2204))_.
   > ```bash
   > sudo apt-get install fuse libfuse2
   >```
@@ -98,14 +98,14 @@ In this step you will need to provide the following information:
 
 - **Engine Path:**  
   This is the location of iR Engine source code repo.  
-  If the path does not contain the source code, then it will be [cloned](https://github.com/EtherealEngine/etherealengine) by the Control Center App.
+  If the path does not contain the source code, then it will be [cloned](https://github.com/ir-engine/ir-engine) by the Control Center App.
   :::info[windows]
   The path must be inside your WSL Ubuntu distribution.
   :::
 
 - **Ops Path:**  
   This is the location of iR Engine ops source code repo.  
-  If the path does not contain the source code, then it will be [cloned](https://github.com/EtherealEngine/ethereal-engine-ops) by Control Center App.
+  If the path does not contain the source code, then it will be [cloned](https://github.com/ir-engine/ir-engine-ops/) by Control Center App.
   :::info[windows]
   The path must be inside your WSL Ubuntu distribution.
   :::

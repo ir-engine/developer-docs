@@ -6,7 +6,7 @@ There's a couple of steps to this, which will involve deploying things with most
 configuration values, and then letting the deployment process fill in the rest.
 
 ### Fill in Helm config file with variables
-Template Helm config files for dev and prod deployments can be found in [configs](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs) \<dev/prod\>.template.values.yaml.
+Template Helm config files for dev and prod deployments can be found in [configs](https://github.com/ir-engine/ir-engine-ops/blob/master/configs) \<dev/prod\>.template.values.yaml.
 Before filling them in, make a copy elsewhere, call that '\<dev/prod\>.values.yaml', and edit that copy.
 Both the builder and main deployments should use the same config file. When the builder seeds the database,
 it needs a number of values that only need to be configured for the other services, so all of the values

@@ -2,7 +2,7 @@
 ## Grant EKSUser access to cluster
 By default, only the IAM user who set up an EKS cluster may access it.
 In order to let other users access the cluster, you must apply an aws-auth configmap to the cluster
-granting access to specific IAM users. A template of [aws-auth-template.yml](https://github.com/EtherealEngine/ethereal-engine-ops/blob/master/configs/aws-auth-template.yml) file can be found in [ethereal-engine-ops](https://github.com/EtherealEngine/ethereal-engine-ops) repo.
+granting access to specific IAM users. A template of [aws-auth-template.yml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/aws-auth-template.yml) file can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 You'll need to provide a few values for this file. To find `<rolearn>`, in AWS go to EKS->Clusters->
 `<your cluster>`->Compute->Select a nodegroup.  In the details should be 'Node IAM Role ARN'; copy this
