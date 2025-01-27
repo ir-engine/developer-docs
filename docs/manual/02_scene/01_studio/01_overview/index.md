@@ -4,7 +4,7 @@
 # Studio Overview
 
 Navigating to the `/studio` route in any iR Engine deployment will show you the projects page, where you can open existing projects or create a new one.  
-> _eg: When the engine is hosted at `dev.etherealengine.com`, the studio would be accessed from `dev.etherealengine.com/studio`_
+> _eg: When the engine is hosted at `ir-engine-dev.theinfinitereality.io`, the studio would be accessed from `ir-engine-dev.theinfinitereality.io/studio`_
 
 Opening a project will open the editor, from which you can then load any scenes contained in your project.
 

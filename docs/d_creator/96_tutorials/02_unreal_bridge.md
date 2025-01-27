@@ -69,7 +69,7 @@ https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 
-https://api-dev.etherealengine.com/openapi/
+https://api-ir-engine-dev.theinfinitereality.io/openapi/
 
 This first requires a generated bearer token for API autorization. OAuth API app digestion with socpes is coming soon!
 
@@ -145,7 +145,7 @@ https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 
-https://api-dev.etherealengine.com/openapi/
+https://api-ir-engine-dev.theinfinitereality.io/openapi/
 
 This first requires a generated bearer token for API autorization. OAuth API app digestion with socpes is coming soon!
 
