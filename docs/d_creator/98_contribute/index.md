@@ -17,7 +17,7 @@ TODO
 
 ## Participate in the community
 <!-- Start of partial: Participate -->
-The easiest way to get involved is to participate in Ethereal Engine's community.  
+The easiest way to get involved is to participate in iR Engine's community.  
 Join us on your favorite [community channel](/manual/community) and become a part of the conversation.  
 Ask any questions that you may have and/or help other users with their questions.
 
@@ -25,17 +25,17 @@ Ask any questions that you may have and/or help other users with their questions
 
 ## Create and Host your own worlds
 <!-- Start of partial: Host -->
-Ethereal Engine is a platform aimed at helping you achieve your goals.
+iR Engine is a platform aimed at helping you achieve your goals.
 And nothing showcases a great tool better than some great projects made with it!
 
-Complete the **Getting Started** tutorials, learn to use the engine with the [Ethereal Engine Manual](/manual), create a cool project that you love and then share it with the world.
-<!-- TODO: Revise the copywriting of this paragraph after the `Promote Ethereal Engine` copy has been revised, so that it segues better into the next section. -->
+Complete the **Getting Started** tutorials, learn to use the engine with the [iR Engine Manual](/manual), create a cool project that you love and then share it with the world.
+<!-- TODO: Revise the copywriting of this paragraph after the `Promote iR Engine` copy has been revised, so that it segues better into the next section. -->
 
 <!-- End of partial: Host -->
 
-## Promote Ethereal Engine
+## Promote iR Engine
 <!-- Start of partial: Promote -->
-Talk about the engine with people you know. Let them know about those cool projects that you have created, or those locations that you like the most. Being a user and overall advocate of Ethereal Engine is a great way to help growing the community.  
+Talk about the engine with people you know. Let them know about those cool projects that you have created, or those locations that you like the most. Being a user and overall advocate of iR Engine is a great way to help growing the community.  
 <!-- TODO: Improve the copywriting quality of this paragraph with better marketing information, based on Ethereal's marketing strategy. -->
 
 <!-- End of partial: Promote -->
@@ -43,17 +43,17 @@ Talk about the engine with people you know. Let them know about those cool proje
 ## Testing and reporting issues
 <!-- Start of partial: Test -->
 Our team is constantly on the lookout for potential issues during development, and we have a really high standard for Code Reviewing and QA _(Quality Assurance)_. But sometimes bugs can go unnoticed and sneak into release versions of the codebase.
-Because of this, another great way to contribute is by reporting errors, problems or issues that may show up in different versions of Ethereal Engine.
+Because of this, another great way to contribute is by reporting errors, problems or issues that may show up in different versions of iR Engine.
 
 Search for the issue in our [Issues List](https://github.com/EtherealEngine/etherealengine/issues), and open a new one if you think that what you found has not been reported yet.
 
 <!-- End of partial: Test -->
 
-## Contribute to Ethereal Engine's documentation
+## Contribute to iR Engine's documentation
 <!-- Start of partial: Documentation -->
 Documentation tasks are a great way to get started if you are new to the engine and/or development in general.  
 
-If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main Ethereal Engine's [source code repository](https://github.com/EtherealEngine/etherealengine).  
+If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/EtherealEngine/etherealengine).  
 
 For an easier task, the documentation website you are reading right now is maintained from its own [GitHub repository](https://github.com/EtherealEngine/etherealengine-docs). Find something that you think could be improved in this website, and either open an issue or send a PR with your proposed changes.
 
@@ -61,7 +61,7 @@ Get started by reading the [Get Involved: Documentation Guidelines](/manual/cont
 
 <!-- End of partial: Documentation -->
 
-## Translate Ethereal Engine
+## Translate iR Engine
 <!-- Start of partial: Translate -->
 <!--
 TODO
@@ -71,5 +71,5 @@ TODO
 
 <!--
 TODO
-## Donate to Ethereal Engine
+## Donate to iR Engine
 -->
