@@ -53,7 +53,7 @@ Search for the issue in our [Issues List](https://github.com/ir-engine/ir-engine
 <!-- Start of partial: Documentation -->
 Documentation tasks are a great way to get started if you are new to the engine and/or development in general.  
 
-If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/ir-engine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/ir-engine/ir-engine).  
+If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/ir-engine/ir-engine).  
 
 For an easier task, the documentation website you are reading right now is maintained from its own [GitHub repository](https://github.com/ir-engine/developer-docs). Find something that you think could be improved in this website, and either open an issue or send a PR with your proposed changes.
 
