@@ -6,7 +6,7 @@ from the Storage Provider, then all client files will be stored and served from 
 
 ### Create S3 bucket
 In the AWS web client, go to S3 -> Buckets and click Create Bucket.
-Name the bucket `<name>-static-resources`, e.g. ```etherealengine-static-resources```, and have it be in Region us-east-1.
+Name the bucket `<name>-static-resources`, e.g. ```ir-engine-static-resources```, and have it be in Region us-east-1.
 Under Object Ownership, select 'ACLs enabled', and under that select 'Object Writer'.
 Under Block Public Access Settings For The Bucket, uncheck the checkbox Block *all* Public Access; 
 you need the bucket to be publicly accessible.

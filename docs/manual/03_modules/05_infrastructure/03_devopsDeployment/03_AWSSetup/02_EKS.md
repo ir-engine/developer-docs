@@ -57,7 +57,7 @@ the recent high traffic picking up again.
 The OIDC provider that was created in the prior step, installing the EBS CSI Addon, can be re-used in this step.
 
 #### Create launch template
-Go to EC2 -> Launch Templates and make a new one. Name it something like 'etherealengine-production-instanceserver'.
+Go to EC2 -> Launch Templates and make a new one. Name it something like 'ir-engine-production-instanceserver'.
 Most settings can be left as-is, except for the following:
 * Storage -> Add a volume, set the size to ~20GB, and for Device name select '/dev/xvda'.
 * Network Interfaces -> Add one, and under 'Auto-assign public IP' select 'Enable'

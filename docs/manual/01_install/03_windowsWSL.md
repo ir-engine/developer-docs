@@ -84,7 +84,7 @@ You can verify that Make is installed correctly with the command: `make --versio
 Clone iR Engine repo on your machine by running the following command from your WSL Ubuntu terminal:
 <!-- Start of partial: CloneInstructions -->
 ```bash
-git clone https://github.com/etherealengine/etherealengine --depth 1
+git clone https://github.com/ir-engine/ir-engine --depth 1
 ```
 > **Warning**:  
 > Adding `--depth=1` will significantly reduce the amount of data downloaded when cloning, but it will also create a `Shallow Copy` of the engine's repository.  
@@ -92,10 +92,10 @@ If you need to download any branch other than `dev`, or go back in git history i
 
 <!-- End of partial: CloneInstructions -->
 
-Change directory to the location where `etherealengine` repository is cloned with:
+Change directory to the location where `ir-engine` repository is cloned with:
 ```bash
 pwd                 # Prints the current working directory
-cd etherealengine   # Change directory to `etherealengine`
+cd ir-engine   # Change directory to `ir-engine`
 ```
 If an `.env.local` file does not exist in the root of your iR Engine repository folder, then create it by duplicating the `.env.local.default` file:
 ```bash
@@ -110,7 +110,7 @@ npm install
 > Note: If you find issues related to `mediasoup` when running `npm install`, then:
 > - Remove the `mediasoup` package from `packages/instanceserver/package.json` file of iR Engine's source code.
 > - Run `npm install` again.
-> - Run: `npm install mediasoup@3 -w @etherealengine/instanceserver`
+> - Run: `npm install mediasoup@3 -w @ir-engine/packages/instanceserver`
 
 ## Initialize MariaDB server
 You will need to initialize the engine's database with tables and data if you are running the engine for the first time. You can do so with:
@@ -139,8 +139,8 @@ When loading the engine's website for the first time you'll have to tell your br
     - Reload your iR Engine's tab
 
 You need to do this for the following domains:
-- `wss://api-local.etherealengine.org` -> https://api-local.etherealengine.org
-- `wss://instanceserver-local.etherealengine.org` -> https://instanceserver-local.etherealengine.org
+- `wss://api-local.theinfinitereality.io` -> https://api-local.theinfinitereality.io
+- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  

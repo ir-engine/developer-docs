@@ -14,7 +14,7 @@
 
 > 8. _(Optional):_ you can use `docker-compose` to start the `scripts/docker-compose.yml` file, or install MariaDB and copy the credentials _(database name, username, password)_ from docker-compose or `.env.local`. You will need to create an empty database with the matching name.
 > Note: `./start-db.sh` only needs to be run once. If the docker image has stopped, start it again with:  
-  `docker container start etherealengine_db`
+  `docker container start ir-engine_db`
 
 > 9. Check your WSL config for any incorrect networking settings.  
 >    https://docs.microsoft.com/en-us/windows/wsl/wsl-config#network

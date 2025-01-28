@@ -12,12 +12,12 @@ The purpose of the next few pages of this tutorial is to teach you how these con
 
 ## Hello World Code
 This is how the code for our project looks like at the moment.  
-```ts title="ee-tutorial-hello/src/Hello.ts" showLineNumbers
-import { ECS } from '@etherealengine/ecs'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
+import { ECS } from '@ir-engine/packages/ecs'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
 
 const entity = ECS.createEntity()

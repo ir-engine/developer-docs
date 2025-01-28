@@ -22,7 +22,7 @@ To avoid cloning everything, use this command:
 
 <!-- Start of partial: CloneInstructions -->
 ```bash
-git clone https://github.com/etherealengine/etherealengine --depth 1
+git clone https://github.com/ir-engine/ir-engine --depth 1
 ```
 > **Warning**:  
 > Adding `--depth=1` will significantly reduce the amount of data downloaded when cloning, but it will also create a `Shallow Copy` of the engine's repository.  
@@ -53,7 +53,7 @@ If you don't wish to use Docker, you will need to setup mariadb and redis on you
 If you are lucky, this will just work. However, you may encounter some issues.  
 Make sure you are running Node 18, and check your dependencies.
 ```
-cd path/to/etherealengine
+cd path/to/ir-engine
 cp .env.local.default .env.local
 npm install
 npm run dev-docker
@@ -76,8 +76,8 @@ When loading the engine's website for the first time you'll have to tell your br
     - Reload your iR Engine's tab
 
 You need to do this for the following domains:
-- `wss://api-local.etherealengine.org` -> https://api-local.etherealengine.org
-- `wss://instanceserver-local.etherealengine.org` -> https://instanceserver-local.etherealengine.org
+- `` -> https://api-local.theinfinitereality.io
+- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  

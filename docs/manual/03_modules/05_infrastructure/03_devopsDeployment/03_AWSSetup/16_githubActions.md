@@ -10,7 +10,7 @@ attempt to build and deploy the builder.
 ### Overview of the build process
 The full build and deployment process works like this:
 1. GitHub Actions builds just enough of the iR Engine monorepo to fetch any installed iR Engine projects.
-2. GitHub Actions pushes this builder Docker image to the repo `etherealengine-<release>-builder` in ECR
+2. GitHub Actions pushes this builder Docker image to the repo `ir-engine-<release>-builder` in ECR
 3. GitHub Actions updates the builder deployment to point to the builder image it just created.
 4. The builder deployment spins up the builder Docker image on its single node
 5. The builder connects to the deployment's database and checks if there is a table `user`. This is a proxy
@@ -19,7 +19,7 @@ The full build and deployment process works like this:
 6. The builder downloads any iR Engine projects that the deployment has added.
 7. The builder builds the Docker image for each service concurrently using these projects, building them into the client files as well as copying them so that the api and instanceservers have access to them.
     If serving client files from the Storage Provider, the client files will be pushed to S3
-8. The builder pushes these final Docker images to the repos `etherealengine-<release>-<service>` in ECR (not the client image if serving client files from the Storage Provider)
+8. The builder pushes these final Docker images to the repos `ir-engine-<release>-<service>` in ECR (not the client image if serving client files from the Storage Provider)
 9. The builder caches all of the layers of each Docker file in S3 for faster build times on subsequent builds
 10. The builder updates the main deployment to point to the final images it just created.
 11. The main deployment spins up the final Docker images for the api, client (optional), instanceserver and taskserver services.

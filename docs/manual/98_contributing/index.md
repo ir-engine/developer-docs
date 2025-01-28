@@ -54,8 +54,8 @@ Talk about the engine with people you know. Let them know about those cool proje
 
 ## Contribute to iR Engine's development
 <!-- Start of partial: Develop -->
-iR Engine is an open-source project, based on the [CPAL](https://github.com/ir-engine/ir-engine/blob/dev/LICENSE) license.
-You can find the source code of the engine on iR Engine's [GitHub](https://github.com/ir-engine/ir-engine) repository, and some guidelines on how to contribute to its codebase in the [Contributing](https://github.com/ir-engine/etherealengine#contributing) section of the repository's readme.
+iR Engine is an open-source project, based on the [CPAL](https://github.com/ir-engine/ir-engine/LICENSE) license.
+You can find the source code of the engine on iR Engine's [GitHub](https://github.com/ir-engine/ir-engine) repository, and some guidelines on how to contribute to its codebase in the [Contributing](https://github.com/ir-engine/ir-engine#contributing) section of the repository's readme.
 
 <!-- End of partial: Develop -->
 
