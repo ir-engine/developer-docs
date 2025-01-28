@@ -17,8 +17,8 @@ When loading the engine's website for the first time you'll have to tell your br
     - Reload your iR Engine's tab
 
 You need to do this for the following domains:
-- `wss://api-local.etherealengine.org` -> https://api-local.etherealengine.org
-- `wss://instanceserver-local.etherealengine.org` -> https://instanceserver-local.etherealengine.org
+- `wss://api-local.theinfinitereality.io` -> https://api-local.theinfinitereality.io
+- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  

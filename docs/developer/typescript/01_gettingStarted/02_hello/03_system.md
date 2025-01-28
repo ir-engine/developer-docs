@@ -121,7 +121,7 @@ The engine will take care of executing our code when it is correct to do so, bas
 
 <TechnicalNote title="Solution">
 
-```ts title="ee-tutorial-hello/src/Hello.ts"
+```ts title="ir-tutorial-hello/src/Hello.ts"
 //highlight-start
 export const HelloWorldSystem = ECS.defineSystem({
   uuid: 'helloworld.system',
@@ -137,15 +137,15 @@ This is how our final code will look like after we have completed these tasks.
 
 <TechnicalNote title="Full Solution">
 
-```ts title="ee-tutorial-hello/src/Hello.ts" showLineNumbers
-import { ECS } from '@etherealengine/ecs'
-import { PhysicsSystem } from '@etherealengine/spatial/src/physics/PhysicsModule'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
+import { ECS } from '@ir-engine/packages/ecs'
+import { PhysicsSystem } from '@ir-engine/packages/spatial/src/physics/PhysicsModule'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 
 
 //highlight-start

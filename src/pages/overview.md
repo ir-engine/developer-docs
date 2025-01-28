@@ -82,11 +82,11 @@ The Studio is fully integrated with the engine. It is a heavily modified version
 ## Project API
 The Project API is the core of what makes Ethereal Engine shine - the ability to load your own scenes, assets & code with a click of a button. Using github, we allow users to have fully version controlled access to extend the base functionality. You can see examples of the Project API in action [here](https://etherealengine.com/explore) and [here](https://github.com/EtherealEngine/ee-development-test-suite)
 ```ts
-import type { ProjectConfigInterface } from '@etherealengine/projects/ProjectConfigInterface'
+import type { ProjectConfigInterface } from '@ir-engine/packages/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: './projectEventHooks.ts',
-  thumbnail: '/static/etherealengine_thumbnail.jpg',
+  thumbnail: '/static/IR_thumbnail.jpg',
   routes: {
     '/examples': {
       component: () => import('./examplesRoute')

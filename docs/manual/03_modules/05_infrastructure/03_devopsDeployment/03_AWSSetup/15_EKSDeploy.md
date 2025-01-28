@@ -51,7 +51,7 @@ initial nodegroup.
 If you're using a private ECR repo, set this to "true" in the builder config file.
 
 #### (everything).image.repository
-You'll need to replace every \<repository_name\> with the full ECR_URL of your non-builder repos, e.g. `abcd1234efgh.dkr.ecr.us-west-1.amazonaws.com/etherealengine-dev-api`.
+You'll need to replace every \<repository_name\> with the full ECR_URL of your non-builder repos, e.g. `abcd1234efgh.dkr.ecr.us-west-1.amazonaws.com/ir-engine-dev-api`.
 Each service has to have the proper `-<service>` suffix on it, e.g. `-api`, `-client`, etc.
 
 #### GITHUB_CLIENT_ID/GITHUB_CLIENT_SECRET
@@ -61,8 +61,8 @@ See [this document](../setupGithubOAuth) for
 more information, and enter the appropriate ID/secret in these variables.
 
 ### Run Helm install
-Run ```helm install -f </path/to/<RELEASE_NAME>.values.yaml> <RELEASE_NAME>-builder etherealengine/etherealengine-builder```
-and then run ```helm install -f </path/to/<RELEASE_NAME>.values.yaml> <RELEASE_NAME> etherealengine/etherealengine```
+Run ```helm install -f </path/to/<RELEASE_NAME>.values.yaml> <RELEASE_NAME>-builder ir-engine/ir-engine-builder```
+and then run ```helm install -f </path/to/<RELEASE_NAME>.values.yaml> <RELEASE_NAME> ir-engine/ir-engine```
 
 This will spin up the main and builder deployments using the Helm config file, \<dev/prod\>.values.yaml.
 Neither will fully work yet, since there's no valid image in the repos yet. The GitHub

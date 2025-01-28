@@ -53,11 +53,11 @@ A local version of the engine is required to follow this introductory tutorial.
 The previous commands will have the engine running locally.  
 Lets stop it by pressing `Ctrl+C`, and then run these commands to install and run the tutorial's template project:
 ```bash
-git clone -b Step0 https://github.com/ir-engine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
+git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
 npm run dev
 ```
 
-You should now be able to see the `ee-tutorial-hello` project listed in iR Engine's Studio by navigating to https://localhost:3000/studio.
+You should now be able to see the `ir-tutorial-hello` project listed in iR Engine's Studio by navigating to https://localhost:3000/studio.
 
 ## Confirm the installation
 Lets make sure that our `hello world` code is running:

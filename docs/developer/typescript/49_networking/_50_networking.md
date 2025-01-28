@@ -77,7 +77,7 @@ const ArtifactReactor = ({ entityUUID }: { entityUUID: EntityUUID }) => {
 
 ## Closing
 This example is simple, but these are the building blocks and foundations for creating richer and more complex experiences.  
-The source code for this example from https://github.com/etherealengine/ee-tutorial-basic
+The source code for this example from https://github.com/ir-engine/ir-tutorial-basic
 
 
 
@@ -96,25 +96,25 @@ import {
   getState,
   none,
   useHookstate
-} from '@etherealengine/hyperflux'
+} from '@ir-engine/packages/hyperflux'
 
-import { EntityUUID } from '@etherealengine/common/src/interfaces/EntityUUID'
+import { EntityUUID } from '@ir-engine/packages/common/src/interfaces/EntityUUID'
 
-import { NetworkTopics } from '@etherealengine/spatial/src/networking/classes/Network'
-import { WorldNetworkAction } from '@etherealengine/spatial/src/networking/functions/WorldNetworkAction'
+import { NetworkTopics } from '@ir-engine/packages/spatial/src/networking/classes/Network'
+import { WorldNetworkAction } from '@ir-engine/packages/spatial/src/networking/functions/WorldNetworkAction'
 
-import { isClient } from '@etherealengine/common/src/utils/getEnvironment'
-import { PresentationSystemGroup, defineSystem, getComponent, setComponent } from '@etherealengine/ecs'
-import { ECSState } from '@etherealengine/ecs/src/ECSState'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { UUIDComponent } from '@etherealengine/spatial/src/common/UUIDComponent'
-import { NetworkState } from '@etherealengine/spatial/src/networking/NetworkState'
-import { ColliderComponent } from '@etherealengine/spatial/src/physics/components/ColliderComponent'
-import { RigidBodyComponent } from '@etherealengine/spatial/src/physics/components/RigidBodyComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
+import { isClient } from '@ir-engine/packages/common/src/utils/getEnvironment'
+import { PresentationSystemGroup, defineSystem, getComponent, setComponent } from '@ir-engine/packages/ecs'
+import { ECSState } from '@ir-engine/packages/ecs/src/ECSState'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { UUIDComponent } from '@ir-engine/packages/spatial/src/common/UUIDComponent'
+import { NetworkState } from '@ir-engine/packages/spatial/src/networking/NetworkState'
+import { ColliderComponent } from '@ir-engine/packages/spatial/src/physics/components/ColliderComponent'
+import { RigidBodyComponent } from '@ir-engine/packages/spatial/src/physics/components/RigidBodyComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
 import { Vector3 } from 'three'
 
 /**

@@ -39,7 +39,7 @@ Every 6 months, when the Client Secret expires, you have to get it updated in th
 4. Also update the Client Secret value in the "Values.yaml" file for both the main release and builder. You can use the following command as reference for updating the Client Secret in Values.yaml files of the deployments. Run the command separately for Main and Builder release while updating the corresponding values accordingly.
 
 ```shell
-helm repo update && helm upgrade --reuse-values --set api.extraEnv.APPLE_CALLBACK_URL=\<CallbackURL> --set api.extraEnv.APPLE_CLIENT_ID=\<ClientID> --set api.extraEnv.APPLE_CLIENT_SECRET=\<ClientSecret> --set media.extraEnv.APPLE_CALLBACK_URL=\<CallbackURL> --set media.extraEnv.APPLE_CLIENT_ID=\<ClientID> --set media.extraEnv.APPLE_CLIENT_SECRET="\<ClientSecret>" \<Main and builder Release Name> etherealengine/etherealengine
+helm repo update && helm upgrade --reuse-values --set api.extraEnv.APPLE_CALLBACK_URL=\<CallbackURL> --set api.extraEnv.APPLE_CLIENT_ID=\<ClientID> --set api.extraEnv.APPLE_CLIENT_SECRET=\<ClientSecret> --set media.extraEnv.APPLE_CALLBACK_URL=\<CallbackURL> --set media.extraEnv.APPLE_CLIENT_ID=\<ClientID> --set media.extraEnv.APPLE_CLIENT_SECRET="\<ClientSecret>" \<Main and builder Release Name> ir-engine/ir-engine
 ```
 
 ## Future Work and Recommendations

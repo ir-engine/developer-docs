@@ -59,15 +59,15 @@ mapRoles:
 - groups:
   - system:bootstrappers
   - system:nodes
-  rolearn: arn:aws:iam::<accountId>:role/eksctl-etherealengine-test-nodegro-NodeInstanceRole-dXwOpisgTD1e
+  rolearn: arn:aws:iam::<accountId>:role/eksctl-ir-engine-test-nodegro-NodeInstanceRole-dXwOpisgTD1e
   username: system:node:{{EC2PrivateDNSName}}
 
 mapUsers:
 ----
 - groups:
   - system:masters
-  userarn: arn:aws:iam::<accountId>:user/etherealengine-eks
-  username: etherealengine-eks
+  userarn: arn:aws:iam::<accountId>:user/ir-engine-eks
+  username: ir-engine-eks
 ```
 
 Copy the value of `rolearn` in the entry for mapRoles and paste that in the template copy to replace `<rolearn>`.
@@ -77,13 +77,13 @@ In the mapUsers section, you'll need to make as many copies of the following as 
 ```yaml
 - groups:
   - system:masters
-  userarn: arn:aws:iam::<account_id>:user/etherealengine-eks
-  username: etherealengine-eks
+  userarn: arn:aws:iam::<account_id>:user/ir-engine-eks
+  username: ir-engine-eks
 ```
 
 :::important
 Make sure to have an entry for the user who made the cluster.  
-In the example above, that's `etherealengine-eks`.
+In the example above, that's `ir-engine-eks`.
 :::
 
 Replace `<account_id>` with the AWS account ID, and both instances of `<IAM_username>` with the username you want to grant access.

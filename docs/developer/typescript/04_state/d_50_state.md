@@ -26,10 +26,10 @@ const MyComponent = () => {
 
 ## Global State
 Global state definitions are wrapped in a 'store' which allows for automatic creation and cleanup as needed.  
-This API, as well as the underlying hookstate API, can be imported from `@etherealengine/hyperflux`.
+This API, as well as the underlying hookstate API, can be imported from `@ir-engine/packages/hyperflux`.
 
 ```ts title="MyState.ts"
-import { defineState } from '@etherealengine/hyperflux'
+import { defineState } from '@ir-engine/packages/hyperflux'
 
 const MyState = defineState({
   name: 'MyState',
@@ -48,7 +48,7 @@ When accessing the state, `getState` returns the underlying object typed as read
 This is useful for reading state values, but should not be used to write to state.
 
 ```ts
-import { getState } from '@etherealengine/hyperflux'
+import { getState } from '@ir-engine/packages/hyperflux'
 import { MyState } from './MyState'
 
 const state = getState(MyState)
@@ -63,7 +63,7 @@ The proxy returned can be wrapped in Hookstate's reactive hook `useHookstate`.
 This will cause the component to re-render when any state values are changed.
 
 ```tsx
-import { getMutableState, useHookstate } from '@etherealengine/hyperflux'
+import { getMutableState, useHookstate } from '@ir-engine/packages/hyperflux'
 import { MyState } from './MyState'
 
 const MyComponent = () => {

@@ -90,7 +90,7 @@ typing ```thisisunsafe”``` or ```"iknowwhatiamdoing"``` then reload original p
 Type in terminal
 
 ```bash
-     npm i <packagename> -w @etherealengine/editor
+     npm i <packagename> -w @ir-engine/packages/editor
 ```
 
 ### Using Local Storage instead of MinIO
@@ -139,8 +139,8 @@ npm run dev-reinit
 ```
 or
 ```bash
-docker container stop etherealengine_db
-docker container rm etherealengine_db
+docker container stop ir-engine_db
+docker container rm ir-engine_db
 docker container prune --force
 npm run dev-docker
 npm run dev-reinit

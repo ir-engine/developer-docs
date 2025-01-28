@@ -4,7 +4,7 @@ The iR Engine codebase is most easily deployed by forking it and configuring som
 Actions can run the deployment for you. You can run all of the commands that the `<dev/prod>`-deploy action runs manually
 if you so choose, and in that case, you don't need to fork the GH repo.
 
-Go to https://github.com/etherealengine/etherealengine. In the upper right-hand corner, there's a button 'Fork'. Click that,
+Go to https://github.com/ir-engine/ir-engine. In the upper right-hand corner, there's a button 'Fork'. Click that,
 then click the account/organization you wish to fork it to. You should be taken to your fork in a short time.
 
 You'll need to set several Secrets (runtime variables) for GitHub Actions. By default GitHub Actions should be fully
@@ -19,8 +19,8 @@ this page to make a new one. You will need to make several Secrets with the foll
 * EKS_AWS_SECRET -> The secret key of the EKSUser IAM user
 * CLUSTER_NAME -> The name of the EKS cluster
 * DEPLOYMENTS_ENABLED -> Set to `true`
-* DEV_REPO_NAME -> The base name of the dev ECR repository, e.g. `etherealengine-dev` (all references to the builder and service repos will append `-builder`/`-<service>` to this value)
-* DEV_REPO_URL -> The root URL for your repos, i.e. everything before the `/etherealengine-dev-builder`, e.g. `11111111111.dkr.ecr.us-west-1.amazonaws.com` or `public.ecr.aws/a1b2c3d4`. If pushing to Docker Hub, this should have `docker.io/` before the organization name, e.g. `docker.io/myorg .
+* DEV_REPO_NAME -> The base name of the dev ECR repository, e.g. `ir-engine-dev` (all references to the builder and service repos will append `-builder`/`-<service>` to this value)
+* DEV_REPO_URL -> The root URL for your repos, i.e. everything before the `/ir-engine-dev-builder`, e.g. `11111111111.dkr.ecr.us-west-1.amazonaws.com` or `public.ecr.aws/a1b2c3d4`. If pushing to Docker Hub, this should have `docker.io/` before the organization name, e.g. `docker.io/myorg .
 * PRIVATE_REPO -> Set this to `true` if your repos are private; if they're public you don't need to set this at all.
 * REPO_PROVIDER -> The provider of the container repos; currently allowed values are `aws` for ECR and `dockerhub` for Docker Hub.
 

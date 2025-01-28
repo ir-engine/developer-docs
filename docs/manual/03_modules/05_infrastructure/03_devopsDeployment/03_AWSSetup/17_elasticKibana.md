@@ -28,7 +28,7 @@ In order to connect logger with elasticsearch, update config file(values.yml) fo
 One of the features of Helm is being able to easily upgrade deployments with new values. The command to
 do this is very similar to the install command:
 
-```helm upgrade --reuse-values -f </path/to/*.values.yaml> --set api.image.tag=<latest_github_commit_SHA>,client.image.tag=<latest_github_commit_SHA>,instanceserver.image.tag=<latest_github_commit_SHA> <RELEASE_NAME> etherealengine/etherealengine```
+```helm upgrade --reuse-values -f </path/to/*.values.yaml> --set api.image.tag=<latest_github_commit_SHA>,client.image.tag=<latest_github_commit_SHA>,instanceserver.image.tag=<latest_github_commit_SHA> <RELEASE_NAME> ir-engine/ir-engine```
 
 ```--reuse-values``` says to carry over all configuration values from the previous deployment. This is most important
 for tags, since they're usually set inline with the `helm install/upgrade` command, not a Helm config.
