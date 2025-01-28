@@ -26,9 +26,9 @@ helm plugin install https://github.com/databus23/helm-diff
 
 Now that the `helm diff` plugin is installed, you can run the following command:
 ```bash
-helm diff upgrade [DEPLOYMENT_NAME] etherealengine/etherealengine --values [PATH_TO_VALUES_YAML]
+helm diff upgrade [DEPLOYMENT_NAME] ir-engine/ir-engine --values [PATH_TO_VALUES_YAML]
 ```
-> eg: `helm diff upgrade dev etherealengine/etherealengine --values ~/etherealengine-ops/values/dev.ethereal.values.yaml`
+> eg: `helm diff upgrade dev ir-engine/ir-engine --values ~/ir-engine-ops/values/dev.ethereal.values.yaml`
 
 This will print the differences between the deployed helm release `values.yaml` file and the specified `values.yaml` file.  
 > Note: When the output is empty it means that there are no differences/changes.
@@ -36,6 +36,6 @@ This will print the differences between the deployed helm release `values.yaml` 
 ## Upgrading Helm Deployment
 Now that the local `values.yaml` file is updated, the following command will upgrade the Helm deployment with the correct configuration:
 ```bash
-helm upgrade [DEPLOYMENT_NAME] etherealengine/etherealengine --reuse-values -f [PATH_TO_VALUES_YAML]
+helm upgrade [DEPLOYMENT_NAME] ir-engine/ir-engine --reuse-values -f [PATH_TO_VALUES_YAML]
 ```
-> eg: `helm upgrade dev etherealengine/etherealengine --reuse-values -f ~/etherealengine-ops/values/dev.ethereal.values.yaml`
+> eg: `helm upgrade dev ir-engine/ir-engine --reuse-values -f ~/ir-engine-ops/values/dev.ethereal.values.yaml`

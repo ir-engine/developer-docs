@@ -69,7 +69,7 @@ https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 
-https://api-dev.etherealengine.com/openapi/
+https://ir-engine-api.mt-int.theinfinitereality.io/
 
 This first requires a generated bearer token for API autorization. OAuth API app digestion with socpes is coming soon!
 
@@ -96,21 +96,21 @@ This is a ticketing system to be placed into a lobby group and then into a games
 
 Match User Relation
 
-https://github.com/etherealengine/etherealengine/blob/dev/packages/server-core/src/matchmaking/match-user/match-user.class.ts
+https://github.com/ir-engine/ir-engine/blob/dev/packages/server-core/src/matchmaking/match-user/match-user.class.ts
 
 #### Open Match Endpoint Reference
 
 Match the ticket for an assignment
 
-https://github.com/etherealengine/etherealengine/blob/dev/packages/server-core/src/matchmaking/match-ticket/match-ticket.class.ts
+https://github.com/ir-engine/ir-engine/blob/dev/packages/server-core/src/matchmaking/match-ticket/match-ticket.class.ts
 
 Match Gameserver Instance Relation
 
-https://github.com/etherealengine/etherealengine/blob/dev/packages/server-core/src/matchmaking/match-instance/match-instance.class.ts
+https://github.com/ir-engine/ir-engine/blob/dev/packages/server-core/src/matchmaking/match-instance/match-instance.class.ts
 
 Get a ticket for assignment to a gameserver instance
 
-https://github.com/etherealengine/etherealengine/blob/dev/packages/server-core/src/matchmaking/match-ticket-assignment/match-ticket-assignment.class.ts
+https://github.com/ir-engine/ir-engine/blob/dev/packages/server-core/src/matchmaking/match-ticket-assignment/match-ticket-assignment.class.ts
 
 
 
@@ -121,7 +121,7 @@ Agones Actions
 
 
 
-# Ethereal-Engine-Bridge-Unreal-Example
+# iR Engine Bridge Unreal Example
 
 https://github.com/ir-engine/EE-Bridge-Unreal-Example
 
@@ -145,7 +145,7 @@ https://github.com/ir-engine/EE-Bridge-Unreal
 
 This bridge is wrapping OpenAPI endpoints presented by iR Engine 
 
-https://api-dev.etherealengine.com/openapi/
+https://ir-engine-api.mt-int.theinfinitereality.io/
 
 This first requires a generated bearer token for API autorization. OAuth API app digestion with socpes is coming soon!
 

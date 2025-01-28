@@ -34,7 +34,7 @@ A project must also have a package.json to provide custom dependencies, and to d
 Systems imported from a scene MUST have their filename end with `System.ts` and be in the `/src/systems` folder.
 This is to optimize vite's code-splitting bundling process, as each potentially dynamically importable file will result in a new bundle with it's own copy of all of it's import dependencies.
 
-`@etherealengine/*` monorepo dependencies will be symlinked and not needed, but some package managers _(such as pnpm)_ require these to be defined.
+`@ir-engine/*` monorepo dependencies will be symlinked and not needed, but some package managers _(such as pnpm)_ require these to be defined.
 If so, they should be defined in `peerDependencies` and kept up to date with the current engine version.
 
 ## Config
@@ -120,4 +120,4 @@ The `databaseSeed` property is:
 
 ### Internationalization _(i18n)_
 Internationalization can be added by using the pattern `./i18n/<language>/<namespace>.json`.  
-An example of the format can be found in [the base i18n files](https://github.com/etherealengine/etherealengine/tree/dev/packages/client-core/i18n).
+An example of the format can be found in [the base i18n files](https://github.com/ir-engine/ir-engine/tree/dev/packages/client-core/i18n).

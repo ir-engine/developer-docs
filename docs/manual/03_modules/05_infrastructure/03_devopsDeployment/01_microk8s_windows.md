@@ -139,7 +139,7 @@ While you can follow the demo instructions there about starting MicroK8s, deploy
 To build the iR Engine Docker image locally, and to have a pre-tested way to run various local services, you'll need to get the iR Engine repo on your machine. This is most easily done by running following command in WSL Ubuntu terminal.
 
 ```bash
-git clone https://github.com/etherealengine/etherealengine.git etherealengine
+git clone https://github.com/ir-engine/ir-engine.git etherealengine
 ```
 
 If `.env.local` file does not exist in the root of your repo folder then create it by duplicating `.env.local.default`.
@@ -246,7 +246,7 @@ From the above output, use `172.31.89.133` as `{WSL_IP}`.
 Next, edit your Windows hostfile, this is done by editing `C:\Windows\System32\drivers\etc\hosts`. Add/Update the following lines:
 
 ```conf
-{WSL_IP} local.etherealengine.org api-local.etherealengine.org instanceserver-local.etherealengine.org 00000.instanceserver-local.etherealengine.org 00001.instanceserver-local.etherealengine.org 00002.instanceserver-local.etherealengine.org 00003.instanceserver-local.etherealengine.org
+{WSL_IP} local.etherealengine.org api-local.theinfinitereality.io instanceserver-local.theinfinitereality.io 00000.instanceserver-local.theinfinitereality.io 00001.instanceserver-local.theinfinitereality.io 00002.instanceserver-local.theinfinitereality.io 00003.instanceserver-local.theinfinitereality.io
 
 {WSL_IP} microk8s.registry
 ```
@@ -351,12 +351,12 @@ kubectl get pods
 Run the following command:
 
 ```bash
-helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values.yaml> local etherealengine/etherealengine
+helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values.yaml> local ir-engine/ir-engine
 ```
 
 > [db-refresh-true.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-true.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
-After a minute or so, running `kubectl get pods` should show one or more instanceservers, one or more api servers, and one client server in the Running state. Setting `FORCE_DB_REFRESH=true` made the api servers (re)initialize the database. Since you don't want that to happen every time a new api pod starts, run `helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local etherealengine/etherealengine`. The API pods will restart and will now not attempt to reinit the database on boot.
+After a minute or so, running `kubectl get pods` should show one or more instanceservers, one or more api servers, and one client server in the Running state. Setting `FORCE_DB_REFRESH=true` made the api servers (re)initialize the database. Since you don't want that to happen every time a new api pod starts, run `helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local ir-engine/ir-engine`. The API pods will restart and will now not attempt to reinit the database on boot.
 
 > [db-refresh-false.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/db-refresh-false.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
@@ -367,8 +367,8 @@ Since there are no valid certificates for this domain, you'll have to tell your 
 
 Go to \<https://local.etherealengine.org/>, you should see a warning about an invalid certificate; accept this invalid cert to get to the home page. Next if it keeps displaying 'loading routes' progress for a long time, it is due to the fact that you have to allow certificates. You'll have to open the dev tools for your browser and go to the 'Console' tab. You will see some errors in URL address starting with 'wss'. Replace 'wss' with 'https' and open it in new tab. Accept the certificate and reload your iR Engine tab. You need to do this for following domains:
 
-- wss://api-local.etherealengine.org -> https://api-local.etherealengine.org
-- wss://instanceserver-local.etherealengine.org -> https://instanceserver-local.etherealengine.org
+- wss://api-local.theinfinitereality.io -> https://api-local.theinfinitereality.io
+- wss://instanceserver-local.theinfinitereality.io -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > You can open Developer tools in Chrome by clicking the side menu with three dots, then More tools > Developer tools (or use Ctrl+Shift+I)

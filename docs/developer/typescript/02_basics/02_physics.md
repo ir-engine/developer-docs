@@ -36,7 +36,7 @@ Lets also change the position of ball so that it spawns some distance above the 
 Here are your hints for this tutorial:
 ```ts
 // Both the RigidBody and Collider components are part of the `Spatial/physics` engine module
-'@etherealengine/spatial/src/physics/components/.....'
+'@ir-engine/packages/spatial/src/physics/components/.....'
 // We can specify the dynamic type with:
 { type: 'dynamic' }
 // We can specify the shape with:
@@ -53,8 +53,8 @@ You will know that your code is correct if:
 
 ```ts
 // Import both components from the Spatial/physics module
-import { RigidBodyComponent } from '@etherealengine/spatial/src/physics/components/RigidBodyComponent'
-import { ColliderComponent } from '@etherealengine/spatial/src/physics/components/ColliderComponent'
+import { RigidBodyComponent } from '@ir-engine/packages/spatial/src/physics/components/RigidBodyComponent'
+import { ColliderComponent } from '@ir-engine/packages/spatial/src/physics/components/ColliderComponent'
 ```
 ```ts
 // Set both components to our entity
@@ -68,19 +68,19 @@ ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 3, 0) })
 
 <UnstyledDetails title="Full Solution">
 
-```ts title="ee-tutorial-basics/Step2.ts" showLineNumbers
-import { ECS } from '@etherealengine/ecs'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-basic/Step2.ts" showLineNumbers
+import { ECS } from '@ir-engine/packages/ecs'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
-import { PhysicsSystem } from '@etherealengine/spatial'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
+import { PhysicsSystem } from '@ir-engine/packages/spatial'
 // Import both components from the Spatial/physics module
 //highlight-start
-import { RigidBodyComponent } from '@etherealengine/spatial/src/physics/components/RigidBodyComponent'
-import { ColliderComponent } from '@etherealengine/spatial/src/physics/components/ColliderComponent'
+import { RigidBodyComponent } from '@ir-engine/packages/spatial/src/physics/components/RigidBodyComponent'
+import { ColliderComponent } from '@ir-engine/packages/spatial/src/physics/components/ColliderComponent'
 //highlight-end
 
 export const BasicsComponent = ECS.defineComponent({

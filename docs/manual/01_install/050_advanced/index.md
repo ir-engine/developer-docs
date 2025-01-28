@@ -7,7 +7,7 @@ These instructions will explain how to manually setup iR Engine docker instances
 
 ## 1. Install dependencies
 ```bash
-cd path/to/etherealengine
+cd path/to/ir-engine
 npm install
 ```
 _Note how you don't need to use sudo for any of these commands._
@@ -20,7 +20,7 @@ _Note how you don't need to use sudo for any of these commands._
 ## 2. Start the MySQL database
 Make sure you have a MySQL database installed and running. Our recommendation is `MariaDB`.
 
-We provide a docker container for easily setting up the database. This command will create a Docker container of MariaDB named `etherealengine_db`:
+We provide a docker container for easily setting up the database. This command will create a Docker container of MariaDB named `ir-engine_db`:
 ```bash
 npm run dev-docker
 ```
@@ -33,7 +33,7 @@ The default database information is:
 |-|-|
 | Username | `server` |
 | Password | `password` |
-| Database | `etherealengine` |
+| Database | `ir-engine` |
 | Hostname | `127.0.0.1` |
 | Port     | `3306` |
 > Note: If you have errors connecting to the local database, you might need to shut off your local firewall.
@@ -70,7 +70,7 @@ Open a new terminal and start the Agones sidecar in local mode
 ```bash
 npm run dev-agones
 ```
-Alternatively, you can also go to `etherealengine/vendor/agones/` and run:
+Alternatively, you can also go to `ir-engine/vendor/agones/` and run:
 - Linux: `./sdk-server.linux.amd64 --local`
 - Windows: `sdk-server.windows.amd64.exe --local`
 - Mac: `./sdk-server.darwin.amd64 --local`
@@ -118,8 +118,8 @@ When loading the engine's website for the first time you'll have to tell your br
     - Reload your iR Engine's tab
 
 You need to do this for the following domains:
-- `wss://api-local.etherealengine.org` -> https://api-local.etherealengine.org
-- `wss://instanceserver-local.etherealengine.org` -> https://instanceserver-local.etherealengine.org
+- `wss://api-local.theinfinitereality.io` -> https://api-local.theinfinitereality.io
+- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  

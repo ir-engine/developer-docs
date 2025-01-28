@@ -35,7 +35,7 @@ They are equivalent to the concept of "projects" in other engines, except they a
 The engine scans for projects mounted in the `/packages/projects/projects` sub-folder.  
 This means that we can install and run new projects by executing the following commands inside our iR Engine installation folder:
 ```bash
-git clone https://github.com/ir-engine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
+git clone https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
 npm run dev
 ```
 :::note
@@ -43,11 +43,11 @@ You will need to stop the engine and re-run it whenever you install a new projec
 :::
 
 <TechnicalNote>
-Please note that, in the [Quickstart](../quickstart) guide, we cloned the `Step0` branch from the `ee-tutorial-hello` project specifically, and not the whole project.  
+Please note that, in the [Quickstart](../quickstart) guide, we cloned the `Step0` branch from the `ir-tutorial-hello` project specifically, and not the whole project.  
 We did this by adding `-b Step0` to the `git clone` command:
 
 ```bash
-git clone -b Step0 https://github.com/ir-engine/ee-tutorial-hello packages/projects/projects/ee-tutorial-hello
+git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
 ```
 
 This step won't be needed for your own projects.
@@ -80,12 +80,12 @@ There are multiple options available, but the important thing to remember is tha
 
 <TechnicalNote title="Config File">
 
-```ts title="ee-tutorial-hello/xrengine.config.ts"
-import type { ProjectConfigInterface } from '@etherealengine/projects/ProjectConfigInterface'
+```ts title="ir-tutorial-hello/xrengine.config.ts"
+import type { ProjectConfigInterface } from '@ir-engine/packages/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: undefined,
-  thumbnail: '/static/etherealengine_thumbnail.jpg',
+  thumbnail: '/static/IR_thumbnail.jpg',
   routes: {},
   services: undefined,
   databaseSeed: undefined,
@@ -104,17 +104,17 @@ We don't need to know much more about this file for now. We will explore it furt
 In this minimal tutorial we are adding a sphere primitive to the scene.  
 As this sphere will be a `Spatial` object, we will import a few components from the Spatial engine module:
 
-```ts title="ee-tutorial-hello/src/Hello.ts"
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-hello/src/Hello.ts"
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 ```
 We will be adding these Components to our Entity, and Components are part of the ECS pattern.  
 As such, we will need to use the iR Engine ECS management functions.  
 The engine provides a convenient way to import all ECS related functions at once through the `ECS` [namespace](https://www.typescriptlang.org/docs/handbook/namespaces.html).
-```ts title="ee-tutorial-hello/src/Hello.ts"
-import { ECS } from '@etherealengine/ecs'
+```ts title="ir-tutorial-hello/src/Hello.ts"
+import { ECS } from '@ir-engine/packages/ecs'
 ```
 
 ## Modifying our Source Code
@@ -123,14 +123,14 @@ This will be our first modification to the code of the project.
 
 :::important
 This guide uses [`Project-based Learning`](https://en.wikipedia.org/wiki/Project-based_learning) as its core teaching philosophy.  
-From now on, you will be actively modifying the source code of the `ee-tutorial-hello` in every step of the way.  
+From now on, you will be actively modifying the source code of the `ir-tutorial-hello` in every step of the way.  
 :::
 
 Lets start with a simple change.  
 We will modify our Sphere `PrimitiveGeometryComponent` to load our geometry with a name, instead of the hardcoded number `1` that we used before.  
 
 In order to do this, we need to:
-- Open the file `ee-tutorial-hello/src/Hello.ts` with a text editor.
+- Open the file `ir-tutorial-hello/src/Hello.ts` with a text editor.
 - Import the `GeometryTypeEnum` from the `scene/constants/` sub-module inside the `engine` module.
 - Replace the `1` with a call to the `SphereGeometry` name that is stored inside it `GeometryTypeEnum`.  
 
@@ -138,7 +138,7 @@ Try to figure out the changes by yourself before looking at the solution.
 I don't expect you to know where that enum is stored, so here are some hints to make it easier:  
 ```ts
 // The full path to the GeometryTypeEnum is:
-'@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
+'@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 
 // Getting the ID number of a Sphere by its enum name will look like:
 GeometryTypeEnum.SphereGeometry
@@ -158,16 +158,16 @@ VSCode has support for some important features and plugins that make the iR Engi
 <TechnicalNote title="Solution">
 
 The imports section of our code will now be:
-```ts title="ee-tutorial-hello/src/Hello.ts"
+```ts title="ir-tutorial-hello/src/Hello.ts"
 // ... our other imports
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
 // highlight-start
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 // highlight-end
 ```
 The `PrimitiveGeometryComponent` call will now be:
-```ts title="ee-tutorial-hello/src/Hello.ts"
+```ts title="ir-tutorial-hello/src/Hello.ts"
 const entity = ECS.createEntity()
 // ... our other calls to setComponent
 // highlight-start
@@ -177,14 +177,14 @@ ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTyp
 
 <UnstyledDetails title="Full Solution">
 
-```ts title="ee-tutorial-hello/src/Hello.ts" showLineNumbers
-import { ECS } from '@etherealengine/ecs'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
+import { ECS } from '@ir-engine/packages/ecs'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 // highlight-start
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 // highlight-end
 
 const entity = ECS.createEntity()

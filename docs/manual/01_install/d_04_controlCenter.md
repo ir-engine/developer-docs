@@ -20,11 +20,11 @@ The iR Engine Control Center app provides access to various functionalities whic
 - See realtime logs of different actions being performed.
 
 ## 1. Downloading Control Center App
-In order to download iR Engine Control Center App, navigate to [releases](https://github.com/ir-engine/etherealengine-control-center/releases) page and download the latest version of the App.
+In order to download iR Engine Control Center App, navigate to [releases](https://github.com/ir-engine/ir-engine-control-center/releases) page and download the latest version of the App.
 - **Windows** _(and WSL)_: Download the `.exe` file
 
   > You will need to allow permission for executing ps1 scripts.  
-  > You can do so by running following command in Powershell with admin privileges ([reference](https://github.com/ir-engine/etherealengine-control-center#2-windows-permission-to-run-ps1-scripts)).  
+  > You can do so by running following command in Powershell with admin privileges ([reference](https://github.com/ir-engine/ir-engine-control-center#2-windows-permission-to-run-ps1-scripts)).  
   > ```Powershell
   > Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   >```
@@ -35,7 +35,7 @@ In order to download iR Engine Control Center App, navigate to [releases](https:
   > Afterwards, double click on AppImage to launch the app.
 
   > Ubuntu 22.04 or later:  
-  > If you are unable to launch the AppImage, you might have to install Fuse with the following command _([reference](https://github.com/ir-engine/etherealengine-control-center#1-app-not-launching-in-ubuntu-2204))_.
+  > If you are unable to launch the AppImage, you might have to install Fuse with the following command _([reference](https://github.com/ir-engine/ir-engine-control-center#1-app-not-launching-in-ubuntu-2204))_.
   > ```bash
   > sudo apt-get install fuse libfuse2
   >```
@@ -187,8 +187,8 @@ In this step you will need to provide the following deployment information:
 - **Release Name**:  
   This is the name of your release in selected kubernetes deployment.  
   It can be `dev`, `prod`, `local`, etc, and will be used to prefix the workloads of your cluster.
-  > `{RELEASE_NAME}-etherealengine-client`  
-  > eg: `prod-etherealengine-client`
+  > `{RELEASE_NAME}-ir-engine-client`  
+  > eg: `prod-ir-engine-client`
 
 ### 2.3.3. Summary
 ![Create Cluster - Summary](../images/controlCenter/create-cluster-8.jpg)
@@ -394,7 +394,7 @@ you will now be able to `Launch` the engine from the [options panel](#33-options
 This button will open iR Engine's default location in your browser.
 
 :::important
-Make sure to allow certificates as explained [here](https://etherealengine.github.io/etherealengine-docs/docs/devops_deployment/microk8s_linux#accept-invalid-certs).
+Make sure to allow certificates as explained [here](https://etherealengine.github.io/ir-engine-docs/docs/devops_deployment/microk8s_linux#accept-invalid-certs).
 :::
 
 ## 6. Workloads

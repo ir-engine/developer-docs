@@ -1,5 +1,5 @@
 ```bash
-git clone https://github.com/etherealengine/etherealengine --depth 1
+git clone https://github.com/ir-engine/ir-engine --depth 1
 ```
 > **Warning**:  
 > Adding `--depth=1` will significantly reduce the amount of data downloaded when cloning, but it will also create a `Shallow Copy` of the engine's repository.  

@@ -19,7 +19,7 @@ e.g. `kubectl logs prod-instanceserver-vhwh2-9vqrv -c prod-instanceserver -f`. I
 and instanceserver pod:
 
 ```
-> @etherealengine/instanceserver@1.3.0 start
+> @ir-engine/packages/instanceserver@1.3.0 start
 > cross-env APP_ENV=production ts-node --swc src/index.ts
 
 👾 bitECS - resizing all data stores from 100000 to 5000

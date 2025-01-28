@@ -44,7 +44,7 @@ Another alternative is to follow the instructions for how to [install Kubernetes
 ## Download iR Engine
 To build the iR Engine Docker image locally, and to have a pre-tested way to run various local services, you'll need to download the iR Engine repository to your device. The easiest way to do this is by running the following command in your Ubuntu terminal:
 ```bash
-git clone https://github.com/etherealengine/etherealengine.git
+git clone https://github.com/ir-engine/ir-engine.git
 ```
 You can create an `.env.local` file by duplicating `.env.local.default` if it does not already exist in the root folder of iR Engine's repository.
 
@@ -155,7 +155,7 @@ These are some possible warnings and their potential fixes:
 You'll need to edit your `hosts` file to redirect certain domains to your host machine IP address.  
 Add or update the following line into your `/etc/hosts` file:  
 ```
-127.0.0.1 local.etherealengine.org api-local.etherealengine.org instanceserver-local.etherealengine.org 00000.instanceserver-local.etherealengine.org 00001.instanceserver-local.etherealengine.org 00002.instanceserver-local.etherealengine.org 00003.instanceserver-local.etherealengine.org
+127.0.0.1 local.etherealengine.org api-local.theinfinitereality.io instanceserver-local.theinfinitereality.io 00000.instanceserver-local.theinfinitereality.io 00001.instanceserver-local.theinfinitereality.io 00002.instanceserver-local.theinfinitereality.io 00003.instanceserver-local.theinfinitereality.io
 ```
 > On Linux this can be done by running `sudo gedit /etc/hosts`  
 > Make sure to save the file after editing. You will need administrator permissions to do so.
@@ -283,13 +283,13 @@ This will use a Helm config file titled `local.values.yaml` to configure the dep
 There is a [template](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) for this file in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
 If you are using a local file server, as explained in one of the previous steps, you will need to update the variable `api.fileServer.hostUploadFolder` in the `local.values.yaml` file with a value similar to `ENGINE_FULL_PATH/packages/server/upload`.  
-_e.g. `/home/username/etherealengine/packages/server/upload`._  
+_e.g. `/home/username/ir-engine/packages/server/upload`._  
 It is mandatory that it points to the `/packages/server/upload` folder of your iR Engine folder.
 
 ## Deploy iR Engine Helm chart
 Run the following command:
 ```bash
-helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values.yaml> local etherealengine/etherealengine
+helm install -f </path/to/local.values.yaml> -f </path/to/db-refresh-true.values.yaml> local ir-engine/ir-engine
 ```
 > Important:  
 > Make sure to change `/path/to/local.values.yaml` and `/path/to/db-refresh-true.values.yaml` with the actual path of the files.  
@@ -300,7 +300,7 @@ After a minute or so, running `kubectl get pods` should show one or more instanc
 Setting the option `FORCE_DB_REFRESH=true` made the api servers (re)initialize the database.  
 Since you don't want that to happen every time a new api pod starts, run the following command to restart the API pods and configure them to not reinit the database on boot.
 ```bash
-helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local etherealengine/etherealengine
+helm upgrade --reuse-values -f </path/to/db-refresh-false.values.yaml> local ir-engine/ir-engine
 ```
 > Important:  
 > Make sure to change `/path/to/db-refresh-true.values.yaml` with the actual path of the file.  
@@ -322,8 +322,8 @@ When loading the engine's website for the first time you'll have to tell your br
     - Reload your iR Engine's tab
 
 You need to do this for the following domains:
-- `wss://api-local.etherealengine.org` -> https://api-local.etherealengine.org
-- `wss://instanceserver-local.etherealengine.org` -> https://instanceserver-local.etherealengine.org
+- `wss://api-local.theinfinitereality.io` -> https://api-local.theinfinitereality.io
+- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
 - https://localhost:9000
 
 > If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  

@@ -149,15 +149,15 @@ function hello() {
 ```
 <UnstyledDetails title="Full Solution">
 
-```ts title="ee-tutorial-hello/src/Hello.ts" showLineNumbers
-import { ECS } from '@etherealengine/ecs'
-import { NameComponent } from '@etherealengine/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@etherealengine/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@etherealengine/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@etherealengine/engine/src/scene/components/PrimitiveGeometryComponent'
+```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
+import { ECS } from '@ir-engine/packages/ecs'
+import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
+import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
+import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
+import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
-import { GeometryTypeEnum } from '@etherealengine/engine/src/scene/constants/GeometryTypeEnum'
-import { PhysicsSystem } from '@etherealengine/spatial'
+import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
+import { PhysicsSystem } from '@ir-engine/packages/spatial'
 
 // Define our component
 //highlight-start
@@ -216,7 +216,7 @@ We don't know how to add a Component to an entity through the Studio yet, or how
 And we have gone through two entire pages with a LOT of theory but not a whole lot of practice.  
 So I already solved this problem for you.  
 
-When you open the `ee-tutorial-hello` project... there is a scene called `hello-final` in there.  
+When you open the `ir-tutorial-hello` project... there is a scene called `hello-final` in there.  
 That's what we are looking for :)
 
 Thanks to how the `hello-final` scene is setup, our Component will work in that Scene... but it will not work anywhere else! Really neat.  
