@@ -20,9 +20,9 @@ The other option is to use the helm test command to examine the cluster’s heal
 To install Kibana on top of Elasticsearch : `helm install kibana elastic/kibana`
 Check if all the pods are ready: `kubectl get pods`
 
-After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `http://localhost:5601 `in your browser
+After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `https://localhost:5601 `in your browser
 
-In order to connect logger with elasticsearch, update config file(values.yml) for Xr env `api.extraEnv.ELASTIC_HOST` for e.g. `http://<username>:<password>@<host>:<port>`
+In order to connect logger with elasticsearch, update config file(values.yml) for Xr env `api.extraEnv.ELASTIC_HOST` for e.g. `https://<username>:<password>@<host>:<port>`
 
 ### Upgrading an existing Helm deployment
 One of the features of Helm is being able to easily upgrade deployments with new values. The command to

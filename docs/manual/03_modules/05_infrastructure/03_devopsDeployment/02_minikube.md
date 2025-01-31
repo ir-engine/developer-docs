@@ -124,9 +124,9 @@ To install Kibana on top of Elasticsearch : `helm install kibana elastic/kibana`
 
 Check if all the pods are ready: `kubectl get pods`
 
-After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `http://localhost:5601` in your browser
+After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `https://localhost:5601` in your browser
 
-In order to connect logger with elasticsearch, update `local.minikube.template.values.yaml` env `api.extraEnv.ELASTIC_HOST` for e.g. `http://<username>:<password>@<host>:<port>`
+In order to connect logger with elasticsearch, update `local.minikube.template.values.yaml` env `api.extraEnv.ELASTIC_HOST` for e.g. `https://<username>:<password>@<host>:<port>`
 
 > [local.minikube.template.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.minikube.template.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 

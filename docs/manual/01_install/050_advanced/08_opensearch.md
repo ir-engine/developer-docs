@@ -28,23 +28,23 @@ docker run -it -d --network="host" -e "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true" 
 ### Verify if the containers are up & running
 Send a request to port 9200
 ```bash
-curl http://127.0.0.1:9200
+curl https://127.0.0.1:9200
 ```
 List Indices through curl 
 ```bash
-curl -X GET "http://127.0.0.1:9200/_cat/indices?v"
+curl -X GET "https://127.0.0.1:9200/_cat/indices?v"
 ```
 Create Indices through Curl 
 ```bash
-curl -X PUT "http://127.0.0.1:9200/your_index_name"
+curl -X PUT "https://127.0.0.1:9200/your_index_name"
 ```
 Delete Index 
 ```bash
-curl --location --request DELETE 'http://127.0.0.1:9200/index_name'
+curl --location --request DELETE 'https://127.0.0.1:9200/index_name'
 ```
 Fetch logs for an index_name
 ```bash
-curl --location --request GET 'http://127.0.0.1:9200/ethereal/_search' \
+curl --location --request GET 'https://127.0.0.1:9200/ethereal/_search' \
   --header 'Content-Type: application/json' \
   --data '{
   "query": {

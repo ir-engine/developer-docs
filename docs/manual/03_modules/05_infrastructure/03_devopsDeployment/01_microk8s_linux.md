@@ -242,11 +242,11 @@ Check if all of the pods are ready:
 kubectl get pods
 ```
 
-After port-forwarding has been setup, Elasticsearch and the Kibana GUI can be accessed by navigating to http://localhost:5601 in your browser.
+After port-forwarding has been setup, Elasticsearch and the Kibana GUI can be accessed by navigating to https://localhost:5601 in your browser.
 
 Edit the file `local.microk8s.template.values.yaml` and update the env variable `api.extraEnv.ELASTIC_HOST` to connect the logger with Elasticsearch:  
 ```bash
-http://<username>:<password>@<host>:<port>
+https://<username>:<password>@<host>:<port>
 ```
 > The file [local.microk8s.template.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in the [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
@@ -276,7 +276,7 @@ The script will supply default values for all of the `MYSQL_*` variables if they
 > When built for targeting multiple services, the resulting docker file will only deploy and run the parts needed for each individual service.
 
 Once the images are built, the script will push the result to the MicroK8s local registry.  
-You can verify that the images are pushed correctly by visiting http://localhost:32000/v2/_catalog
+You can verify that the images are pushed correctly by visiting https://localhost:32000/v2/_catalog
 
 ## Update Helm Values File
 This will use a Helm config file titled `local.values.yaml` to configure the deployment.  

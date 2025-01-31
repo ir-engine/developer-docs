@@ -204,7 +204,7 @@ Option 1: In Windows, add the following lines to `%userprofile%\.docker\daemon.j
 
 ```json
 { 
-    "insecure-registries" : ["http://microk8s.registry:32000", "microk8s.registry:32000"]  
+    "insecure-registries" : ["https://microk8s.registry:32000", "microk8s.registry:32000"]  
 }
 ```
 
@@ -304,9 +304,9 @@ To install Kibana on top of Elasticsearch : `helm install kibana elastic/kibana`
 
 Check if all the pods are ready: `kubectl get pods`
 
-After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `http://localhost:5601` in your browser
+After you set up port-forwarding, access Elasticsearch, and the Kibana GUI by typing `https://localhost:5601` in your browser
 
-In order to connect logger with elasticsearch, update `local.microk8s.template.values.yaml` env `api.extraEnv.ELASTIC_HOST` for e.g. `http://<username>:<password>@<host>:<port>`
+In order to connect logger with elasticsearch, update `local.microk8s.template.values.yaml` env `api.extraEnv.ELASTIC_HOST` for e.g. `https://<username>:<password>@<host>:<port>`
 
 > [local.microk8s.template.values.yaml](https://github.com/ir-engine/ir-engine-ops/blob/master/configs/local.microk8s.template.values.yaml) can be found in [ir-engine-ops](https://github.com/ir-engine/ir-engine-ops/) repo.
 
@@ -331,7 +331,7 @@ The script builds the full-repo Docker image using several build arguments. Vite
 
 This will build an image of the entire iR Engine repo into a single Docker file. When deployed for different services, it will only run the parts needed for that service. This may take up to 15 minutes, though later builds should take less time as things are cached.
 
-Once the images are build. It will push it to MicroK8s local registry. You can verify that images are pushed to registry by visiting [http://microk8s.registry:32000/v2/_catalog](http://microk8s.registry:32000/v2/_catalog).
+Once the images are build. It will push it to MicroK8s local registry. You can verify that images are pushed to registry by visiting [https://microk8s.registry:32000/v2/_catalog](https://microk8s.registry:32000/v2/_catalog).
 
 ## Update Helm Values File
 

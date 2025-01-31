@@ -126,7 +126,7 @@ npm run dev
 ```
 
 :::hint{type="success"}
-This command opens the application at `http://localhost:3000/location/default` in your web browser.
+This command opens the application at `https://localhost:3000/location/default` in your web browser.
 :::
 
 ### Step 3: Open your development environment
