@@ -123,7 +123,7 @@ Run the iR Engine's stack with:
 ```bash
 npm run dev
 ```
-If everything went well, you will now be able to open iR Engine in your browser by navigating to [this link](https://localhost:3000/location/default).  
+If everything went well, you will now be able to open iR Engine in your browser by navigating to [https://localhost:3000/location/default](https://localhost:3000/location/default).  
 
 ## Accept Certificates
 <!-- Start of partial: AcceptCertificates -->

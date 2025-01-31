@@ -100,7 +100,7 @@ Open two/three separate terminals and run:
   _Note: If you are on windows you need to use `npm run dev-windows` instead of `npm run dev`._
 
 ## 7. Open the Engine
-If everything went well, you can now open the engine by navigating to [this link](https://localhost:3000/location/default) in your browser.  
+If everything went well, you can now open the engine by navigating to [https://localhost:3000/location/default](https://localhost:3000/location/default) in your browser.  
 
 The database seeding process creates a default empty location called `default`, which can be accessed by opening `https://localhost:3000/location/default`.
 

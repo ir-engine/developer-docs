@@ -24,7 +24,7 @@ Open a terminal window and run these two lines:
 wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
 npm run reinit && npm run dev
 ```
-You can now open iR Engine on your web browser by navigating to https://localhost:3000
+You can now open iR Engine on your web browser by navigating to [https://localhost:3000](https://localhost:3000)
 
 <!-- End of partial: UbuntuInstall -->
 
@@ -32,7 +32,7 @@ You can now open iR Engine on your web browser by navigating to https://localhos
 ### Default Projects
 <!-- Start of partial: DefaultProjects -->
 iR Engine has a few scenes that are installed by default.  
-With the engine running, open the Studio by navigating to https://localhost:3000/studio, and you will see the engine's default project listed in that page.  
+With the engine running, open the Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio), and you will see the engine's default project listed in that page.  
 
 Lets give it a test run:
 - Open the default project by clicking on its card
@@ -57,7 +57,7 @@ git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/proje
 npm run dev
 ```
 
-You should now be able to see the `ir-tutorial-hello` project listed in iR Engine's Studio by navigating to https://localhost:3000/studio.
+You should now be able to see the `ir-tutorial-hello` project listed in iR Engine's Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio).
 
 ## Confirm the installation
 Lets make sure that our `hello world` code is running:

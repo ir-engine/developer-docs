@@ -16,4 +16,4 @@ Open a terminal window and run these two lines:
 wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
 npm run reinit && npm run dev
 ```
-You can now open iR Engine on your web browser by navigating to https://localhost:3000
+You can now open iR Engine on your web browser by navigating to [https://localhost:3000](https://localhost:3000)

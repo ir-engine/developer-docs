@@ -60,7 +60,7 @@ npm run dev-docker
 npm run dev-reinit
 npm run dev
 ```
-Now run iR Engine in your browser by navigating to [this link](https://localhost:3000/location/default).  
+Now run iR Engine in your browser by navigating to [https://localhost:3000/location/default](https://localhost:3000/location/default).  
 
 ### Accept Certificates
 <!-- Start of partial: AcceptCertificates -->
