@@ -2,3 +2,4 @@ root: ./docs
 structure:
   readme: introduction.md
   summary: summary.md
+publishSpace: true
