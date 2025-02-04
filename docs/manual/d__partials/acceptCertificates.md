@@ -21,8 +21,8 @@ When accessing the iR Engine for the first time, browsers block access due to **
 3. **Bypass the security warning**
 
    1. Open these URLs directly in your browser:
-       - [https://localhost:3030](https://localhost:3030/)
-       - [https://localhost:8642](https://localhost:8642/)
+      - [https://localhost:3030](https://localhost:3030/)
+      - [https://localhost:8642](https://localhost:8642/)
    2. A **"Your connection is not private"** warning appears.
    3. Click **Advanced** → **Proceed to localhost (unsafe)**.
    4. Reload the engine’s website.
