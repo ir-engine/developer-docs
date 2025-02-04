@@ -137,7 +137,7 @@ Navigate to the [application's URL](https://localhost:3000/location/default) in 
 
 When accessing the iR Engine for the first time, browsers block access due to **self-signed certificates**. This prevents you from accessing the Admin panel and the Editor. To bypass this, manually accept the certificates:
 
-::::workflow-block
+:::::workflow-block
 :::workflow-block-item
 **Open Developer Tools**
 
@@ -160,24 +160,26 @@ The following addresses require certificate approval:
 - `https://localhost:8642` – File server
 :::
 
-:::workflow-block-item
+::::workflow-block-item
 **Bypass the security warning**
 
 1. Open these URLs directly in your browser:
-   - https\://localhost:3030
-   - https\://localhost:3030
+   1. [https://localhost:3030](https://localhost:3030)
+   2. [https://localhost:8642](https://localhost:8642)
 2. A **"Your connection is not private"** warning appears.
 3. Click **Advanced** → **Proceed to localhost (unsafe)**.
 4. Reload the engine’s website.
-:::
-::::
-
-:::hint{type="success"}
-Once completed, the iR Engine’s admin panel and editor will be fully accessible. 🚀
-:::
 
 :::hint{type="info"}
 ** Why bypassing security warnings?**
-Browsers block connections to self-signed certificates by default to protect users from potentially unsafe sites. For local development, it's safe to bypass these warnings, but only if you trust the source—like your own machine or your team's local environment.
+Browsers block connections to self-signed certificates by default to protect users from potentially unsafe sites.&#x20;
+
+For local development, it's safe to bypass these warnings, but only if you trust the source—like your own machine or your team's local environment.
+:::
+::::
+:::::
+
+:::hint{type="success"}
+Once completed, the iR Engine’s admin panel and editor will be fully accessible. 🚀
 :::
 
