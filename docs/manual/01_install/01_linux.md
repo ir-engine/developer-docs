@@ -7,8 +7,8 @@
 1. Ensure you have at least 16GB of RAM  
   _You may run int issues running the full development setup with less_
 2. Clone the repository to a location whose path **contains no spaces**.
-3. Install Node.js 18  
-  _(versions earlier than 16 are not guaranteed to work)_
+3. Install Node.js 22  
+  _(versions earlier than 22 are not guaranteed to work)_
 4. Install Python >=3.6, [PIP](https://pypi.org/project/pip/), C++, and other build tools  
   _See the [Mediasoup install instructions](https://mediasoup.org/documentation/v3/mediasoup/installation/) for full details._
 5. Install Docker  
@@ -30,19 +30,19 @@ If you need to download any branch other than `dev`, or go back in git history i
 
 <!-- End of partial: CloneInstructions -->
 
-### Ensure you are running Node 18
-The engine to date has only been confirmed to work with Node 16.x and 18.x.  
+### Ensure you are running Node 22
+The engine to date has only been confirmed to work with Node 22.x.  
 Earlier or later major versions are not guaranteed to work properly.
 
 The best way to install and manage Node.js versions is by using a version manager:
 1. Install [NVM](https://github.com/nvm-sh/nvm)
-2. Install Node.js 18 with `nvm install 18`
-3. _(Optional)_ Make Node.js 18 your default node version with `nvm alias default 18`
+2. Install Node.js 22 with `nvm install 22`
+3. _(Optional)_ Make Node.js 22 your default node version with `nvm alias default 22`
 
 _Note: Polyglot [ASDF](https://github.com/asdf-vm/asdf) can also be used for managing node versions._
 
 Please check the output of `node --version` before running the engine.  
-If you are using a node version below 16, please update or nothing will work.   
+If you are using a node version below 22, please update or nothing will work.   
 You will know that you are having issues if you try to install packages at root with `npm install` and you get package dependency errors.
 
 ### Docker is your friend
@@ -51,7 +51,7 @@ If you don't wish to use Docker, you will need to setup mariadb and redis on you
 
 ## Quick Start
 If you are lucky, this will just work. However, you may encounter some issues.  
-Make sure you are running Node 18, and check your dependencies.
+Make sure you are running Node 22, and check your dependencies.
 ```
 cd path/to/ir-engine
 cp .env.local.default .env.local
@@ -64,25 +64,56 @@ Now run iR Engine in your browser by navigating to [https://localhost:3000/locat
 
 ### Accept Certificates
 <!-- Start of partial: AcceptCertificates -->
-When loading the engine's website for the first time you'll have to tell your browser to ignore insecure connections.  
-1. Open the `Developer Tools` of your browser by clicking the side menu with three dots, then go to `More tools > Developer tools` (or use either `Ctrl+Shift+I` or `F12`) and then go to the `Console` tab.
-2. You will see some errors in URL addresses starting with `wss`
-    - Replace `wss` with `https` and open that URL in a new tab
-    - Accept the certificate
-    - Reload your iR Engine's tab
-3. You will see some errors in URL addresses starting with `https://localhost:9000`
-    - Open the URL linked in one of those errors
-    - Accept the certificate
-    - Reload your iR Engine's tab
+### Step 4: Accept the certificates
 
-You need to do this for the following domains:
-- `` -> https://api-local.theinfinitereality.io
-- `wss://instanceserver-local.theinfinitereality.io` -> https://instanceserver-local.theinfinitereality.io
-- https://localhost:9000
+When accessing the iR Engine for the first time, browsers block access due to **self-signed certificates**. This prevents you from accessing the Admin panel and the Editor. To bypass this, manually accept the certificates:
 
-> If the engine's website keeps displaying `loading routes` progress for a long time, it means that you have to allow the engine's certificates.  
+:::::workflow-block
+:::workflow-block-item
+**Open Developer Tools**
 
-Web browsers will throw warnings when navigating to pages with unknown certificates _(aka: insecure pages)_. You should be able to tell the browser to ignore these warnings by opening your browser's `advanced options`, but during development it is easier to just ignore the browser's warnings and accept the default certificates.  
+- **Chrome/Edge:** Click the three-dot menu → *More tools* → *Developer tools*
+- **Shortcut:** Press `Ctrl+Shift+I` or `F12`
+- Navigate to the **Console** tab.
+:::
+
+:::workflow-block-item
+**Identify certificate-related errors**
+
+Check for network request errors related to:
+
+- **WebSocket connections** (`wss://` URLs)
+- **HTTPS requests to localhost**
+
+The following addresses require certificate approval:
+
+- `https://localhost:3030` – API server
+- `https://localhost:8642` – File server
+:::
+
+::::workflow-block-item
+**Bypass the security warning**
+
+1. Open these URLs directly in your browser:
+2. [https://localhost:3030](https://localhost:3030)
+3. [https://localhost:8642](https://localhost:8642)
+4. A **"Your connection is not private"** warning appears.
+5. Click **Advanced** → **Proceed to localhost (unsafe)**.
+6. Reload the engine’s website.
+
+:::hint{type="info"}
+** Why bypassing security warnings?**
+Browsers block connections to self-signed certificates by default to protect users from potentially unsafe sites.&#x20;
+
+For local development, it's safe to bypass these warnings, but only if you trust the source—like your own machine or your team's local environment.
+:::
+::::
+:::::
+
+:::hint{type="success"}
+Once completed, the iR Engine’s admin panel and editor will be fully accessible. 🚀
+:::
+
 > _Note: You will be able to create signed certificates to replace the default ones when you deploy your own iR Engine stack._
 
 <!-- End of partial: AcceptCertificates -->
