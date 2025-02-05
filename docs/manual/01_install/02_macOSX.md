@@ -164,12 +164,11 @@ The following addresses require certificate approval:
 **Bypass the security warning**
 
 1. Open these URLs directly in your browser:
-   1. <a href="https://localhost:3030" target="_blank">https\://localhost:3030</a>
-   2. [https://localhost:8642](https://localhost:8642)
-   3. https\://localhost:8642
-2. A **"Your connection is not private"** warning appears.
-3. Click **Advanced** → **Proceed to localhost (unsafe)**.
-4. Reload the engine’s website.
+2. [https://localhost:3030](https://localhost:3030)
+3. [https://localhost:8642](https://localhost:8642)
+4. A **"Your connection is not private"** warning appears.
+5. Click **Advanced** → **Proceed to localhost (unsafe)**.
+6. Reload the engine’s website.
 
 :::hint{type="info"}
 ** Why bypassing security warnings?**
