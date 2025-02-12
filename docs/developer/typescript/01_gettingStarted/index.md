@@ -1,71 +1,66 @@
-<!-- import UbuntuInstall from '../../../_partials/installUbuntu.md' -->
-<!-- import DefaultProjects from '../../../_partials/defaultProjects.md' -->
+# TypeScript quickstart
 
-# TypeScript Quickstart
-This QuickStart guide will teach you the basics of iR Engine, and how to run the engine for the first time.  
+This guide walks you through the basics of iR Engine and how to install and run it for the first time.
 
 ## Installation
-<!-- Start of partial: UbuntuInstall -->
-:::important
-iR Engine is a web application.  
-We are going to install and run a local version of the engine.  
-But this setup might not reflect how you will use the engine on a day to day basis.  
+
+Before you begin, note that iR Engine is a web application. The following steps will help you install and run a local version, which may differ from how you use the engine in production.
+
+:::hint{type="info"}
+These instructions are for Ubuntu Linux. For Windows, macOS, or other Linux distributions, refer to the [installation manual]().
 :::
 
-:::note
-These installation instructions assume you are using Ubuntu Linux.  
-You can find alternative _(and more advanced)_ installation instructions for [Windows](/manual/install/windowsWSL), [Mac](/manual/install/macOSX) and [Linux](/manual/install/linux) in the Manual.
-:::
+### Install iR Engine on Ubuntu
 
-If you are on Ubuntu Linux, there is an automatic installation script to setup and run a local version of iR Engine.  
-Open a terminal window and run these two lines:  
-> Make sure that you open the terminal in the folder where you want to install the engine
-```bash
-wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
-npm run reinit && npm run dev
-```
-You can now open iR Engine on your web browser by navigating to [https://localhost:3000](https://localhost:3000)
+To install and run a local version of iR Engine on Ubuntu, follow these steps:
 
-<!-- End of partial: UbuntuInstall -->
+1. Open a terminal in the directory where you want to install the engine.
+2. Run the following command:
+   ```bash
+   wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
+   npm run reinit && npm run dev
+   ```
+3. Once the installation is complete, open [https://localhost:3000](https://localhost:3000) in your web browser to access iR Engine.
 
 ## Projects
-### Default Projects
-<!-- Start of partial: DefaultProjects -->
-iR Engine has a few scenes that are installed by default.  
-With the engine running, open the Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio), and you will see the engine's default project listed in that page.  
 
-Lets give it a test run:
-- Open the default project by clicking on its card
-- Click on one of the scenes to open it
-- Click on the `Play` button to enter the scene with an Avatar
-- Move around the scene with `WASD` and/or clicking on the ground
+iR Engine includes default projects and scenes that are pre-installed. You can explore them through the Studio.
 
-<!-- End of partial: DefaultProjects -->
+### Default projects
 
-### Install and Run the tutorial project
-Whether you installed the engine with method above, or with the installation instructions for your specific system, your next step will be to install the tutorial project.
+To access the default project and test its functionality:
 
-:::danger
-This `HelloWorld` project should never be installed in a remote deployment.  
-A local version of the engine is required to follow this introductory tutorial.  
+1. Open the Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio).
+2. Click on the default project card.
+3. Select a scene to open it.
+4. Click the **Play** button to enter the scene with an avatar.
+5. Move around using the **WASD** keys or by clicking on the ground.
+
+### Install and run the tutorial project
+
+To follow the introductory tutorial, you need to install the **Hello World** project. This project provides a step-by-step introduction to iR Engine’s features.
+
+:::hint{type="danger"}
+This tutorial project should only be installed locally. Do not install it in a remote deployment.
 :::
 
-The previous commands will have the engine running locally.  
-Lets stop it by pressing `Ctrl+C`, and then run these commands to install and run the tutorial's template project:
-```bash
-git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
-npm run dev
-```
+1. Stop the running engine by pressing **Ctrl+C** in the terminal.
+2. Install the tutorial project by running:
+   ```bash
+   git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
+   npm run dev
+   ```
+3. Open [https://localhost:3000/studio](https://localhost:3000/studio), and you should see the **ir-tutorial-hello** project listed.
 
-You should now be able to see the `ir-tutorial-hello` project listed in iR Engine's Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio).
+## Verify the installation
 
-## Confirm the installation
-Lets make sure that our `hello world` code is running:
-1. Open the project from the Studio by clicking on its card
-2. Create a new empty scene
+To confirm that the Hello World project is running correctly, follow these steps:
 
-You will know that the code is running if you can see a white sphere in the middle of the scene.  
+1. Open the project in **Studio** by clicking on its card.
+2. Create a new empty scene.
+3. If the installation was successful, a white sphere should appear in the center of the scene.
 
-:::note
-You can also enter the scene and move around with an avatar by pressing the `Play` button in the editor like we did before.  
+:::hint{type="info"}
+You can also enter the scene and move around with an avatar by pressing the **Play** button in the editor.
 :::
+

@@ -1,202 +1,186 @@
-<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
-<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
-
 # Working with iR Engine
-You will need three very important steps for creating a project with iR Engine:
-1. Installing iR Engine
-2. Installing (or creating) a project
-3. Modify and run the source code of your project
 
-We already solved #1 and #2 in the [Quickstart](../quickstart) guide.  
-Lets do a quick review of how #1 and #2 work, and we  will start programming with the engine right after.  
+To start working on a project in the engine, you need to follow three key steps:
 
-## Requirements and Dependencies
-We will use `git` and `npm` a lot throughout the guides on this website.  
+1. **Install iR Engine**
+2. **Install or create a project**
+3. **Modify and run the project’s source code**
 
-Whether you followed the Quickstart guide for Ubuntu, or installed the engine with the Manual instructions, you will have both `git` and `npm` already installed.  
+For installation instructions, consult the [Installation](./../../../../manual/01_install/index.md) section on the [Technical manual](./../../../../manual/index.md)
 
-You don't need to understand either of them to get started. This guide will teach you what to do every time they are needed.  
-Just remember that they are used a lot to work with the engine locally.
+## Requirements and dependencies
 
-## Installing and running iR Engine 
-iR Engine is a web application.  
-Just like any other web application, it needs to be run in a server. And that server will provide access to the engine remotely to anyone with access to its address.
-
-We will eventually learn how to work with "deployed" versions of the engine.  
-But we need to follow this tutorial in a `local development server` instead.  
-
-That's exactly what the Quickstart installation guide automated for us.  
-As the `localhost` part of the URL indicates, we are running a `local` version of the engine.  
+Throughout this guide, we frequently use `git` and `npm`. If you followed the [TypeScript Quickstart](./../index.md) guide or [installed](./../../../../manual/01_install/index.md) the iR Engine manually, you already have both tools installed.
 
 ## Installing and running projects
-iR Engine can be **extended** with projects.
-They are equivalent to the concept of "projects" in other engines, except they are modular like npm packages _(they are npm packages too)_.
 
-The engine scans for projects mounted in the `/packages/projects/projects` sub-folder.  
-This means that we can install and run new projects by executing the following commands inside our iR Engine installation folder:
+iR Engine can be extended by using **projects**, which function similarly to projects in other game engines but are modular, like `npm` packages. Projects are `npm` packages too.
+
+:::hint{type="info"}
+**ℹ️    Info**
+
+Each project's source code is executed **globally**.
+This will become an important concept later in this guide.
+:::
+
+The engine automatically scans for projects inside the `/packages/projects/projects/` directory. This means that we can install and run new projects by executing the following commands inside our iR Engine installation folder:
+
 ```bash
 git clone https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
 npm run dev
 ```
-:::note
-You will need to stop the engine and re-run it whenever you install a new project.  
+
+:::hint{type="info"}
+**ℹ️    Important**
+
+Whenever you install a new project, you must stop and restart the engine for the changes to take effect.
 :::
 
-<TechnicalNote>
-Please note that, in the [Quickstart](../quickstart) guide, we cloned the `Step0` branch from the `ir-tutorial-hello` project specifically, and not the whole project.  
-We did this by adding `-b Step0` to the `git clone` command:
+These commands perform the following actions:
+
+1. Clone the project’s repository so iR Engine can load it.
+2. Install all required `npm` packages.
+3. Run a local development instance of iR Engine.
+
+This is also the recommended method for working with projects of your authoring–instead of starting from  **Hello World**, you can use a pre-made template as a starting point.
+
+:::hint{type="info"}
+**ℹ️    Info**
+
+In the [TypeScript Quickstart](./../index.md) document, we cloned only the `Step0` branch of the `ir-tutorial-hello` project instead of the entire repository.
+This was done by using `-b Step0` in the `git clone` command:
 
 ```bash
 git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
 ```
 
-This step won't be needed for your own projects.
-</TechnicalNote>
-
-These steps will:
-- Download a copy of the project's git repository, so the engine can load it
-- Install all `npm` packages required by the project
-- Run a local development version of the engine
-
-:::note
-This is also the process recommended for installation of your own projects.  
-The difference will be that, instead of starting your project from the minimal HelloWorld example like we are doing now, you will start from a pre-made template.  
+For your own projects, this is not required, and you can clone without `-b Step0` on your command.
 :::
 
-:::important
-Each project's source code is executed globally.  
-This will become very important later on in this guide.  
-:::
+## Configuring  projects
 
+To integrate a project's source code with iR Engine, two critical steps are required:
 
-## Programming with iR Engine
-There are two very important steps to take in order to connect the source code of our project to the engine:
-- We need to import some iR Engine's modules
-- We need to export our code so the engine can run it 
+1. **Importing iR Engine’s modules**
+2. **Exporting the code so the engine can run it**
 
-### Project Configuration File
-Every project has an `xrengine.config.ts` file that defines how it will behave in the engine.  
-There are multiple options available, but the important thing to remember is that our `src/Hello.ts` code will be connected to the engine from here.
+### Project configuration file
 
-<TechnicalNote title="Config File">
+Every project includes an <a href="https://github.com/ir-engine/ir-tutorial-hello/xrengine.config.ts" target="_blank">`xrengine.config.ts`</a> file, which defines how the project interacts with iR Engine.
 
-```ts title="ir-tutorial-hello/xrengine.config.ts"
+The key part to note in this file is that our `src/Hello0.ts` file is connected to the engine through this configuration. See the code below:
+
+```typescript
 import type { ProjectConfigInterface } from '@ir-engine/packages/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
   onEvent: undefined,
-  thumbnail: '/static/IR_thumbnail.jpg',
+  thumbnail: '/static/ir-engine_thumbnail.jpg',
   routes: {},
   services: undefined,
   databaseSeed: undefined,
   // highlight-start
-  worldInjection: () => import('./src/Hello')  // Import our Hello World code
+  worldInjection: () => import('./src/Hello0')  // Import our Hello World code
   // highlight-end
 }
 
 export default config
 ```
-</TechnicalNote>
 
-We don't need to know much more about this file for now. We will explore it further in the `Beyond the Basics` guide.
+For now, it is enough to understand that this file connects your project’s code to the engine. More details will be covered in the [Beyond the Basics]() guide.
 
-### Module Imports
-In this minimal tutorial we are adding a sphere primitive to the scene.  
-As this sphere will be a `Spatial` object, we will import a few components from the Spatial engine module:
+## **Importing required modules**
 
-```ts title="ir-tutorial-hello/src/Hello.ts"
+In this tutorial, we are adding a sphere primitive to the scene. This section explains the importing process.&#x20;
+
+:::hint{type="info"}
+ℹ️    **Tip**
+
+For now, focus on understanding the concepts exclusively. We'll get hands on with the project in the <a href="" target="_blank">Modifying the source code</a> section in just a bit.
+:::
+
+### **Importing spatial components**
+
+Since the sphere is a **spatial** object, we must import several components from the <a href="https://github.com/ir-engine/ir-engine/tree/dev/packages/spatial" target="_blank">spatial** **engine module</a>, as well as our sphere from the <a href="https://github.com/ir-engine/ir-engine/blob/dev/packages/engine/src/scene/components/PrimitiveGeometryComponent.ts" target="_blank">PrimitiveGeometry component </a>from the <a href="https://github.com/ir-engine/ir-engine/tree/dev/packages/engine/src/scene/components" target="_blank">components</a> module.
+
+```typescript
 import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
 import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
 import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
 import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
+import { Vector3 } from 'three'
 ```
-We will be adding these Components to our Entity, and Components are part of the ECS pattern.  
-As such, we will need to use the iR Engine ECS management functions.  
-The engine provides a convenient way to import all ECS related functions at once through the `ECS` [namespace](https://www.typescriptlang.org/docs/handbook/namespaces.html).
-```ts title="ir-tutorial-hello/src/Hello.ts"
+
+### **Importing ECS utilities**
+
+Since we are working with the **ECS pattern**, we also need to import the ECS management functions. iR Engine provides a way to import all ECS-related functions simultaneously via the `ECS` **namespace**.
+
+```typescript
 import { ECS } from '@ir-engine/packages/ecs'
 ```
 
-## Modifying our Source Code
-We have learned how our minimal example works, but so far we haven't needed to modify any of its source code.  
-This will be our first modification to the code of the project.  
+## Modifying the source code
 
-:::important
-This guide uses [`Project-based Learning`](https://en.wikipedia.org/wiki/Project-based_learning) as its core teaching philosophy.  
-From now on, you will be actively modifying the source code of the `ir-tutorial-hello` in every step of the way.  
+So far, we have only reviewed how our example works—we haven’t modified any source code yet.
+
+:::hint{type="info"}
+This guide follows a **project-based learning** approach.
+From this point onward, you will actively modify the `ir-tutorial-hello` project as you progress.
 :::
 
-Lets start with a simple change.  
-We will modify our Sphere `PrimitiveGeometryComponent` to load our geometry with a name, instead of the hardcoded number `1` that we used before.  
+Let's start with a simple change: replacing the hardcoded `1` in `PrimitiveGeometryComponent` with a readable **enum value**.
 
-In order to do this, we need to:
-- Open the file `ir-tutorial-hello/src/Hello.ts` with a text editor.
-- Import the `GeometryTypeEnum` from the `scene/constants/` sub-module inside the `engine` module.
-- Replace the `1` with a call to the `SphereGeometry` name that is stored inside it `GeometryTypeEnum`.  
+### **Modifying the sphere geometry type**
 
-Try to figure out the changes by yourself before looking at the solution.  
-I don't expect you to know where that enum is stored, so here are some hints to make it easier:  
-```ts
-// The full path to the GeometryTypeEnum is:
+1. Open the file `ir-tutorial-hello/src/Hello0.ts` in a text editor.
+2. Import `GeometryTypeEnum` from the `scene/constants/` submodule.
+3. Replace `1` with `GeometryTypeEnum.SphereGeometry`.
+
+Try implementing these changes on your own before checking the solution. If you’re unsure where the enum is located, use these hints:
+
+```none
+/ The full path to the GeometryTypeEnum:
 '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 
-// Getting the ID number of a Sphere by its enum name will look like:
+// Getting the ID number of a Sphere by its enum name:
 GeometryTypeEnum.SphereGeometry
 
-// To be certain that your changes are working, set the geometry to be a cylinder instead:
+// To verify your changes, set the geometry to a cylinder instead:
 GeometryTypeEnum.CylinderGeometry
 ```
-> As we said before, you will need to stop the engine and re-run it whenever you _install_ a new project.  
-> But you can just refresh the webpage when you update your source code and the engine will load your changes correctly.  
 
-:::note
-`VSCode` is the recommended editor for programming with iR Engine.  
-It is not required, but it is highly recommended.  
-VSCode has support for some important features and plugins that make the iR Engine programming workflow really smooth and featureful.  
+:::hint{type="info"}
+You only need to restart the engine when **installing** a new project.
+When modifying source code, simply **refresh the webpage** to see your changes.
 :::
 
-<TechnicalNote title="Solution">
+### Solution
 
-The imports section of our code will now be:
-```ts title="ir-tutorial-hello/src/Hello.ts"
-// ... our other imports
+Once updated, the **import section** should look like this:
+
+```typescript
+// Other imports
 import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
 // highlight-start
 import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 // highlight-end
 ```
-The `PrimitiveGeometryComponent` call will now be:
-```ts title="ir-tutorial-hello/src/Hello.ts"
+
+The **PrimitiveGeometryComponent** assignment should be updated as follows:
+
+```typescript
 const entity = ECS.createEntity()
-// ... our other calls to setComponent
+// Other setComponent calls
 // highlight-start
 ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTypeEnum.SphereGeometry })
 // highlight-end
 ```
 
-<UnstyledDetails title="Full Solution">
+### **Confirming the changes**
 
-```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
-import { ECS } from '@ir-engine/packages/ecs'
-import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
-import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
-import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
-import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
-// highlight-start
-import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
-// highlight-end
-
-const entity = ECS.createEntity()
-ECS.setComponent(entity, NameComponent, 'hello-world')
-ECS.setComponent(entity, VisibleComponent)
-ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 1, 0) })
-// highlight-start
-ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTypeEnum.SphereGeometry })
-// highlight-end
-```
-</UnstyledDetails>
-<!-- Full Solution End -->
-</TechnicalNote>
-<!-- Solution End -->
+1. Open [http://localhost:3000/studio](http://localhost:3000/studio).
+2. Open the **ir-tutorial-hello** project.
+3. Create a new scene.
+4. A **white sphere** should appear in the center.
 

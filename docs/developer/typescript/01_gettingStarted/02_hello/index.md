@@ -1,18 +1,19 @@
-# Hello World from iR Engine
-The quickstart tutorial helped us create a project and run the engine for the first time.  
+# Hello World in iR Engine
 
-This is our starting point.  
-The Quickstart has automated a lot for us, so lets review what we have.
+The [TypeScript Quickstart](./../index.md) guide helped us create a project and run iR Engine for the first time. Now, let's review what we have before diving deeper.
 
-:::note
-Don't dwell too much on this page.  
-This is a quick preview, so please skim read and don't go into too much detail.  
-The purpose of the next few pages of this tutorial is to teach you how these concepts work.  
+:::hint{type="info"}
+This is a brief overview. Skim through this page without focusing on details—the next sections will explain these concepts in depth.
 :::
 
-## Hello World Code
-This is how the code for our project looks like at the moment.  
-```ts title="ir-tutorial-hello/src/Hello.ts" showLineNumbers
+## Hello world code
+
+At this stage, our project contains the following code:
+
+:::codeblocktabs
+ir-tutorial-hello/src/Hello.ts
+
+```typescript
 import { ECS } from '@ir-engine/packages/ecs'
 import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
 import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
@@ -26,30 +27,34 @@ ECS.setComponent(entity, VisibleComponent)
 ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 1, 0) })
 ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 ```
+:::
 
 ## Conceptual overview
-Conceptually, this is what the example project does:
-- It creates an entity called `hello-world`
-- It gives the entity a primitive geometry component _(a Sphere)_
-- It defines the position of the sphere in the scene
+
+This example project performs the following actions:
+
+- Creates an entity named `hello-world`.
+- Assigns a **primitive geometry component** (a sphere) to the entity.
+- Sets the sphere's **position** in the scene.
 
 ## Technical overview
-In technical terms, this is what the example's source code does:
-- It imports some iR Engine's typescript modules in its code 
-- It uses the `ECS` pattern
-- It creates an `Entity`
-- It adds a few `Components` to the Entity
-- It adds its code to the engine through the `xrengine.config.ts` file
 
-## The Path Forward
-Our example from the quickstart tutorial is as minimal as it can possibly be.  
-But there is a lot happening already, as you can see, even in such a minimal example!  
-So, the first step we will take is to spend some time understanding how everything in the example works.
+From a technical perspective, this code:
 
-Next we will get our hands into the code, and learn how to program with iR Engine.
+- Imports **iR Engine's TypeScript modules**.
+- Uses the **Entity-Component-System (ECS) pattern**.
+- Creates an **entity**.
+- Adds **components** to the entity.
+- Integrates the code into the engine via the `xrengine.config.ts` file.
 
-Then, at the end of this guide, we will have a very minimal project that we can load with the Engine.  
-But, more importantly, we will have enough knowledge to be able to continue our learning through the `iR Engine: Basics` guide.  
+## What’s next?
 
-Lets not delay any longer, and get started with our journey!
+This project is as minimal as possible, but it already introduces key concepts.
 
+Next, we'll break down how each part of the code works and begin programming with iR Engine. By the end of this guide, you will:
+
+- Understand the fundamental concepts behind iR Engine.
+- Write and modify code within an iR Engine project.
+- Be prepared to continue learning through the **iR Engine: Basics** guide.
+
+Let's get started! 🚀
