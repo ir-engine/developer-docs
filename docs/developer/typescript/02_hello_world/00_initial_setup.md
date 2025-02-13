@@ -1,12 +1,14 @@
-# 1. Initial setup
+# Install the Tutorial Project
 
-For this tutorial, you will use introductory **Hellow World project** to learn your way around the engine.
+For this tutorial, you will use the introductory <a href="https://github.com/ir-engine/ir-tutorial-hello" target="_blank">**Hellow World project**</a> to learn your way around the engine.
 
 ## Prerequisites
 
-Ensure you have completed the **Developer quickstart** guide and have your engine installed.
+Ensure you have completed the [Developer quickstart](./../01_quickstart/index.md) and that you have the engine installed.
 
-:::hint{type="danger"}
+:::hint{type="info"}
+ℹ️    **Important**
+
 Before you proceed, end any instances of the engine you might have running by pressing **Ctrl + C** on your terminal.
 :::
 
@@ -22,6 +24,8 @@ To install the tutorial project and run your local environment, execute the foll
 2. Open [https://localhost:3000/studio](https://localhost:3000/studio), and you should see the **ir-tutorial-hello** project listed.
 
 :::hint{type="danger"}
+⚠️    **Warning **
+
 This tutorial project should only be installed locally. Do not install it in a remote deployment.
 :::
 
@@ -34,6 +38,8 @@ To confirm that the Hello World project is running correctly, follow these steps
 3. If the installation was successful, a white sphere should appear in the center of the scene.
 
 :::hint{type="info"}
+💡    **Tip**
+
 You can also enter the scene and move around with an avatar by pressing the **Play** button in the editor.
 :::
 

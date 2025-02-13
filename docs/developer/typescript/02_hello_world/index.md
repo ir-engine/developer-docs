@@ -1,28 +1,58 @@
 # Hello World tutorial
 
-Welcome to the Hello World tutorial. This guide is aimed to be your first hands on experience with the engine. 
-By the end of this guide, you will have accomplished the following:
+Welcome to the **Hello World tutorial**—your first step toward developing with iR Engine. This guide is designed to give you a **hands-on introduction** to the engine’s core concepts through a structured, practical approach.
 
-- Imported iR Engine's typescript modules in a file
-- Created an entity, and gave it an `uuid` and a `name`
-- Gave the entity the ability to:
-  - Be visible on the screen with `VisibleComponent`
-  - Have Linear Transformations with `TransformComponent`
-- Gave the entity a `PrimitiveGeometryComponent` _(a Sphere)_
-- Defined the position of the sphere in the scene
-- Defined a Custom `Component` type
-- Defined a `Query` to search for our Custom Component
-- Locked our logic to only happen once with the `initialized` State variable contained inside our Custom Component.
-- Defined a `System` and locked our logic behind its `execute` function
-- Locked our logic to only trigger for the entities that match our `helloQuery` generator
-- Added our project's code to the engine with the `xrengine.config.ts` configuration file
+By the end of this tutorial, you will have set up a working project, created an entity, and explored the **Entity-Component-System (ECS) pattern**, which is fundamental to how iR Engine operates.
 
-## Next steps
+::::link-array
+:::link-array-item{headerImage headerColor}
+Pt 1. [Hello World tutorial]()&#x20;
 
-After finishing the tutorial, continue your learning path in the **iR Engine basics** section. This tutorial covers the next steps to work with your code.
+Your first step into iR Engine.
 
-Now, withour much further ado, let's get started.
+- Set up and run a project.
+- Work with **entities**, **components**, and **systems**.
+- Implement basic transformations and rendering.
+:::
 
-## Tutorial contents
+:::link-array-item{headerImage headerColor}
+Pt. 2[Engine basics tutorial](./../03_basics_tutorial/index.md)
 
-(Tutorial navigation)
+Continue expanding your knowledge.
+
+- Learn how to **structure your project properly**.
+- Work with **components**, **physics**, and **state management**.
+:::
+
+:::link-array-item{headerImage headerColor}
+Pt. 3 [Technical manual](./../../../manual/index.md)
+
+Detailed documentation on iR Engine’s internals.
+
+- Learn about the **engine’s API and modules**.
+- Explore advanced features and customization options.
+:::
+::::
+
+## What you will learn
+
+This tutorial covers the following core concepts:
+
+✅ **Project setup:** Installing and running iR Engine.
+
+✅ **Creating an entity:** Understanding how entities function in ECS.
+
+✅ **Attaching components:** Making an entity **visible**, **interactive**, and **movable**.
+
+✅ **Using the ECS pattern:** Structuring logic with **systems and queries**.
+
+✅ **Configuring the engine:** Registering and managing your project in iR Engine.
+
+By the end of this tutorial, you will have a **basic functional project** and an introductory foundation for working with the engine.
+
+:::hint{type="info"}
+## Where to start
+
+Begin with <a href target="_blank">Step 1: Initial setup</a>, where you will configure your project and prepare your development environment.
+:::
+
