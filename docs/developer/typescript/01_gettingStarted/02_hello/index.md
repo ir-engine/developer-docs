@@ -11,7 +11,7 @@ This is a brief overview. Skim through this page without focusing on details—t
 At this stage, our project contains the following code:
 
 :::codeblocktabs
-ir-tutorial-hello/src/Hello.ts
+ir-tutorial-hello/src/Hello0.ts
 
 ```typescript
 import { ECS } from '@ir-engine/packages/ecs'
@@ -45,7 +45,12 @@ From a technical perspective, this code:
 - Uses the **Entity-Component-System (ECS) pattern**.
 - Creates an **entity**.
 - Adds **components** to the entity.
-- Integrates the code into the engine via the `xrengine.config.ts` file.
+
+This code is integrated into the engine via the <a href="https://github.com/ir-engine/ir-tutorial-hello/blob/dev/xrengine.config.ts" target="_blank">`xrengine.config.ts`</a> file, which contains the following line of code:
+
+```typescript
+worldInjection: () => import('./src/Hello') // Connects Hello.ts to the engine
+```
 
 ## What’s next?
 
