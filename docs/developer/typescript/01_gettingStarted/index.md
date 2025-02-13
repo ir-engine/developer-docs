@@ -1,12 +1,18 @@
 # TypeScript quickstart
 
-This guide walks you through the basics of iR Engine and how to install and run it for the first time.
+Welcome to the TypeScript quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. By the end of this guide, you will have:&#x20;
+
+1. Installed the iR Engine in your local environment
+2. Accessed the default projects to start developing
+3. Get your first hands-on experience with the introduction of a tutorial project
 
 ## Installation
 
-Before you begin, note that iR Engine is a web application. The following steps will help you install and run a local version, which may differ from how you use the engine in production.
+The iR Engine is a web application; the following steps will help you install and run a local version. Note that some steps of this tutorial may differ from how you use the engine in production.
 
 :::hint{type="info"}
+ℹ️    **Info**
+
 These instructions are for Ubuntu Linux. For Windows, macOS, or other Linux distributions, refer to the [installation manual]().
 :::
 
@@ -20,25 +26,42 @@ To install and run a local version of iR Engine on Ubuntu, follow these steps:
    wget https://raw.githubusercontent.com/ir-engine/ir-engine/dev/scripts/ubuntu-install.sh && bash -i ./ubuntu-install.sh
    npm run reinit && npm run dev
    ```
-3. Once the installation is complete, open [https://localhost:3000](https://localhost:3000) in your web browser to access iR Engine.
+3. Once the installation is complete, open [https://localhost:3000](https://localhost:3000) in your web browser to access the engine.
 
-## Projects
+## Introduction to Projects
 
-iR Engine includes default projects and scenes that are pre-installed. You can explore them through the Studio.
+Projects are folders that contain all your custom code, assets, and scenes. Working with projects is the way you extend the engine's functionalities.&#x20;
 
-### Default projects
+These projects are hosted in the following directory:&#x20;
 
-To access the default project and test its functionality:
+```shell
+packages/projects/projects/
+```
+
+### Access default projects
+
+iR Engine includes default projects and pre-installed scenes, which you can explore with Studio, the engine's editor and asset management interface.
+
+**To access the default project:**
 
 1. Open the Studio by navigating to [https://localhost:3000/studio](https://localhost:3000/studio).
 2. Click on the default project card.
 3. Select a scene to open it.
-4. Click the **Play** button to enter the scene with an avatar.
-5. Move around using the **WASD** keys or by clicking on the ground.
 
-### Install and run the tutorial project
+**To test the project's functionality:**
 
-To follow the introductory tutorial, you need to install the **Hello World** project. This project provides a step-by-step introduction to iR Engine’s features.
+1. Click the **Play** button to enter the scene with an avatar.
+2. Move around using the **WASD** keys or by clicking on the ground.
+
+Your project is now ready for editing.
+
+## Next steps
+
+You can now start working with the engine and extend its functionality by following the ECS pattern. We suggest you run through the [Hello World tutorial](./02_hello/index.md)&#x20;
+
+## Install and run the tutorial project
+
+To learn the basics of the engine, you can start by cloning the introductory tutorial project, which we cover in the [Hello World in iR Engine](./02_hello/index.md) tutorial. This project provides a step-by-step introduction to iR Engine’s features.
 
 :::hint{type="danger"}
 This tutorial project should only be installed locally. Do not install it in a remote deployment.
@@ -52,7 +75,7 @@ This tutorial project should only be installed locally. Do not install it in a r
    ```
 3. Open [https://localhost:3000/studio](https://localhost:3000/studio), and you should see the **ir-tutorial-hello** project listed.
 
-## Verify the installation
+### Verify the installation
 
 To confirm that the Hello World project is running correctly, follow these steps:
 
@@ -64,3 +87,6 @@ To confirm that the Hello World project is running correctly, follow these steps
 You can also enter the scene and move around with an avatar by pressing the **Play** button in the editor.
 :::
 
+## Next steps
+
+With your tutorial project running, you can go through the [Hello World in iR Engine](./02_hello/index.md) tutorial to learn how the engine works and the basics of the ECS pattern. You will also create your first component and more.
