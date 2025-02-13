@@ -1,6 +1,3 @@
----
-pagination_next: developer/typescript/basics/recap/index
----
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
 # Recap and next steps

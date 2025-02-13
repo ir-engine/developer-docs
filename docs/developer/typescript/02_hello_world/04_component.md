@@ -1,7 +1,7 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# 5. Work with Components
+# Work with Components
 
 Ok, lets admit the truth.  
 We have cheated with something else.  

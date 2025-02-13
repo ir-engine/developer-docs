@@ -1,7 +1,7 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# 6. Use Queries
+# Use Queries
 
 Queries are a tool provided by the `Entity Component System` pattern used by iR Engine.  
 

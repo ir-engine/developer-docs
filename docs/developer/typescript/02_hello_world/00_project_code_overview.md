@@ -1,4 +1,4 @@
-# 1. Initial setup
+# Project code overview
 
 The [TypeScript Quickstart](./../index.md) guide helped us create a project and run iR Engine for the first time. Now, let's review what we have before diving deeper.
 
