@@ -84,6 +84,7 @@
 - [typescript](developer/typescript/index.md) 
   - [01_quickstart](developer/typescript/01_quickstart/index.md) 
   - [02_hello_world](developer/typescript/02_hello_world/index.md) 
+    - [00_initial_setup.md](developer/typescript/02_hello_world/00_initial_setup.md)
     - [00_project_code_overview.md](developer/typescript/02_hello_world/00_project_code_overview.md)
     - [01_ecs.md](developer/typescript/02_hello_world/01_ecs.md) 
     - [02_engine.md](developer/typescript/02_hello_world/02_engine.md) 

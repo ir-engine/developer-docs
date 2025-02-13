@@ -58,35 +58,3 @@ Your project is now ready for editing.
 ## Next steps
 
 You can now start working with the engine and extend its functionality by following the ECS pattern. We suggest you run through the [Hello World tutorial](./02_hello/index.md)&#x20;
-
-## Install and run the tutorial project
-
-To learn the basics of the engine, you can start by cloning the introductory tutorial project, which we cover in the [Hello World in iR Engine](./02_hello/index.md) tutorial. This project provides a step-by-step introduction to iR Engine’s features.
-
-:::hint{type="danger"}
-This tutorial project should only be installed locally. Do not install it in a remote deployment.
-:::
-
-1. Stop the running engine by pressing **Ctrl+C** in the terminal.
-2. Install the tutorial project by running:
-   ```bash
-   git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
-   npm run dev
-   ```
-3. Open [https://localhost:3000/studio](https://localhost:3000/studio), and you should see the **ir-tutorial-hello** project listed.
-
-### Verify the installation
-
-To confirm that the Hello World project is running correctly, follow these steps:
-
-1. Open the project in **Studio** by clicking on its card.
-2. Create a new empty scene.
-3. If the installation was successful, a white sphere should appear in the center of the scene.
-
-:::hint{type="info"}
-You can also enter the scene and move around with an avatar by pressing the **Play** button in the editor.
-:::
-
-## Next steps
-
-With your tutorial project running, you can go through the [Hello World in iR Engine](./02_hello/index.md) tutorial to learn how the engine works and the basics of the ECS pattern. You will also create your first component and more.
