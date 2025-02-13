@@ -1,8 +1,6 @@
-# Understand the ECS pattern
+# Using the ECS pattern
 
-The [Entity-Component-System (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) is a software architecture pattern used to structure code efficiently.
-
-In this pattern:
+The engine uses the [Entity-Component-System (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) patterna software architecture pattern used to structure code efficiently. In this pattern:
 
 - **Logic** is represented as `systems`, which define the application's behavior.
 - **Data** is stored in `components`, which do not have behavior or identifiers.
@@ -39,10 +37,12 @@ The `setComponent` function does not return a value, but it:
 
 To display an entity in iR Engine, it must have specific components:
 
-- **VisibleComponent**
-- **TransformComponent**
-- **PrimitiveGeometryComponent** or **MeshComponent**
-- *(Optional)* **NameComponent**: Not required but recommended for better debugging.
+- **NameComponent: **Identifier for an entity.
+- **VisibleComponent: **Makes an entity visible on the screen.
+- **TransformComponent: **Gives an entity a **position** in 3D space.
+- **PrimitiveGeometryComponent** or **MeshComponent: **Assigns a **primitive shape** or a mesh to an entity.
+
+The following section explains how to use them.
 
 ### NameComponent
 
@@ -91,4 +91,8 @@ ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 The `1` here represents a [`SphereGeometry`](https://github.com/ir-engine/ir-engine/blob/dev/packages/engine/src/scene/constants/GeometryTypeEnum.ts#L28) object.
 In the next section, we will use a more readable name to create this component.
 :::
+
+## Next steps
+
+Now that you know what the ECS pattern is and how to use it, you can [Start working in the engine](./02_engine.md) and extend its functionalities.
 

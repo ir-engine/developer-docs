@@ -3,12 +3,14 @@
 The [TypeScript Quickstart](./../index.md) guide helped us create a project and run iR Engine for the first time. Now, let's review what we have before diving deeper.
 
 :::hint{type="info"}
+ℹ️    **Info**
+
 This is a brief overview. Skim through this page without focusing on details—the next sections will explain these concepts in depth.
 :::
 
 ## Hello world code
 
-At this stage, our project contains the following code:
+Our project, after cloning, contains the following code:
 
 :::codeblocktabs
 ir-tutorial-hello/src/Hello0.ts
@@ -29,7 +31,9 @@ ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 ```
 :::
 
-## Conceptual overview
+The `Hello0.ts` file contains our initial reference of code inside of a project.
+
+### Conceptual overview
 
 This example project performs the following actions:
 
@@ -37,7 +41,7 @@ This example project performs the following actions:
 - Assigns a **primitive geometry component** (a sphere) to the entity.
 - Sets the sphere's **position** in the scene.
 
-## Technical overview
+### Technical overview
 
 From a technical perspective, this code:
 
@@ -46,7 +50,7 @@ From a technical perspective, this code:
 - Creates an **entity**.
 - Adds **components** to the entity.
 
-This code is integrated into the engine via the <a href="https://github.com/ir-engine/ir-tutorial-hello/blob/dev/xrengine.config.ts" target="_blank">`xrengine.config.ts`</a> file, which contains the following line of code:
+This code is integrated into the engine via the `xrengine.config.ts`  file, which contains the following line of code:
 
 ```typescript
 worldInjection: () => import('./src/Hello') // Connects Hello.ts to the engine
@@ -54,12 +58,12 @@ worldInjection: () => import('./src/Hello') // Connects Hello.ts to the engine
 
 ## What’s next?
 
-This project is as minimal as possible, but it already introduces key concepts.
+This project is as minimal as possible but it already introduces key concepts.
 
 Next, we'll break down how each part of the code works and begin programming with iR Engine. By the end of this guide, you will:
 
 - Understand the fundamental concepts behind iR Engine.
 - Write and modify code within an iR Engine project.
-- Be prepared to continue learning through the **iR Engine: Basics** guide.
+- Be prepared to continue learning through the [Engine basics tutorial](./../03_basics_tutorial/index.md).
 
 Let's get started! 🚀
