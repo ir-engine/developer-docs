@@ -82,7 +82,7 @@
   - [97_license.md](manual/97_license.md) 
 
 - [typescript](developer/typescript/index.md) 
-  - [01_gettingStarted](developer/typescript/01_gettingStarted/index.md) 
+  - [01_quickstart](developer/typescript/01_quickstart/index.md) 
   - [02_hello_world](developer/typescript/02_hello_world/index.md) 
     - [00_initial_setup.md](developer/typescript/02_hello_world/00_initial_setup.md)
     - [01_ecs.md](developer/typescript/02_hello_world/01_ecs.md) 
@@ -91,7 +91,7 @@
     - [04_component.md](developer/typescript/02_hello_world/04_component.md) 
     - [05_query.md](developer/typescript/02_hello_world/05_query.md) 
     - [90_recap.md](developer/typescript/02_hello_world/90_congrats.md) 
-  - [02_basics_tutorial](developer/typescript/02_basics_tutorial/index.md) 
+  - [03_basics_tutorial](developer/typescript/02_basics_tutorial/index.md) 
     - [01_styling_code.md](developer/typescript/02_basics_tutorial/01_styling.md) 
     - [02_custom_component.md](developer/typescript/02_basics_tutorial/02_component.md) 
     - [03_defining_query.md](developer/typescript/02_basics_tutorial/03_query.md) 
