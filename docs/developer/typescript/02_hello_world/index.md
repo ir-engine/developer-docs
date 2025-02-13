@@ -1,4 +1,4 @@
-# Hello World
+# Hello World tutorial
 
 Welcome to the Hello World tutorial. This guide is aimed to be your first hands on experience with the engine. 
 By the end of this guide, you will have accomplished the following:
