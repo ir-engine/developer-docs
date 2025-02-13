@@ -1,7 +1,8 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# Defining a Custom Component
+# Custom Components
+
 The `defineComponent` function accepts a `ComponentPartial` that has multiple fields available.  
 ```ts
 // Define our component

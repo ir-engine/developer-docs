@@ -1,6 +1,6 @@
-# TypeScript quickstart
+# Developer quickstart
 
-Welcome to the TypeScript quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. By the end of this guide, you will have:&#x20;
+Welcome to the developer quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. By the end of this guide, you will have:&#x20;
 
 1. Installed the iR Engine in your local environment
 2. Accessed the default projects to start developing
