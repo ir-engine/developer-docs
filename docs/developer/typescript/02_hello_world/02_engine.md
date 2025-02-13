@@ -1,4 +1,4 @@
-# Working with iR Engine
+# 3. Start working in the engine
 
 To start working on a project in the engine, you need to follow three key steps:
 

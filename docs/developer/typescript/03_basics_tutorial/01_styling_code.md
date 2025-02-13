@@ -1,20 +1,32 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# Styling
+# Styling your code
+
+In the last step of the [Hello World Tutorial](/developer/typescript/gettingStarted/hello/component#create) we created a custom Scene Component.  
+But we never really explained how we did it.
+
+We also skimmed over multiple concepts that are very important for working with the Engine. So lets start on the right foot and explain them now.  
+Also, now that we are into it, we are going to style our code in a way that matches iR Engine's code a bit more.  
+
+Lets start with Styling.  
+
 We took a lot of shortcuts in previous sections of the tutorial.  
 This made learning much simpler to get started with, but we also left out a few concepts that will make our codebase much easier to navigate as soon as our project starts growing.  
 
 ## ID Naming Convention
+
 Lets start with the simplest style change.  
 You may have noticed that we changed the `uuid` and `NameComponent` in the HelloWorld's final solution.  
 The engine doesn't have a standard for these names yet, but this is a good naming convention that you can follow:
+
 - Separate words with `.`
 - Start with the namespace/organization/author of your project
 - Follow by the project name of the thing that you are naming
 - Follow by the name of the thing
 - Separate multi-word names with `-`
 ```md
+
 # Example
 Namespace  : ee
 Project    : tutorial
@@ -23,12 +35,14 @@ Thing      : HelloSystem
 Result     : ee.tutorial.HelloSystem
 Multi-word : ee.multi-word-example.HelloSystem
 ```
+
 :::note[assignment zero]
 This is not really an assignment, as we already did this before.  
 But see if you have any names leftover in your code that are not using this standard, and change them so that they do.  
 :::
 
 ## `jsonID` Naming Requirements
+
 You may have also noticed that the `jsonID` field does not respect the naming convention we just explained above.  
 Internally, the field `jsonID` will be used to define the name of a [glTF](https://www.khronos.org/gltf) extension.  
 As such, the engine has a different standard for them:
@@ -37,6 +51,7 @@ As such, the engine has a different standard for them:
 - Follow by the project name of the thing that you are naming
 - Follow by the name of the thing
 ```md
+
 # Example
 Namespace  : EE
 Project    : tutorial
@@ -47,6 +62,7 @@ Multi-word : EE_multi_word_example_hello
 ```
 
 ## Arrow Functions
+
 We talked about Javascript [`Arrow Functions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) during one of the earlier sections of the HelloWorld tutorial. They are used a lot throughout the engine's codebase.  
 
 They are specially helpful when defining Systems and Components.  

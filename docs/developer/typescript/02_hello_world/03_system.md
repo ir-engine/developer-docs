@@ -1,7 +1,8 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# Systems
+# 4. Manage Systems
+
 If you have a keen eye you may have noticed something really important.  
 We are using the `Entity Component System` pattern, and so far:
 - We created an `Entity`

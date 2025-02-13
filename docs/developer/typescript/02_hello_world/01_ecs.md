@@ -1,6 +1,4 @@
-# The ECS Pattern
-
-# The ECS pattern
+# 2. Understand the ECS pattern
 
 The [Entity-Component-System (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) is a software architecture pattern used to structure code efficiently.
 

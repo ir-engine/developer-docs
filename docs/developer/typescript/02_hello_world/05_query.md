@@ -1,15 +1,18 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# Queries
+# 6. Use Queries
+
 Queries are a tool provided by the `Entity Component System` pattern used by iR Engine.  
 
 In simple terms, a Query is a function that will request all entities that match a certain condition.  
 More specifically, it will return **all** entities that contain **all** Components in the list that we specify.  
 
 ## Creating a Query
+
 We are going to **define a Query**. I think you can figure out the name of the function already :)  
 This is how the function works:
+
 - We give the function an [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of Components
 - The function will give us back a Query function
 - We can call the given function to retrieve all entities that contain the components that we specified.
