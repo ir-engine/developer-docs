@@ -16,7 +16,7 @@ Your first step into iR Engine.
 :::
 
 :::link-array-item{headerImage headerColor}
-Pt. 2[Engine basics tutorial](./../03_basics_tutorial/index.md)
+Pt. 2 [Engine basics tutorial](./../03_basics_tutorial/index.md)
 
 Continue expanding your knowledge.
 
