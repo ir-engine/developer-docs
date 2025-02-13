@@ -1,4 +1,5 @@
-# Locations
+# Managing Locations
+
 Explain what they are.  
 Explain why they are required.
 

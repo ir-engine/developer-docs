@@ -1,5 +1,3 @@
-<!-- import DocCardList from '@theme/DocCardList'; -->
-
 # Basics tutorial
 
 This guide is a continuation of the [Hello World Tutorial](../gettingStarted/hello).  
