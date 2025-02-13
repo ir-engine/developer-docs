@@ -1,7 +1,7 @@
 <!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
 <!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
 
-# Adding Physics
+# Assigning Physics
 
 So far we have learned how to create an `Entity`, and how to tell the engine what we want our entity to be. In simple terms, we told the engine how to **create** our sphere.  
 
