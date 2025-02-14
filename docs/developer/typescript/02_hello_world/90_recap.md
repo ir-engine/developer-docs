@@ -1,37 +1,37 @@
 # Recap and next steps
 
-Congratulations! 🎉 You have completed the **Hello World** tutorial for iR Engine using TypeScript.
+🎉 **Congratulations!** You have completed the **Hello World** tutorial for iR Engine using TypeScript.
 
-This introductory guide covered the **fundamental concepts** of iR Engine development, giving you a solid foundation to build upon.
+This tutorial introduced you to the **fundamentals of iR Engine development**, providing a solid foundation for working with the engine.
 
 ---
 
 ## What you accomplished
 
-Throughout this tutorial, you explored how to create a **minimal working example** in iR Engine. Here’s a summary of what you learned:
+Throughout this tutorial, you built a **functional project** while learning key ECS concepts. Here’s a recap of what you covered:
 
-### Project setup and structure
+### ✅ Project setup and structure
 
-- ✅ Installed and configured a **TypeScript project** in iR Engine.  
-- ✅ Integrated the project with the engine using `xrengine.config.ts`.  
+- Installed and configured a **TypeScript project** in iR Engine.
+- Integrated the project with the engine using **`xrengine.config.ts`**.
 
-### Entities and components
+### ✅ Entities and components
 
-- ✅ Created an **entity** with a unique identifier.  
-- ✅ Attached core **components** to define behavior.
+- Created an **entity** and assigned **core components**.
+- Used **`NameComponent`**, **`TransformComponent`**, and **`PrimitiveGeometryComponent`**.
 
-### Working with systems
+### ✅ Working with systems
 
-- ✅ Defined a **system** to manage logic execution.  
-- ✅ Used a **custom component** to store state.  
-- ✅ Queried entities dynamically based on their **assigned components**.  
-- ✅ Controlled execution flow by **managing state within components**.  
+- Defined a **system** to manage entity logic.
+- Used a **custom component** to track state.
+- Queried entities dynamically using `defineQuery()`.
+- Controlled execution flow by **ensuring systems only run when needed**.
 
-### Best practices
+### ✅ Best practices
 
-- ✅ Used **ECS principles** to separate logic from data.  
-- ✅ Ensured **systems execute only when needed** by querying entities with specific components.  
-- ✅ Structured the code to follow **modular and scalable design patterns**.  
+- Applied **ECS principles** to separate **data** and **logic**.
+- Ensured **systems executed efficiently** by processing only relevant entities.
+- Structured the code using **modular and scalable design patterns**.
 
 With these skills, you can now confidently create **interactive scenes and dynamic systems** in iR Engine.
 

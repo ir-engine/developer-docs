@@ -1,24 +1,20 @@
 # Work in the engine
 
-In this guide, you will finally get your hands on your first task to learn the engine by modifying a project's source code, importing components, setting up ECS, and modifying an object's geometry.
+Now that you understand the **project structure**, it’s time to start working with iR Engine by modifying a project’s source code.
 
 ## Requirements and dependencies
 
-In general, to start working on a project in the engine, you need to follow three key steps:
+Before making modifications, ensure you have:
 
-1. **Install iR Engine**
-2. **Install or create a project**
-3. **Modify and run the project’s source code**
+✅ **iR Engine installed** ([Developer Quickstart](./../01_quickstart/index.md)).  
+✅ **The Hello World project cloned and running** ([Initial setup](./00_initial_setup.md)).  
 
-:::hint{type="info"}
-ℹ️    **Info**
+Throughout this guide, you will use `git` and `npm` frequently. If you followed the **installation guide**, these tools are already installed.
 
-For installation instructions, consult the [Installation]() section on the [Technical manual.]()
+:::hint{style="info"}
+💡 **Need installation help?**  
+Refer to the **[Technical Manual](./../../../manual/01_install/index.md)** for full installation instructions.
 :::
-
-**Additional requirements**
-
-Throughout this guide, we frequently use `git` and `npm`. If you followed the [Developer quickstart](./../01_quickstart/index.md) or installed the iR Engine manually, you already have both tools installed.
 
 ## Installing and running projects
 
@@ -33,7 +29,13 @@ This will become an important concept later in this guide.
 
 ### Projects directory
 
-The engine automatically scans for projects inside the `/packages/projects/projects/` directory. This means that we can install and run new projects by executing the following commands inside our iR Engine installation folder:
+The engine automatically scans for projects in: 
+
+```
+/packages/projects/projects/
+```
+
+To install and run a project inside iR Engine, execute the following:
 
 ```bash
 git clone https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
@@ -43,19 +45,8 @@ npm run dev
 :::hint{type="info"}
 **ℹ️    Important**
 
-Whenever you install a new project, you must stop and restart the engine for the changes to take effect.
+If you install a new project, **restart the engine** for changes to take effect.
 :::
-
-These commands perform the following actions:
-
-1. Clone the project’s repository so iR Engine can load it.
-2. Install all required `npm` packages.
-3. Run a local development instance of iR Engine.
-
-:::hint{type="success"}
-📝    **Checkpoint**
-
-- [ ] Did you clone the repository with no issues?
 
 *If you run into any trouble with the commands above, consult the *[Troubleshooting](./../../../manual/01_install/050_advanced/07_troubleshooting.md)* guides for guidance.*
 :::
@@ -75,7 +66,7 @@ git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/proje
 For your own projects, this is not required, and you can clone without `-b Step0` on your command.
 :::
 
-## Configuring  projects
+## Configuring the project
 
 To integrate a project's source code with iR Engine, two critical steps are required:
 
@@ -84,11 +75,9 @@ To integrate a project's source code with iR Engine, two critical steps are requ
 
 ### Project configuration file
 
-Every project includes an <a href="https://github.com/ir-engine/ir-tutorial-hello/xrengine.config.ts" target="_blank">xrengine.config.ts</a>  file, which defines how the project interacts with iR Engine.
+Each project has an **`xrengine.config.ts`** file, which defines how the project interacts with iR Engine.
 
-The key part to note in this file is that our `src/Hello0.ts` file is connected to the engine through this configuration. See the code below:
-
-```typescript
+```typescript title="xrengine.config.ts"
 import type { ProjectConfigInterface } from '@ir-engine/packages/projects/ProjectConfigInterface'
 
 const config: ProjectConfigInterface = {
@@ -97,15 +86,14 @@ const config: ProjectConfigInterface = {
   routes: {},
   services: undefined,
   databaseSeed: undefined,
-  // highlight-start
-  worldInjection: () => import('./src/Hello0')  // Import our Hello World code
-  // highlight-end
+  worldInjection: () => import('./src/Hello')  // Connects Hello.ts to the engine
 }
 
 export default config
 ```
 
-For now, it is enough to understand that this file connects your project’s code to the engine. More details will be covered in the [Beyond the Basics]() guide.
+📌 **This file registers the project with the engine, allowing it to execute custom logic.**  
+You will explore this configuration further in the **Beyond the Basics** guide.
 
 ## Importing required modules
 

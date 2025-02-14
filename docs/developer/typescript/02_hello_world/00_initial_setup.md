@@ -1,48 +1,59 @@
 # Initial setup
 
-For this tutorial, you will use the introductory <a href="https://github.com/ir-engine/ir-tutorial-hello" target="_blank">Hellow World project</a> to learn your way around the engine.
+In this tutorial, you will set up the **Hello World** project, which serves as your introduction to working with iR Engine.
+
+---
 
 ## Prerequisites
 
-Ensure you have completed the [Quickstart guide](./../01_quickstart/index.md) and that you have the engine installed.
+Before proceeding, ensure that you have:
 
-:::hint{type="info"}
-ℹ️    **Important**
+✅ Completed the **[Developer Quickstart](./../01_quickstart/index.md)**.  
+✅ Installed iR Engine successfully on your system.  
 
-Before you proceed, end any instances of the engine you might have running by pressing **Ctrl + C** on your terminal.
+:::hint{style="info"}
+💡 **Important**  
+Before continuing, stop any running instances of iR Engine by pressing **Ctrl + C** in your terminal.
 :::
 
-## Step 1. Install and run the tutorial project
+---
 
-To install the tutorial project and run your local environment, execute the following commands.
+## Step 1: Install and run the tutorial project
 
-1. Install the tutorial project by running:
-   ```bash
-   git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
-   npm run dev
-   ```
-2. Open [https://localhost:3000/studio](https://localhost:3000/studio), and you should see the **ir-tutorial-hello** project listed.
+To install and start the **Hello World** tutorial project, execute the following commands:
 
-:::hint{type="danger"}
-⚠️    **Warning **
+```bash
+git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
+npm run dev
+```
 
-This tutorial project should only be installed locally. Do not install it in a remote deployment.
+### **Verify installation**
+1. Open **Studio** at [https://localhost:3000/studio](https://localhost:3000/studio).
+2. Locate the **ir-tutorial-hello** project in the list.
+
+:::hint{style="danger"}
+⚠️ **Warning**  
+This tutorial project is for **local development only**.  
+**Do not install it in a remote deployment**.
 :::
 
-## Step 2. Verify the installation
+---
 
-To confirm that the Hello World project is running correctly, follow these steps:
+## Step 2: Confirm installation success
 
-1. Open the project in **Studio** by clicking on its card.
-2. Create a new empty scene.
-3. If the installation was successful, a white sphere should appear in the center of the scene.
+To verify that the project is running correctly:
 
-:::hint{type="info"}
-💡    **Tip**
+1. Open the project in **Studio** by clicking on its card.  
+2. Create a **new empty scene**.  
+3. ✅ If installed correctly, a **white sphere** should appear in the center of the scene.
 
-You can also enter the scene and move around with an avatar by pressing the **Play** button in the editor.
+:::hint{style="info"}
+💡 **Tip**  
+You can enter the scene and control an avatar by pressing the **Play** button in the editor.
 :::
+
+---
 
 ## Next steps
 
-With your tutorial project running, proceed now to the Project code overview to understand the basics of your cloned codebase.
+Now that your tutorial project is running, proceed to **[Project overview](./01_project_overview.md)** to understand the basics of your cloned codebase.

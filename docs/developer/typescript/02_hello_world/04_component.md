@@ -1,10 +1,7 @@
 # Create a custom Component
 
-:::hint{type="info"}
-📝 You must complete [Adding  Systems](./03_system.md) before starting this guide.
-:::
-
-Your current implementation has a **critical issue**: The sphere is being created **globally in every scene** rather than being restricted to a specific scene.
+Your **current implementation has a critical issue**:  
+The sphere appears in **every scene**, instead of being controlled within a specific scene.
 
 This happens because iR Engine **executes projects globally**, and you have not defined when the sphere should be created.
 
@@ -47,7 +44,7 @@ By following this approach, your system will **only create the sphere when neede
 
 ***
 
-## Step 1: Create a custom component
+## Step 1: Define a custom component
 
 A **component** is a structured way to store information about an entity in the engine. For this example, define a new component that tracks whether the sphere has been initialized.
 
@@ -75,7 +72,7 @@ The `name` and `jsonID` follow a specific convention, which will be explained in
 
 ***
 
-## Step 2: Manage the component’s state
+## Step 2: Store component state
 
 To track whether the sphere has been created, retrieve and update the component’s state inside your system.
 
@@ -110,7 +107,7 @@ Next, modify the system to **only execute when this component is present**.
 
 ## Step 3: Restrict execution using a query
 
-Modify the system so that it **only runs for entities that have the **`HelloComponent`.
+Modify the system so that it **only runs for entities that have the `HelloComponent`.
 
 This prevents the sphere from being created in every scene.
 
