@@ -1,14 +1,16 @@
 # TypeScript guides
 
-Here you will learn everything that there is to know about programming with TypeScript in the iR Engine.
+Welcome to the TypeScript guides for iR Engine. This section provides structured tutorials and documentation to help you learn how to develop with the engine efficiently.
 
-## Learning pathway
+Whether you're just getting started or diving into advanced features, this guide will walk you through everything you need to know about entities, components, systems, physics, state management, and more.
 
-If you are new to the engine, we recommend the following patheway to know your way around, from setting up your environment, getting your first-hands on experience with the engine, and working on advanced knowledge.
+## 🚀 Learning pathway
+
+If you are new to iR Engine, we recommend following this structured learning path. It will guide you from setting up your environment to building a complete project and eventually mastering the engine’s internals.
 
 ::::link-array
 :::link-array-item{headerImage headerColor}
-Pt 1. [Hello World tutorial]()&#x20;
+🌱 Pt 1. [Hello World tutorial]()&#x20;
 
 Your first step into iR Engine.
 
@@ -18,7 +20,7 @@ Your first step into iR Engine.
 :::
 
 :::link-array-item{headerImage headerColor}
-Pt. 2 [Engine basics tutorial](./../03_basics_tutorial/index.md)
+🛠️ Pt. 2 [Engine basics tutorial](./../03_basics_tutorial/index.md)
 
 Continue expanding your knowledge.
 
@@ -27,7 +29,7 @@ Continue expanding your knowledge.
 :::
 
 :::link-array-item{headerImage headerColor}
-Pt. 3 [Technical manual](./../../../manual/index.md)
+📚 Pt. 3 [Technical manual](./../../../manual/index.md)
 
 Detailed documentation on iR Engine’s internals.
 

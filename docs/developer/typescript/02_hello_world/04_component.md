@@ -49,9 +49,9 @@ By following this approach, your system will **only create the sphere when neede
 
 ## Step 1: Create a custom component
 
-A **component** is a structured way to store information about an entity in the engine.
+A **component** is a structured way to store information about an entity in the engine. For this example, define a new component that tracks whether the sphere has been initialized.
 
-For this example, define a new component that tracks whether the sphere has been initialized.
+We'll call this component `HelloComponent`.
 
 ```typescript
 export const HelloComponent = ECS.defineComponent({
@@ -60,6 +60,8 @@ export const HelloComponent = ECS.defineComponent({
   onInit: () => ({ initialized: false }) // Default state
 })
 ```
+
+Right now, this component **does nothing on its own**. You will connect it to your system in the next step.
 
 ### What does this do?
 
@@ -70,8 +72,6 @@ export const HelloComponent = ECS.defineComponent({
 | `onInit`     | Defines the default state of the component (initialized as `false`). |
 
 The `name` and `jsonID` follow a specific convention, which will be explained in a later guide.
-
-Right now, this component **does nothing on its own**. You will connect it to your system in the next step.
 
 ***
 
@@ -110,7 +110,7 @@ Next, modify the system to **only execute when this component is present**.
 
 ## Step 3: Restrict execution using a query
 
-Modify the system so that it **only runs for entities that have the **`HelloComponent`.
+Modify the system so that it **only runs for entities that have the `HelloComponent`**.
 
 This prevents the sphere from being created in every scene.
 

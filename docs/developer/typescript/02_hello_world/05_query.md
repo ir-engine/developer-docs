@@ -21,11 +21,9 @@ When using queries, consider the following:
 - Even if you are searching for **one component**, you must pass it inside an **array**.
 - The query **does not create entities**; it only retrieves existing ones.
 
-:::hint{type="info"}
-ℹ️    **Info**
+Queries return a **JavaScript Generator**, which efficiently fetches matching entities without creating unnecessary objects.
 
-Queries return a **JavaScript Generator**, which efficiently fetches matching entities without creating unnecessary objects. To learn more, see [JavaScript Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#generator_functions).
-:::
+To learn more, see [JavaScript Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#generator_functions).
 
 ## Step 1: Define a query
 
@@ -34,6 +32,7 @@ Define a query using `defineQuery()`, specifying the **component(s)** you want t
 ```typescript
 // Define the query that will find all entities with HelloComponent
 const helloQuery = ECS.defineQuery([HelloComponent])
+
 ```
 
 This query **returns all entities** that have the `HelloComponent`.
@@ -42,17 +41,38 @@ This query **returns all entities** that have the `HelloComponent`.
 
 Here's a table to help you understand the query:
 
-| **Function**        | **Description**                                                   |
-| :------------------ | :---------------------------------------------------------------- |
-| defineQuery(\[...]) | Creates a query to filter entities based on components.           |
-| \[HelloComponent]   | The query will match **only** entities containing this component. |
-| helloQuery()        | When called, it returns **all matching entities**.                |
+| **Function** | **Description** |
+| --- | --- |
+| defineQuery([...]) | Creates a query to filter entities based on components. |
+| [HelloComponent] | The query will match **only** entities containing this component. |
+| helloQuery() | When called, it returns **all matching entities**. |
 
 At this stage, the query **does not run automatically**. You need to integrate it into your system.
 
-## Step 2: Using the query inside a system
+## Step 2: Using queries to process entities
 
-To use the query, modify your system’s logic to retrieve **all matching entities** and process them.
+Before integrating the query into a system, it's important to understand how to retrieve and process its results.
+
+### Iterating over query results
+
+Calling `helloQuery()` does not return an array of entities. Instead, it returns a **generator function** that dynamically **yields** each matching entity one at a time.
+
+To process all entities returned by the query, use a `for...of` loop:
+
+```typescript
+for (const entity of helloQuery()) {
+  // Process each entity
+}
+
+```
+
+This loop retrieves **each entity that contains the HelloComponent**, one at a time. The engine handles this efficiently, ensuring that only relevant entities are returned.
+
+Queries return a **JavaScript Generator**, which improves performance by retrieving entities dynamically instead of storing them all at once in memory.
+
+To learn more, see [JavaScript Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#generator_functions).
+
+Now, use the query in a system to retrieve and modify the correct entities.
 
 ```typescript
 function hello() {
@@ -69,29 +89,16 @@ function hello() {
     ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTypeEnum.SphereGeometry })
   }
 }
+
 ```
 
-### Where does the `for` loop come from?
-
-The `for` loop in ECS queries **does not iterate over an array**. Instead, it processes **a JavaScript Generator**, which is returned by `helloQuery()`.
-
-When you call `helloQuery()`, it **does not return a list** of entities. Instead, it returns **a generator function** that dynamically **yields matching entities** one at a time.
-
-```typescript
-for (const entity of helloQuery()) {
-  // Internally calls helloQuery().next() on each iteration
-}
-```
-
-The `for...of` loop **automatically calls **`.next()`** behind the scenes**. You don’t need to manage it manually.
-
-:::expandable-heading
 ### Why does this matter?
 
-- **Performance** – Instead of storing all entities in memory, they are retrieved **one at a time**.
-- **Efficiency** – ECS ensures that **only matching entities** are processed.
-- **Scalability** – Even if thousands of entities match, they are handled **individually**, reducing memory usage.
-:::
+Using a generator instead of an array provides several benefits:
+
+- **Performance** – Entities are retrieved **only when needed**, reducing memory usage.
+- **Efficiency** – ECS ensures that **only relevant entities** are processed.
+- **Scalability** – The engine handles thousands of entities without loading them all at once.
 
 ## Step 3: Update the system definition
 
@@ -103,50 +110,40 @@ export const HelloSystem = ECS.defineSystem({
   execute: hello,
   insert: { after: PhysicsSystem }
 })
+
 ```
 
 ### How does this solve the problem?
 
-| **Issue**                 | **Before**            | **Now**                                            |
-| :------------------------ | :-------------------- | :------------------------------------------------- |
-| Entities created manually | Used `createEntity()` | Now retrieved dynamically via `defineQuery()`      |
-| Code ran globally         | Executed every time   | Now runs **only for specific entities**            |
-| No filtering mechanism    | Affected all scenes   | Now **restricted to entities with HelloComponent** |
+| **Issue** | **Before** | **Now** |
+| --- | --- | --- |
+| Entities created manually | Used `createEntity()` | Now retrieved dynamically via `defineQuery()` |
+| Code ran globally | Executed every time | Now runs **only for specific entities** |
+| No filtering mechanism | Affected all scenes | Now **restricted to entities with HelloComponent** |
 
 ## Step 4: Loading the component
 
-:::hint{type="info"}
-🙋    **Now, a question:**
+For the system to process the entity, the `HelloComponent` must be present in the scene. The `hello-final` scene in the `ir-tutorial-hello` project already includes this component, so the system can recognize and process the correct entity.
 
-How do you connect your custom scene Component to the scene?
-:::
+### Scene setup
 
-:::hint{type="success"}
-📝    **The answer:**
+The `hello-final` scene includes:
 
-When you open the `ir-tutorial-hello` project, there is a scene called `hello-final`.
+- An entity with **HelloComponent**.
+- A saved scene file that ensures the entity is available when the project runs.
 
-This scene is already **set up with the correct component**, so your system will recognize it immediately.
-:::
-
-### What was done behind the scenes?
-
-- A **new entity** was added to the `hello-final` scene.
-- The `HelloComponent` was assigned to this entity.
-- The **scene was saved**, ensuring your system has an entity to process.
-
-Thanks to this setup, your **HelloComponent logic will only execute inside **`hello-final`, preventing unintended behavior in other scenes.
+With this setup, the system runs only inside `hello-final`, preventing unwanted behavior in other scenes.
 
 ## Step 5: Confirm the implementation
 
-To verify that the queries and components are working correctly:
+Follow these steps to verify that queries and components are working correctly:
 
 1. **Run the project** and open the `hello-final` scene.
-   - ✅ **The sphere should still be visible.**
-2. **Switch to another scene** (e.g., `default-project/apartment`).
-   - ✅ **The sphere should be gone!**
+    ✅ The sphere should appear in the scene.
+1. **Switch to another scene** (e.g., `default-project/apartment`).
+    ✅ The sphere should not appear.
 
-If this works as expected, your code is correctly using **queries to filter entities dynamically**.
+If everything works as expected, the system is correctly filtering and processing entities based on their components.
 
 ## Final implementation
 
@@ -208,4 +205,3 @@ By using `defineQuery()`, your system now **retrieves entities dynamically inste
 - Systems **process only matching entities**, reducing unnecessary execution.
 - The sphere now **only appears in the correct scene**, rather than globally.
 - Using **JavaScript Generators** improves performance by avoiding unnecessary data storage.
-
