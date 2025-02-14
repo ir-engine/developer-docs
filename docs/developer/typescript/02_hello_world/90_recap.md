@@ -1,66 +1,67 @@
-<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
-
 # Recap and next steps
 
-Congratulations! 🎉 You have just learned the minimal basics of working with iR Engine using TypeScript!
+Congratulations! 🎉 You have completed the **Hello World** tutorial for iR Engine using TypeScript.
 
-This was an introductory tutorial to teach you the core essentials of the engine as quickly as possible.  
-But iR Engine has a lot of features to explore!
+This introductory guide covered the **fundamental concepts** of iR Engine development, giving you a solid foundation to build upon.
 
-## Tutorial recap
+---
 
-The `Hello World` tutorial has taught us how to work with and create the most minimal iR Engine programming example possible. But, as we are about to learn, there is a lot more to explore!
+## What you accomplished
 
-With this project we accomplished the following:
+Throughout this tutorial, you explored how to create a **minimal working example** in iR Engine. Here’s a summary of what you learned:
 
-- Imported some iR Engine's typescript modules in our file
-- Created an entity, and gave it an `uuid` and a `name`
-- Gave the entity the ability to:
-  - Be visible on the screen with a `VisibleComponent`
-  - Have Linear Transformations with a `TransformComponent`
-- Defined the position of the sphere in the scene
-- Gave the entity a `PrimitiveGeometryComponent` _(a Sphere)_
-- Defined a Custom `Component` type
-- Defined a `Query` to search for our Custom Component
-- Locked our logic to only happen once with the `initialized` State variable contained inside our Custom Component.
-- Defined a `System` and locked our logic behind its `execute` function
-- Locked our logic to only trigger for the entities that match our `helloQuery` generator
-- Added our project's code to the engine with the `xrengine.config.ts` configuration file
+### Project setup and structure
 
-That's a lot!!!
+✅ Installed and configured a **TypeScript project** in iR Engine.  
+✅ Integrated the project with the engine using `xrengine.config.ts`.  
 
-## What to do next?
+### Entities and components
 
-Your next step in your journey will be to expand on the knowledge you've acquired by running through the **iR Engine basics**.
+✅ Created an **entity** with a unique identifier.  
+✅ Attached core **components** to define behavior.
 
-In the continuation of this tutorial, we will add these features to the source code of our project:
+### Working with systems
 
-- **Physics Properties**: Gravity, Collision, Friction, etc
-- **Logic** that happens every frame at specific intervals _(eg: every fixed-frame or every visual-frame)_
-- **State Management** _(eg: our `initialized` variable, but better)_
-- **Input Management** _(keyboard, mouse, touchpad, etc)_
-- **How to debug our code** to search for errors
-- **Networked events and actions** that can be shared between multiple devices
+✅ Defined a **system** to manage logic execution.  
+✅ Used a **custom component** to store state.  
+✅ Queried entities dynamically based on their **assigned components**.  
+✅ Controlled execution flow by **managing state within components**.  
 
-And, at the end of the tutorial, we will put everything together into a complete mini-game!
+### Best practices
 
-Let's not wait any longer and get started by adding [`Physics`](../physics) to our project.
+✅ Used **ECS principles** to separate logic from data.  
+✅ Ensured **systems execute only when needed** by querying entities with specific components.  
+✅ Structured the code to follow **modular and scalable design patterns**.  
 
-### Intermediate content
+With these skills, you can now confidently create **interactive scenes and dynamic systems** in iR Engine.
 
-If you are feeling confident already, you could jump right into the intermediate tutorials.  
-Just pick a topic that interests you in the sidebar and continue your journey from there.  
-:::note[Intermediate Note]
-Make sure to skim-read the basics section at least once, as it gives an overview of some important concepts that will be used all throughout the other guides.
+---
+
+## What’s next?
+
+Now that you’ve learned the essentials, it’s time to expand your knowledge with the [Engine basics tutorial](./../03_basics_tutorial/index.md), where you will learn:
+
+- **Writing clean and maintainable code**: Learn best practices for structuring your project efficiently.
+- **Building custom components**: Extend the engine’s functionality by defining your own component data.
+- **Defining queries**: Retrieve and manipulate entities dynamically based on their components.
+- **Working with physics**: Add rigidbodies, collisions, and physics interactions to your entities.
+- **State management**: Optimize how entities store and update data within systems.
+- **Managing environments and scenes**: Control scene publishing and world loading.
+
+---
+
+## Mastering iR Engine
+
+For advanced knowledge, refer to the **Technical Manual** and **Reference API**:
+
+- 📖 [**Technical Manual**](./../../../manual/index.md) – A deep dive into iR Engine without hand-holding.
+
+- 📜 [**Reference API**](https://ir-engine-api.mt-int.theinfinitereality.io/) – The complete API documentation.
+
+Make sure to check out the [Mastery Toolkit](./../60_mastery/index.md) section as well. It contains essential tools and resources for advanced projects.
+
+:::hint{type="info"}
+🚀    **Ready for the next step?**
+
+Head over to the [iR Engine basics tutorial](./../03_basics_tutorial/index.md) and continue your journey!
 :::
-
-### Advanced knowledge
-
-The [Technical manual](/manual) is where iR Engine is presented in all of its complexity, without any guard-rails or hand-holding.
-You will also find the [Reference API](https://ir-engine-api.mt-int.theinfinitereality.io/) really useful when writing the code of your application.  
-:::note[Advanced Note]
-Make sure to read the `Mastery Toolkit` section at least once.  
-It contains a list of important tools that you will need when working with advanced projects.
-:::
-
-<!-- TODO: Add a list of cool and interesting topics to read next here -->
