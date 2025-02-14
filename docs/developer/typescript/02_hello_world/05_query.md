@@ -1,109 +1,60 @@
 # Use Queries
 
-Queries are a tool provided by the `Entity Component System` pattern used by iR Engine.
+# Using queries
 
-In simple terms, a Query is a function that will request all entities that match a certain condition.
-More specifically, it will return **all** entities that contain **all** Components in the list that we specify.
+Queries are a powerful feature of the **Entity Component System (ECS)** pattern in iR Engine.
 
-## Creating a Query
+A **query** allows you to retrieve **all entities that contain a specific set of components**.
+This helps you **filter entities dynamically** instead of manually keeping track of them.
 
-We are going to **define a Query**. I think you can figure out the name of the function already :)
-This is how the function works:
+## How queries work
 
-- We give the function an [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of Components
-- The function will give us back a Query function
-- We can call the given function to retrieve all entities that contain the components that we specified.
+A query:
 
+1. Accepts a **list of components** as input.
+2. Returns **a function** that retrieves all entities containing those components.
+3. Can be used anywhere in your code to fetch **matching entities**.
 
+### **Important rules**
 
-1. We need to send an array anyway, even if it only contains a single Component.
-2. The Query will match only those entities that contain **all** components in our list.
-3. We don't need to export the Query function, as it will only be called by our own code.
+- The query **only matches entities that have ALL the specified components**.
+- Even if you are searching for **one component**, you must pass it inside an **array**.
+- The query **does not create entities**; it only retrieves existing ones.
 
-notes
+## Step 1: Define a query
 
-Here are your hints for this assignment:
+Define a query using defineQuery(), specifying the **component(s)** you want to search for.
 
-```ts
-// Define the query that will find our Scene's Entity
-const queryName = NAMESPACE.funtionName([ CustomComponentName ])
-```
-
-:::iframe{code="<TechnicalNote title=&#x22;Solution&#x22;>"}
-
-:::
-
-```ts
-// Define the query that will find our Scene's Entity
+```typescript
+// Define the query that will find all entities with HelloComponent
 const helloQuery = ECS.defineQuery([HelloComponent])
 ```
 
-## Using our Query
+This query **returns all entities** that have the HelloComponent.
 
-A Query, when called, will return a [JavaScript Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#generator_functions).
-This Generator can be used to access the list of all entities that match the list of Components that we specified.
+### **Understanding the query definition**
 
-This means that we can access as many entities as we want from a single unified place!
-Really powerful.
+| **Function**        | **Description**                                                   |
+| ------------------- | ----------------------------------------------------------------- |
+| defineQuery(\[...]) | Creates a query to filter entities based on components.           |
+| \[HelloComponent]   | The query will match **only** entities containing this component. |
+| helloQuery()        | When called, it returns **all matching entities**.                |
 
-I gave you one solution for free earlier, but I'm leaving this assignment a bit ambiguous on purpose.
-I will give you three options. Pick the one that fits your learning style best:
+At this stage, the query **does not run automatically**. You need to integrate it into your system.
 
-1. Challenge:
-   See if you can figure out which part of your code goes where before looking at the solution or the hints. It will be very difficult.
-2. Intermediate difficulty:
-   Open each hint one by one, and take some time to reason about what the hint is trying to say before opening the next one.
-   You might land on the solution earlier than you think.
-3. Otherwise:
-   Read the hints, try to understand them a bit, and then compare what you thought with the full solution.
+## Step 2: Using the query inside a system
 
-Here are your hints:
+To use the query, modify your system’s logic to retrieve **all matching entities** and process them.
 
-```ts
-// Our for loop will look something like this
-for (const entity of /* queryName() */) {
-  // Our code goes here ...
-}
-```
-
-So, our `for` loop should say:
-
-```ts
-for (const entity in helloQuery()) {
-  // do something for every entity
-}
-```
-
-But you cannot use `createEntity` anymore.
-The entity is `requested` by the Query, not created.
-
-> The `hello-final` scene already contains the entity.
-> Scroll down to the `Loading the Component` section right below if you are confused as to why this is the case.
-
-You already have the code for #1, #2, #3, #6 and #7 from before.
-We are creating #5 with this step.
-We are also modifying #4:
-
-- The initialized variable is replaced with the State Management code I gave you
-- &#x20;placed inside the new #5 loop&#x20;
-
-:::iframe{code="<TechnicalNote title=&#x22;Solution&#x22;>"}
-
-:::
-
-```ts
+```typescript
 function hello() {
-  //highlight-start
   for (const entity of helloQuery()) {
-    //highlight-end
-
-    //highlight-start
-    // Check if we have already initialized our Sphere
+    // Check if the entity has already been initialized
     let { initialized } = ECS.getMutableComponent(entity, HelloComponent)
     if (initialized.value) continue
-    initialized.set(true)  // Set our initialized state to true
-    //highlight-end
+    initialized.set(true)  // Mark as initialized
 
+    // Add required components to the entity
     ECS.setComponent(entity, NameComponent, 'ee.tutorial.hello-entity')
     ECS.setComponent(entity, VisibleComponent)
     ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 1, 0) })
@@ -112,11 +63,46 @@ function hello() {
 }
 ```
 
-:::iframe{code="<UnstyledDetails title=&#x22;Full Solution&#x22;>"}
+### **Key changes**
 
-:::
+- The system **loops through all entities** retrieved by helloQuery().
+- If an entity is **already initialized**, it skips processing.
+- Otherwise, it **initializes the entity** and assigns the required components.
 
-```ts
+## Step 3: Update the system definition
+
+Now, modify the system to execute the updated function.
+
+> tsCopyEditexport const HelloSystem = ECS.defineSystem({
+>   uuid: 'ee.tutorial.HelloSystem',
+>   execute: hello,
+>   insert: { after: PhysicsSystem }
+> })
+
+### **How does this solve the problem?**
+
+| **Issue**                 | **Before**          | **Now**                                            |
+| ------------------------- | ------------------- | -------------------------------------------------- |
+| Entities created manually | Used createEntity() | Now retrieved dynamically via defineQuery()        |
+| Code ran globally         | Executed every time | Now runs **only for specific entities**            |
+| No filtering mechanism    | Affected all scenes | Now **restricted to entities with HelloComponent** |
+
+## Step 4: Confirm the implementation
+
+To verify that the queries and components are working:
+
+1. **Run the project** and open the hello-final scene.
+   - ✅ **The sphere should still be visible.**
+2. **Switch to another scene** (e.g., default-project/apartment).
+   - ✅ **The sphere should be gone!**
+
+If this works as expected, your code is correctly using **queries to filter entities dynamically**.
+
+## Final implementation
+
+After making these updates, your Hello.ts file should look like this:
+
+```typescript
 import { ECS } from '@ir-engine/packages/ecs'
 import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
 import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
@@ -126,28 +112,22 @@ import { Vector3 } from 'three'
 import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
 import { PhysicsSystem } from '@ir-engine/packages/spatial'
 
-// Define our component
-//highlight-start
+// Define the custom component
 export const HelloComponent = ECS.defineComponent({
   name: 'ee.tutorial.HelloComponent',
   jsonID: 'EE_tutorial_hello',
-  onInit: () => { return { initialized: false } }
+  onInit: () => ({ initialized: false })
 })
-//highlight-end
 
-// Define the query that will find our Scene's Entity
-//highlight-start
+// Define the query to find entities with HelloComponent
 const helloQuery = ECS.defineQuery([HelloComponent])
-//highlight-end
 
+// Define the function to execute
 const hello = () => {
-  //highlight-start
   for (const entity of helloQuery()) {
-    // Check if we have already initialized our Sphere
     let { initialized } = ECS.getMutableComponent(entity, HelloComponent)
     if (initialized.value) continue
-    initialized.set(true)  // Set our initialized state to true
-    //highlight-end
+    initialized.set(true)
 
     ECS.setComponent(entity, NameComponent, 'ee.tutorial.hello-entity')
     ECS.setComponent(entity, VisibleComponent)
@@ -156,7 +136,7 @@ const hello = () => {
   }
 }
 
-// Define our system
+// Define the system
 export const HelloSystem = ECS.defineSystem({
   uuid: 'ee.tutorial.HelloSystem',
   execute: hello,
@@ -164,49 +144,14 @@ export const HelloSystem = ECS.defineSystem({
 })
 ```
 
-Notice how I have changed the code to use an arrow function.
-They can be used interchangeably, so feel free to use either of them.
+## Summary
 
-Also, notice how the style of the names in this solution has been changed.
-We will learn about them next.
-&#x20;
+✅ **You have now successfully implemented queries in iR Engine!**
+By using `defineQuery()`, your system now **retrieves entities dynamically instead of creating them manually**.
 
-## Loading the Component
+**Key takeaways:**
 
-Now, here is a question:
+- Queries **find existing entities** based on components.
+- Systems **process only matching entities**, reducing unnecessary execution.
+- The sphere now **only appears in the correct scene**, rather than globally.
 
-> How do we connect our custom scene Component to the scene?
-
-The answer is that there is one last piece of the project that we haven't talked about just yet.
-You might have even seen it in the Studio already if you explored a bit!
-
-We don't know how to add a Component to an entity through the Studio yet, or how to make our Component show up on the `Add Component` Studio UI.
-And we have gone through two entire pages with a LOT of theory but not a whole lot of practice.
-So I already solved this problem for you.
-
-When you open the `ir-tutorial-hello` project... there is a scene called `hello-final` in there.
-That's what we are looking for :)
-
-Thanks to how the `hello-final` scene is setup, our Component will work in that Scene... but it will not work anywhere else! Really neat.
-
-This means that, when you installed the project with the Quickstart guide, you also downloaded the final scene that we need.
-&#x20;
-
-## Confirm the Code
-
-You will know that you have completed the [Components]() and [Queries]() tasks correctly if:
-
-- The behavior has not changed for the `hello-final` scene. You can still see the sphere in the Scene.
-- You open another scene *(eg: *`default-project/appartment`* provided by the engine)*...
-  and the Sphere is gone!
-
-## Conclusion
-
-As you can see, we only added around 10 lines of code in these last two pages...
-But we introduced so many new concepts!
-That's the most exciting part about the ECS pattern. You can do **so** much with so little code.
-
-I hope you didn't struggle too much with the last task. I know it was a difficult one.
-But I promise that, now that you have this knowledge, the road ahead will only get easier and easier.
-
-Lets see what we will learn next!
