@@ -1,6 +1,6 @@
-# Project code overview
+# Project overview
 
-The [TypeScript Quickstart](./../index.md) guide helped us create a project and run iR Engine for the first time. Now, let's review what we have before diving deeper.
+The [Quickstart guide](./../01_quickstart/index.md) helped us create a project and run iR Engine for the first time. Now, let's review what we have before diving deeper.
 
 :::hint{type="info"}
 ℹ️    **Info**

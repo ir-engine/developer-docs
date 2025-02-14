@@ -1,4 +1,4 @@
-# Start working in the engine
+# Work in the engine
 
 In this guide, you will finally get your hands on your first task to learn the engine by modifying a project's source code, importing components, setting up ECS, and modifying an object's geometry.
 
@@ -56,8 +56,6 @@ These commands perform the following actions:
 📝    **Checkpoint**
 
 - [ ] Did you clone the repository with no issues?
-
-
 
 *If you run into any trouble with the commands above, consult the *[Troubleshooting](./../../../manual/01_install/050_advanced/07_troubleshooting.md)* guides for guidance.*
 :::
@@ -229,6 +227,4 @@ To see your new changes in place:
 
 You have had your first experience working in the engine. Now, let's learn to add logic through [Systems](./03_system.md).
 :::
-
-
 

@@ -1,4 +1,4 @@
-# Using queries
+# Define a Query
 
 Queries are a core feature of the **Entity Component System (ECS)** pattern in iR Engine.
 
@@ -41,11 +41,11 @@ This query **returns all entities** that have the `HelloComponent`.
 
 Here's a table to help you understand the query:
 
-| **Function** | **Description** |
-| --- | --- |
-| defineQuery([...]) | Creates a query to filter entities based on components. |
-| [HelloComponent] | The query will match **only** entities containing this component. |
-| helloQuery() | When called, it returns **all matching entities**. |
+| **Function**        | **Description**                                                   |
+| :------------------ | :---------------------------------------------------------------- |
+| defineQuery(\[...]) | Creates a query to filter entities based on components.           |
+| \[HelloComponent]   | The query will match **only** entities containing this component. |
+| helloQuery()        | When called, it returns **all matching entities**.                |
 
 At this stage, the query **does not run automatically**. You need to integrate it into your system.
 
@@ -115,11 +115,11 @@ export const HelloSystem = ECS.defineSystem({
 
 ### How does this solve the problem?
 
-| **Issue** | **Before** | **Now** |
-| --- | --- | --- |
-| Entities created manually | Used `createEntity()` | Now retrieved dynamically via `defineQuery()` |
-| Code ran globally | Executed every time | Now runs **only for specific entities** |
-| No filtering mechanism | Affected all scenes | Now **restricted to entities with HelloComponent** |
+| **Issue**                 | **Before**            | **Now**                                            |
+| :------------------------ | :-------------------- | :------------------------------------------------- |
+| Entities created manually | Used `createEntity()` | Now retrieved dynamically via `defineQuery()`      |
+| Code ran globally         | Executed every time   | Now runs **only for specific entities**            |
+| No filtering mechanism    | Affected all scenes   | Now **restricted to entities with HelloComponent** |
 
 ## Step 4: Loading the component
 
@@ -139,9 +139,9 @@ With this setup, the system runs only inside `hello-final`, preventing unwanted 
 Follow these steps to verify that queries and components are working correctly:
 
 1. **Run the project** and open the `hello-final` scene.
-    ✅ The sphere should appear in the scene.
-1. **Switch to another scene** (e.g., `default-project/apartment`).
-    ✅ The sphere should not appear.
+   ✅ The sphere should appear in the scene.
+2. **Switch to another scene** (e.g., `default-project/apartment`).
+   ✅ The sphere should not appear.
 
 If everything works as expected, the system is correctly filtering and processing entities based on their components.
 
@@ -205,3 +205,4 @@ By using `defineQuery()`, your system now **retrieves entities dynamically inste
 - Systems **process only matching entities**, reducing unnecessary execution.
 - The sphere now **only appears in the correct scene**, rather than globally.
 - Using **JavaScript Generators** improves performance by avoiding unnecessary data storage.
+

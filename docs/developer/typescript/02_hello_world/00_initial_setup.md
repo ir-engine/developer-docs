@@ -1,10 +1,10 @@
-# Install the Tutorial Project
+# Initial setup
 
-For this tutorial, you will use the introductory <a href="https://github.com/ir-engine/ir-tutorial-hello" target="_blank">**Hellow World project**</a> to learn your way around the engine.
+For this tutorial, you will use the introductory <a href="https://github.com/ir-engine/ir-tutorial-hello" target="_blank">Hellow World project</a> to learn your way around the engine.
 
 ## Prerequisites
 
-Ensure you have completed the [Developer quickstart](./../01_quickstart/index.md) and that you have the engine installed.
+Ensure you have completed the [Quickstart guide](./../01_quickstart/index.md) and that you have the engine installed.
 
 :::hint{type="info"}
 ℹ️    **Important**

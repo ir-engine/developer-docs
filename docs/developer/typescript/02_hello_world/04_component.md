@@ -1,7 +1,7 @@
-# Work with Components
+# Create a custom Component
 
 :::hint{type="info"}
-📝 You must complete [Manage Systems](./03_system.md) before starting this guide.
+📝 You must complete [Adding  Systems](./03_system.md) before starting this guide.
 :::
 
 Your current implementation has a **critical issue**: The sphere is being created **globally in every scene** rather than being restricted to a specific scene.
@@ -110,7 +110,7 @@ Next, modify the system to **only execute when this component is present**.
 
 ## Step 3: Restrict execution using a query
 
-Modify the system so that it **only runs for entities that have the `HelloComponent`**.
+Modify the system so that it **only runs for entities that have the **`HelloComponent`.
 
 This prevents the sphere from being created in every scene.
 

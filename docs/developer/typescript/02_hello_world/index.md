@@ -21,7 +21,8 @@ This tutorial covers the following core concepts:
 By the end of this tutorial, you will have a **basic functional project** and an introductory foundation for working with the engine.
 
 :::hint{type="info"}
-## Where to start
+➡️    **Start here**
 
-Begin with Step 1: Initial setup, where you will configure your project and prepare your development environment.
+Begin with [Install the Tutorial Project](./00_initial_setup.md), where you will configure your project and prepare your development environment.
 :::
+

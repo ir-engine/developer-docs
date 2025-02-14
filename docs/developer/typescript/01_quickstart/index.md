@@ -2,9 +2,9 @@
 
 Welcome to the developer quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. This guide prepares you to:
 
-1. Install the iR Engine in your local environment
-2. Access the default projects to test and develop
-3. Introduce you to the **Hello world tutorial** for your first hands-on experience with the engine
+1. Install the iR Engine in your local environment.
+2. Access the default projects to test and develop.
+3. Introduce you to the [Hello World tutorial](./../02_hello_world/index.md) for your first hands-on experience with the engine.
 
 ## Initial setup
 
