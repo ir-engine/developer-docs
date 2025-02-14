@@ -13,7 +13,7 @@ The iR Engine is a web application; the following steps will help you install an
 :::hint{type="info"}
 ℹ️    **Info**
 
-These instructions are for Ubuntu Linux. For Windows, macOS, or other Linux distributions, refer to the [installation manual]().
+These instructions are for Ubuntu Linux. For Windows, macOS, or other Linux distributions, refer to the [Installation](./../../../manual/01_install/index.md) manual.
 :::
 
 ### Install iR Engine on Ubuntu
@@ -57,4 +57,4 @@ Your project is now ready for editing.
 
 ## Next steps
 
-You can now start working with the engine and extend its functionality by following the ECS pattern. We suggest you run through the [Hello World tutorial](./02_hello/index.md)&#x20;
+You can now start working with the engine and extend its functionality by following the ECS pattern. We suggest you run through the [Hello World tutorial](./../02_hello_world/index.md).
