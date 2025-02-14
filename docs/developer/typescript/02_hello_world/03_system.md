@@ -1,4 +1,4 @@
-# Adding  Systems
+# Define a System
 
 So far, you have used the **Entity-Component-System (ECS)** pattern by:
 

@@ -1,6 +1,6 @@
-# Using the ECS pattern
+# The ECS pattern
 
-The engine uses the [Entity-Component-System (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) patterna software architecture pattern used to structure code efficiently. In this pattern:
+The engine uses the [Entity-Component-System (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) pattern. A software architecture pattern used to structure code efficiently. In this pattern:
 
 - **Logic** is represented as `systems`, which define the application's behavior.
 - **Data** is stored in `components`, which do not have behavior or identifiers.
@@ -95,4 +95,3 @@ In the next section, we will use a more readable name to create this component.
 ## Next steps
 
 Now that you know what the ECS pattern is and how to use it, you can [Start working in the engine](./02_engine.md) and extend its functionalities.
-
