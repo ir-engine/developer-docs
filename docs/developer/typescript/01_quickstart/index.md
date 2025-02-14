@@ -1,12 +1,12 @@
-# Developer quickstart
+# Quickstart guide
 
-Welcome to the developer quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. By the end of this guide, you will have:&#x20;
+Welcome to the developer quickstart. This guide prepares you for your first experience with the engine as a TypeScript developer. This guide prepares you to:
 
-1. Installed the iR Engine in your local environment
-2. Accessed the default projects to start developing
-3. Get your first hands-on experience with the introduction of a tutorial project
+1. Install the iR Engine in your local environment
+2. Access the default projects to test and develop
+3. Introduce you to the **Hello world tutorial** for your first hands-on experience with the engine
 
-## Installation
+## Initial setup
 
 The iR Engine is a web application; the following steps will help you install and run a local version. Note that some steps of this tutorial may differ from how you use the engine in production.
 
@@ -32,7 +32,7 @@ To install and run a local version of iR Engine on Ubuntu, follow these steps:
 
 Projects are folders that contain all your custom code, assets, and scenes. Working with projects is the way you extend the engine's functionalities.&#x20;
 
-These projects are hosted in the following directory:&#x20;
+Projects are hosted in the following directory:&#x20;
 
 ```shell
 packages/projects/projects/
