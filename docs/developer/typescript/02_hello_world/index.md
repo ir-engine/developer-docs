@@ -8,15 +8,15 @@ By the end of this tutorial, you will have set up a working project, created an 
 
 This tutorial covers the following core concepts:
 
-✅ **Project setup:** Installing and running iR Engine.
+- ✅ **Project setup:** Installing and running iR Engine.
 
-✅ **Creating an entity:** Understanding how entities function in ECS.
+- ✅ **Creating an entity:** Understanding how entities function in ECS.
 
-✅ **Attaching components:** Making an entity **visible**, **interactive**, and **movable**.
+- ✅ **Attaching components:** Making an entity **visible**, **interactive**, and **movable**.
 
-✅ **Using the ECS pattern:** Structuring logic with **systems and queries**.
+- ✅ **Using the ECS pattern:** Structuring logic with **systems and queries**.
 
-✅ **Configuring the engine:** Registering and managing your project in iR Engine.
+- ✅ **Configuring the engine:** Registering and managing your project in iR Engine.
 
 By the end of this tutorial, you will have a **basic functional project** and an introductory foundation for working with the engine.
 
@@ -25,4 +25,3 @@ By the end of this tutorial, you will have a **basic functional project** and an
 
 Begin with [Install the Tutorial Project](./00_initial_setup.md), where you will configure your project and prepare your development environment.
 :::
-

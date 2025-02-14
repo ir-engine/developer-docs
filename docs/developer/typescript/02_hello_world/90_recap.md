@@ -12,26 +12,26 @@ Throughout this tutorial, you explored how to create a **minimal working example
 
 ### Project setup and structure
 
-✅ Installed and configured a **TypeScript project** in iR Engine.  
-✅ Integrated the project with the engine using `xrengine.config.ts`.  
+- ✅ Installed and configured a **TypeScript project** in iR Engine.  
+- ✅ Integrated the project with the engine using `xrengine.config.ts`.  
 
 ### Entities and components
 
-✅ Created an **entity** with a unique identifier.  
-✅ Attached core **components** to define behavior.
+- ✅ Created an **entity** with a unique identifier.  
+- ✅ Attached core **components** to define behavior.
 
 ### Working with systems
 
-✅ Defined a **system** to manage logic execution.  
-✅ Used a **custom component** to store state.  
-✅ Queried entities dynamically based on their **assigned components**.  
-✅ Controlled execution flow by **managing state within components**.  
+- ✅ Defined a **system** to manage logic execution.  
+- ✅ Used a **custom component** to store state.  
+- ✅ Queried entities dynamically based on their **assigned components**.  
+- ✅ Controlled execution flow by **managing state within components**.  
 
 ### Best practices
 
-✅ Used **ECS principles** to separate logic from data.  
-✅ Ensured **systems execute only when needed** by querying entities with specific components.  
-✅ Structured the code to follow **modular and scalable design patterns**.  
+- ✅ Used **ECS principles** to separate logic from data.  
+- ✅ Ensured **systems execute only when needed** by querying entities with specific components.  
+- ✅ Structured the code to follow **modular and scalable design patterns**.  
 
 With these skills, you can now confidently create **interactive scenes and dynamic systems** in iR Engine.
 
@@ -56,7 +56,7 @@ For advanced knowledge, refer to the **Technical Manual** and **Reference API**:
 
 - 📖 [**Technical Manual**](./../../../manual/index.md) – A deep dive into iR Engine without hand-holding.
 
-- 📜 [**Reference API**](https://ir-engine-api.mt-int.theinfinitereality.io/) – The complete API documentation.
+- 📜 [**Reference API**](https://ir-engine-api.mt-int.theinfinitereality.io/openapi/#/) – The complete API documentation.
 
 Make sure to check out the [Mastery Toolkit](./../60_mastery/index.md) section as well. It contains essential tools and resources for advanced projects.
 
