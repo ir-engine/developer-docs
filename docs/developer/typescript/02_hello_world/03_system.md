@@ -4,19 +4,19 @@ So far, you have learned how to create **entities** and attach **components** in
 
 In this guide, you will define a **system**, which is responsible for executing logic in the **Entity-Component-System (ECS)** architecture.
 
----
+***
 
 ## Why do you need a system?
 
 A **system** executes logic on entities that contain specific components. Without a system, your project would **only define data** (components) but lack **behavior**.
 
-### **What systems do in ECS**
+### What systems do in ECS
 
-✅ **Process** entities based on their components.  
-✅ **Run automatically** based on engine timing.  
-✅ **Execute logic globally** or based on conditions.  
+✅ **Process** entities based on their components.
+✅ **Run automatically** based on engine timing.
+✅ **Execute logic globally** or based on conditions.
 
----
+***
 
 ## Step 1: Move logic into a function
 
@@ -39,12 +39,13 @@ function createHelloWorldEntity() {
 }
 ```
 
-**Why move logic into a function?**  
-- Ensures **controlled execution**.  
-- Prevents **duplicate entities**.  
+**Why move logic into a function?**
+
+- Ensures **controlled execution**.
+- Prevents **duplicate entities**.
 - Allows **execution only when needed**.
 
----
+***
 
 ## Step 2: Define a system
 
@@ -66,13 +67,13 @@ export const HelloWorldSystem = ECS.defineSystem({
 
 ### How does this improve execution?
 
-| **Issue** | **Before** | **Now** |
-|-----------|-----------|---------|
-| Logic runs **immediately** | Hard to control | Runs **when the system executes** |
-| No execution control | Runs on project load | Now follows **engine timing** |
-| Entities created globally | No restrictions | Can be **controlled via queries** later |
+| **Issue**                  | **Before**           | **Now**                                 |
+| :------------------------- | :------------------- | :-------------------------------------- |
+| Logic runs **immediately** | Hard to control      | Runs **when the system executes**       |
+| No execution control       | Runs on project load | Now follows **engine timing**           |
+| Entities created globally  | No restrictions      | Can be **controlled via queries** later |
 
----
+***
 
 ## Step 3: Final implementation
 
@@ -111,27 +112,27 @@ export const HelloWorldSystem = ECS.defineSystem({
 })
 ```
 
----
+***
 
 ## Step 4: Confirm the changes
 
 To verify that the system executes correctly:
 
-1. **Restart the engine** (`Ctrl + C`, then `npm run dev`).  
-2. Open **Studio** at [https://localhost:3000/studio](https://localhost:3000/studio).  
-3. Open the **ir-tutorial-hello** project.  
-4. Create a **new scene**.  
+1. **Restart the engine** (`Ctrl + C`, then `npm run dev`).
+2. Open **Studio** at [https://localhost:3000/studio](https://localhost:3000/studio).
+3. Open the **ir-tutorial-hello** project.
+4. Create a **new scene**.
 5. ✅ **A white sphere should appear**, created by the system.
 
-:::hint{style="success"}
-🎉 **Success!**  
+:::hint{type="success"}
+🎉 **Success!**
 Your entity is now managed by a system rather than executing globally.
 :::
 
----
+***
 
 ## Next steps
 
 Now that your project follows best practices with a **system**, the next step is to **control execution more effectively** using **custom components**.
 
-📌 **Proceed to** [Create a custom component](./05_create_component.md).
+📌 **Proceed to** [Create a custom Component](./04_component.md).
