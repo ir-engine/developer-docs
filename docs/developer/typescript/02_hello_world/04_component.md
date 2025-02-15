@@ -1,7 +1,9 @@
 # Create a custom Component
 
-Your **current implementation has a critical issue**:  
-The sphere appears in **every scene**, instead of being controlled within a specific scene.
+So far, your **Hello World system** successfully creates a sphere. However, there is a **critical issue:**
+
+- ❌ The sphere is created **globally in every scene**.
+- ✅ The goal is to **create it only in specific scenes**.
 
 This happens because iR Engine **executes projects globally**, and you have not defined when the sphere should be created.
 
@@ -18,21 +20,15 @@ Right now, your implementation does the following:
 
 Because of **steps 5 and 6**, the sphere appears in **every project that runs in the engine**, which is not the expected behavior.
 
-### Why does this happen?
+:::hint{type="info"}
+ℹ️  **Info**
 
-iR Engine **runs projects globally**, but your sphere should only appear when explicitly needed in a scene.
-
-To achieve this, you need to define a **custom component** that controls when and where the sphere is created.
-
-:::hint{type="warning"}
-⚠️    **Important**
-
-Without a component, the engine has no way to determine when to create the sphere.
-
-The current implementation lacks a trigger to tell the system when to execute.
+Without a component, the engine has no way to determine when to create the sphere. The current implementation lacks a trigger to tell the system when to execute.
 :::
 
 ## The solution: Locking the sphere behind a component
+
+You need to define a **custom component** that controls when and where the sphere is created.
 
 To restrict the sphere’s execution, you need to:
 
@@ -68,8 +64,6 @@ Right now, this component **does nothing on its own**. You will connect it to yo
 | `jsonID`     | An internal identifier used by the engine.                           |
 | `onInit`     | Defines the default state of the component (initialized as `false`). |
 
-The `name` and `jsonID` follow a specific convention, which will be explained in a later guide.
-
 ***
 
 ## Step 2: Store component state
@@ -90,13 +84,13 @@ initialized.set(true)  // Set initialized to true
 Using `initialized.set(true)` ensures that state changes are properly managed within the ECS system.
 
 :::hint{type="info"}
-ℹ️    **Info**
+💡 **State management in ECS**
 
-You will learn more about State in the [State Management](./../03_basics_tutorial/05_state_management.md) guide on the [Engine basics tutorial](./../03_basics_tutorial/index.md).
+Component states must be managed through `getMutableComponent()` to ensure proper updates.
 :::
 
 :::hint{type="success"}
-📝    **Checkpoint**
+📝  **Checkpoint**
 
 At this point, you have a component that stores an initialization state.
 :::
@@ -107,9 +101,7 @@ Next, modify the system to **only execute when this component is present**.
 
 ## Step 3: Restrict execution using a query
 
-Modify the system so that it **only runs for entities that have the `HelloComponent`.
-
-This prevents the sphere from being created in every scene.
+Modify the system so that it **only runs for entities that have the** `HelloComponent`. This prevents the sphere from being created in every scene.
 
 ```typescript
 export const HelloWorldSystem = ECS.defineSystem({
@@ -131,7 +123,7 @@ export const HelloWorldSystem = ECS.defineSystem({
 })
 ```
 
-### How does this solve the problem?
+### How does this fix the issue?
 
 | **Issue**                     | **Before**                              | **Now**                                        |
 | :---------------------------- | :-------------------------------------- | :--------------------------------------------- |
@@ -184,3 +176,24 @@ export const HelloWorldSystem = ECS.defineSystem({
 })
 ```
 
+## Confirming the changes
+
+To verify your system is now **scene-specific**:
+
+1. Run the project in iR Engine.
+2. Open the "**hello-final**"** **scene (pre-configured to include `HelloComponent`).
+3. ✅ The **sphere should appear in the scene**.
+4. Switch to another scene (e.g., `default-project/apartment`).
+5. ✅ **The sphere should not appear** in unrelated scenes.
+
+If both conditions are met, your system is now correctly **scene-specific**.
+
+:::hint{type="success"}
+🎉 You have successfully restricted the system’s execution using components!
+:::
+
+## ➡️  Next steps
+
+Now that the sphere creation is **locked behind a component**, let’s optimize execution using **queries**.
+
+📌  Continue to [Define a Query](./05_query.md).
