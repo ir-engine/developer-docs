@@ -34,7 +34,7 @@ iR Engine supports **projects**, which function similarly to projects in other g
 
 Each project’s **source code runs globally**, which will become an important concept later.
 
-### **Projects directory structure**
+### Projects directory structure
 
 By default, iR Engine scans for projects inside:
 
@@ -61,7 +61,7 @@ To integrate a project’s source code with iR Engine, you must:
 1. **Import iR Engine modules**.
 2. **Export the code so the engine can execute it**.
 
-### **Project configuration file**
+### Project configuration file
 
 Each project has an `xrengine.config.ts` file, which registers it with the engine:
 
@@ -88,7 +88,7 @@ For now, just remember: **this file tells iR Engine how to load your project**.
 
 In this tutorial, we will modify a **sphere primitive** in the scene.
 
-### **Importing spatial components**
+### Importing spatial components
 
 Since the sphere is a **spatial** object, we must import components from the **spatial engine module**:
 
@@ -100,7 +100,7 @@ import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene
 import { Vector3 } from 'three'
 ```
 
-### **Importing ECS utilities**
+### Importing ECS utilities
 
 To manage entities, we also import **ECS functions**:
 
@@ -112,17 +112,17 @@ import { ECS } from '@ir-engine/packages/ecs'
 
 Now that we understand the project structure, let's modify the **sphere’s geometry**.
 
-### **Updating the geometry type**
+### Updating the geometry type
 
 Instead of hardcoding the value `1` for a sphere, we will use a readable **enum**.
 
-### **Steps**
+### Steps
 
 1. Open `ir-tutorial-hello/src/Hello.ts`.
 2. Import `GeometryTypeEnum` from the `scene/constants/` module.
 3. Replace `1` with `GeometryTypeEnum.SphereGeometry`.
 
-### **Where is the enum?**
+### Where is the enum?
 
 If you’re unsure where the enum is located, use these hints:
 

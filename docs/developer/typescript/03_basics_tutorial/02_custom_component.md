@@ -1,93 +1,152 @@
-<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
-<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
-
 # Custom Components
 
-The `defineComponent` function accepts a `ComponentPartial` that has multiple fields available.  
-```ts
-// Define our component
+Learn how to define custom components in iR Engine using `defineComponent()`, structure component data with `ComponentPartial`, and configure essential properties.
+
+## Introduction
+
+A **component** is a fundamental part of the **Entity Component System (ECS)** pattern in iR Engine. Components store data that describes **an entity’s properties and behaviors**, allowing systems to process and update them efficiently.
+
+***
+
+## Creating a component
+
+To define a new component, use `defineComponent()`, which accepts a `ComponentPartial` object containing key configuration fields.
+
+### Example: Defining a simple component
+
+The following code creates a **HelloComponent** that tracks whether an entity has been initialized:
+
+```tsx
 const HelloComponent = ECS.defineComponent({
-  name: 'ee.tutorial.HelloComponent',
-  jsonID: 'EE_tutorial_hello',
-  onInit: () => { return { initialized: false } }
+  name: 'ir-engine.tutorial.HelloComponent',
+  jsonID: 'IR_ENGINE_TUTORIAL_HELLO',
+  onInit: () => ({ initialized: false }) // Default state
 })
 ```
 
-:::note
-See [Typescript.Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype) for a reference of what Partials are.  
+This component assigns an `initialized` property to entities, allowing a system to determine whether an entity has already processed specific logic.
+
+***
+
+## Understanding `ComponentPartial`
+
+The `defineComponent()` function accepts a **ComponentPartial** object, which provides flexible definitions for components.
+
+:::hint{type="info"}
+ℹ️  **What are TypeScript Partials?**
+
+A **partial** in TypeScript means that some properties are optional during definition but are required when used.
+
+📌 **Reference:** See [TypeScript.Partial](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype) for more details.
 :::
 
-Lets review what each of these fields do and how to use them.   
-## `name`
-`name` is a `string` that defines the human readable label for the component that we are creating.  
-It will be displayed in the editor and debugging tools.  
-```ts
-name: 'ee.tutorial.HelloComponent',
-```
-As we saw before, the engine does not define strict naming requirements for this field, but it does define a [naming convention](./styling#id-naming-convention) that is good practice to follow in your projects.  
+The `ComponentPartial` object includes several key properties that define how a component behaves.
 
-## `jsonID`
-`jsonID` is an optional `string` that defines the internal ID used to reference this component in JSON data.  
-```ts
-jsonID: 'EE_tutorial_hello',
-```
-As we saw before, this field will be used by the engine to define the name of a [glTF](https://www.khronos.org/gltf) extension.   
-Because of this, the `jsonID` field has very specific [naming requirements](./styling#jsonid-naming-requirements) that must be followed.  
+***
 
-## `onInit`
-`onInit` is a function that will be called once when the Component is added to an entity _(ie: initialized)_.  
-It returns the shape of the Component's runtime data, which has the type `Schema`.  
-```ts
+## Core component properties
+
+Below is a breakdown of the **most important properties** in `ComponentPartial` and how they affect component behavior.
+
+### 1. `name` (Required)
+
+The `name` property defines a **human-readable label** for the component. This name appears in **Studio, debugging tools, and logs**, making it easier to identify.
+
+```tsx
+name: 'ir-engine.tutorial.HelloComponent'
+```
+
+📌 **Follow the naming conventions** outlined in [Coding Style and Best Practices](https://www.notion.so/styling#id-naming-convention).
+
+***
+
+### 2. `jsonID` (Optional, but recommended)
+
+The `jsonID` property assigns an **internal identifier** used when **serializing components into JSON**. This is required for **glTF-based exports and scene persistence**.
+
+```tsx
+jsonID: 'IR_ENGINE_TUTORIAL_HELLO'
+```
+
+📌 **Follow the required JSON naming format** outlined in [Coding Style and Best Practices](https://www.notion.so/styling#jsonid-naming-requirements).
+
+***
+
+### 3. `onInit` (Optional, but commonly used)
+
+The `onInit` property defines a function that executes **once** when the component is added to an entity. It sets the **initial state** of the component.
+
+```tsx
+onInit: () => ({ initialized: false })
+```
+
+This function **returns an object** that describes the component’s **runtime data structure**.
+
+📌 **How does **`onInit`** work?**
+
+The `onInit` function returns the shape of the component’s runtime data, which has the type `Schema`.
+
+```tsx
 onInit?: (this: SoAComponentType<Schema>, entity: Entity) => ComponentType & OnInitValidateNotState<ComponentType>
 // this    : `@internal` The component partial itself.
-// entity  : The Entity to which this Component is being assigned.
+// entity  : The entity to which this Component is being assigned.
 // returns : The `Schema` (aka shape) of the component's runtime data.
 ```
-A Component's Schema can contain any type of data that you want.   
-In our example from before, we saw how to use this data to store our `initialized` state variable inside the component, instead of storing it in our module.  
 
-## Other fields
-The `ComponentPartial` type accepts multiple other fields that we haven't needed for our simple HelloComponent example. These fields are:  
-`schema`, `toJSON`, `onSet`, `onRemove`, `reactor`, `errors`.  
+This means that `onInit` is responsible for defining **what kind of data the component holds**. You can use this to store **state variables, metadata, or any relevant information** about an entity.
 
-We will explore them further in later sections of the tutorial.  
+***
 
-<TechnicalNote>
-The data used to create a Component with `defineComponent` is declared by the `ComponentPartial` interface.
-This type exists so that some of the properties of Components are optional when defining them, but required during normal use.  
+## Additional component properties
 
-This is the shape of the `ComponentPartial` interface, defined in the [`ComponentFunctions.ts`](https://github.com/ir-engine/ir-engine/blob/dev/packages/ecs/src/ComponentFunctions.ts) file:
-```ts
+While the properties above define the **basic functionality** of a component, `defineComponent()` supports several **advanced features**.
+
+| **Property** | **Purpose**                                              |
+| :----------- | :------------------------------------------------------- |
+| `schema`     | Defines the **expected structure** of component data.    |
+| `toJSON`     | **Serializes** the component’s data when saving a scene. |
+| `onSet`      | Triggers when the component’s data updates.              |
+| `onRemove`   | Triggers when the component is removed from an entity.   |
+| `reactor`    | Defines **React-based side effects** for the component.  |
+| `errors`     | Stores error-handling information.                       |
+
+You don’t need to use these properties in every component. However, understanding them helps when creating more complex systems.
+
+***
+
+## Full `ComponentPartial` interface
+
+The following is the full interface for `ComponentPartial`, as defined in <a href="https://github.com/ir-engine/ir-engine/blob/dev/packages/ecs/src/ComponentFunctions.ts" target="_blank">ComponentFunctions.ts</a>.
+
+```tsx
 {
   name: string
   jsonID?: string
   onInit?: (this: SoAComponentType<Schema>, entity: Entity) => ComponentType & OnInitValidateNotState<ComponentType>
 
-  // A Component's Schema is the shape of its runtime data.
+  // Defines the expected structure of the component’s runtime data
   schema?: Schema
 
-  // Serializer function called when the component is saved to a snapshot or scene file.
-  // Its logic must convert the component's runtime data into a JSON object.
-  // entity    : The Entity to which this Component is assigned.
-  // component : The Component's global data (aka State).
+  // Converts component data to JSON format when saving a scene
   toJSON?: (entity: Entity, component: State<ComponentType>) => JSON
 
-  // Called when the component's data is updated via the setComponent function.
-  // This is where deserialization logic should happen.
-  // entity    : The Entity to which this Component is assigned.
-  // component : The Component's global data (aka State).
-  // json      : The JSON object that contains this component's serialized data.
+  // Handles updates to the component’s data
   onSet?: (entity: Entity, component: State<ComponentType>, json?: SetJSON) => void
 
-  // Called when the Component is removed from an Entity
+  // Handles cleanup logic when the component is removed from an entity
   onRemove?: (entity: Entity, component: State<ComponentType>) => void | Promise<void>
 
-  // Defines the React.FC (Function Component) async logic of the resulting Component type.
-  // Any side-effects that depend on the component's data should be defined here.
+  // Defines React-based logic related to this component
   reactor?: React.FC
 
   errors?: ErrorTypes[]
 }
 ```
-</TechnicalNote>
 
+***
+
+## Next steps
+
+Now that you know how to define a custom component, the next step is **using queries** to find and process entities dynamically.
+
+📌 **Continue to** Defining Queries.

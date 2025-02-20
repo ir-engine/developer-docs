@@ -1,87 +1,101 @@
-<!-- import { TechnicalNote } from '@site/src/components/TechnicalNote'; -->
-<!-- import { UnstyledDetails } from '@site/src/components/UnstyledDetails'; -->
+# Coding style and best practices
 
-# Styling your code
+Structure your code effectively to make it easier to read, maintain, and collaborate on.
 
-In the last step of the [Hello World Tutorial](/developer/typescript/gettingStarted/hello/component#create) we created a custom Scene Component.  
-But we never really explained how we did it.
+## Code formatting and linting
 
-We also skimmed over multiple concepts that are very important for working with the Engine. So lets start on the right foot and explain them now.  
-Also, now that we are into it, we are going to style our code in a way that matches iR Engine's code a bit more.  
+Use automated formatting and linting tools to keep your code clean and consistent:
 
-Lets start with Styling.  
+- <a href="https://prettier.io/docs/install" target="_blank">**Prettier**</a>: Automatically formats your code.
+- <a href="https://www.npmjs.com/package/eslint" target="_blank">**ESLint**</a>: Analyzes your code and enforces best practices.
 
-We took a lot of shortcuts in previous sections of the tutorial.  
-This made learning much simpler to get started with, but we also left out a few concepts that will make our codebase much easier to navigate as soon as our project starts growing.  
+Ensure both tools are installed and enabled in your development environment.
 
-## ID Naming Convention
+***
 
-Lets start with the simplest style change.  
-You may have noticed that we changed the `uuid` and `NameComponent` in the HelloWorld's final solution.  
-The engine doesn't have a standard for these names yet, but this is a good naming convention that you can follow:
+## Naming conventions
 
-- Separate words with `.`
-- Start with the namespace/organization/author of your project
-- Follow by the project name of the thing that you are naming
-- Follow by the name of the thing
-- Separate multi-word names with `-`
-```md
+Using clear and structured names helps you understand, navigate, and maintain your code. Follow these guidelines to name different elements correctly.
 
-# Example
-Namespace  : ee
-Project    : tutorial
-Thing      : HelloSystem
+### Capitalization styles
 
-Result     : ee.tutorial.HelloSystem
-Multi-word : ee.multi-word-example.HelloSystem
+Use these capitalization rules to keep your code consistent:
+
+| Type                  | Convention     | Example           |
+| :-------------------- | :------------- | :---------------- |
+| Classes & definitions | `CapitalCase`  | `CapsuleGeometry` |
+| Variables & functions | `camelCase`    | `createEntity()`  |
+| Enums & namespaces    | `CAPITAL_CASE` | `ENTITY_TYPE`     |
+
+### Component and system naming
+
+Follow a **dot-separated format** when naming components and systems. This keeps them organized and easy to identify.
+
+Each name should include:
+
+- **Namespace**: The name of your organization or module.
+- **Project**: The project to which the system belongs.
+- **System name**: A meaningful identifier for the system.
+
+📌 **Example:**
+
+```plaintext
+ir-engine.tutorial.HelloSystem
 ```
 
-:::note[assignment zero]
-This is not really an assignment, as we already did this before.  
-But see if you have any names leftover in your code that are not using this standard, and change them so that they do.  
-:::
+For multi-word names, avoid underscores and use camelCase within dot-separated segments:
 
-## `jsonID` Naming Requirements
-
-You may have also noticed that the `jsonID` field does not respect the naming convention we just explained above.  
-Internally, the field `jsonID` will be used to define the name of a [glTF](https://www.khronos.org/gltf) extension.  
-As such, the engine has a different standard for them:
-- Separate words and multi-words with `_`
-- Start with the namespace/organization/author of your project in UPPERCASE
-- Follow by the project name of the thing that you are naming
-- Follow by the name of the thing
-```md
-
-# Example
-Namespace  : EE
-Project    : tutorial
-Thing      : hello
-
-Result     : EE_tutorial_hello
-Multi-word : EE_multi_word_example_hello
+```plaintext
+ir-engine.multiwordexample.HelloSystem
 ```
 
-## Arrow Functions
+### Component JSON identifiers (`jsonID`)
 
-We talked about Javascript [`Arrow Functions`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) during one of the earlier sections of the HelloWorld tutorial. They are used a lot throughout the engine's codebase.  
+The `jsonID` field follows a different convention because iR Engine uses it for **glTF extensions**. Follow these rules:
 
-They are specially helpful when defining Systems and Components.  
-This is how a `defineSystem` call would look like using each type of function:
-```ts title="Regular Function   : Simpler, but less common in iR Engine"
-// Our function
-function sayhello() { console.log("Hello World") }
+- Use underscores (`_`) instead of dots (`.`).
+- Write the namespace in uppercase (`IR_ENGINE`).
+- Use lowercase with underscores for the project and component names.
 
-// Our System
+📌 **Example:**
+
+```plaintext
+IR_ENGINE_TUTORIAL_HELLO
+```
+
+For multi-word names:
+
+```plaintext
+IR_ENGINE_MULTIWORD_EXAMPLE_HELLO
+```
+
+### Avoid unnecessary abbreviations or underscores
+
+Keep names clear and easy to read:
+
+✅ Use full words unless it's a common acronym (e.g., `HTTPRequest`).
+✅ Avoid shortening words unnecessarily (`PlayerController`, not `PlrCtrl`).
+✅ Use camelCase instead of underscores for variable names (`playerPosition`, not `player_position`).
+
+Good naming makes your code easier to understand at a glance.
+
+***
+
+## TypeScript typing
+
+Always use **explicit TypeScript types** for functions, variables, and objects. This prevents errors and makes your code easier to maintain.
+
+***
+
+## Use arrow functions
+
+Arrow functions make your code more concise and readable. They are the preferred way to define functions inside objects or systems.
+
+### Arrow function (recommended)
+
+```typescript
 const HelloSystem = ECS.defineSystem({
-  uuid: 'ee.tutorial.HelloSystem',
-  execute: sayhello,
-  insert: { after: PhysicsSystem }
-})
-```
-```ts title="Arrow Function   : How defining a multi-field object usually looks like"
-// Our function can be declared inside our system. Doesn't need a name
-const HelloSystem = ECS.defineSystem({
-  uuid: 'ee.tutorial.HelloSystem',
+  uuid: 'ir-engine.tutorial.HelloSystem',
   execute: () => {
     console.log("Hello World")
   },
@@ -89,92 +103,70 @@ const HelloSystem = ECS.defineSystem({
 })
 ```
 
-As you can see, this gives us a very small gain for this tiny example.  
-But, when the codebase grows, this style can make a big difference in the readability of our code.  
+### Regular function (less common in iR Engine)
 
-Arrow functions are also used extensively all throughout the engine's codebase.   
-So, even if you don't prefer them, at least you need to know about how they work so that you are not confused the first time you find code using this style.  
+```typescript
+function sayHello() { console.log("Hello World") }
 
-:::important[first assignment]
-Change the style of the BasicsTutorial code:  
-. Remove any named functions that are assigned to an object  
-. Use arrow functions directly as object fields  
-
-There are not that many to change. We only had one named function! :)
-:::
-
-<TechnicalNote title="Solution">
-
-```ts
-// Define our system
-export const HelloSystem = ECS.defineSystem({
-  uuid: 'ee.tutorial.HelloSystem',
-  //highlight-start
-  execute: () => {
-  //highlight-end
-    for (const entity of helloQuery()) {
-      let { initialized } = ECS.getMutableComponent(entity, HelloComponent)
-      if (initialized.value) continue
-      initialized.set(true)
-
-      ECS.setComponent(entity, NameComponent, 'ee.tutorial.hello-entity')
-      ECS.setComponent(entity, VisibleComponent)
-      ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 1, 0) })
-      ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTypeEnum.SphereGeometry })
-    }
-  //highlight-start
-  },
-  //highlight-end
+const HelloSystem = ECS.defineSystem({
+  uuid: 'ir-engine.tutorial.HelloSystem',
+  execute: sayHello,
   insert: { after: PhysicsSystem }
 })
 ```
-<UnstyledDetails title="Full Solution">
 
-```ts title="ir-tutorial-basic/src/step1.ts" showLineNumbers
+:::hint{type="info"}
+ℹ️  **Why use arrow functions?**
+
+- Makes your code **shorter** and **easier to read**.
+- Matches the **style used across iR Engine’s codebase**.
+- Works well for **defining system logic**.
+:::
+
+Use arrow functions whenever you define functions inside objects or systems.
+
+***
+
+## Apply best practices
+
+Here’s an example of a properly structured system following all best practices.
+
+```typescript
 import { ECS } from '@ir-engine/packages/ecs'
+import { PhysicsSystem } from '@ir-engine/packages/spatial/src/physics/PhysicsModule'
 import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
 import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
 import { TransformComponent } from '@ir-engine/packages/spatial/src/transform/components/TransformComponent'
 import { PrimitiveGeometryComponent } from '@ir-engine/packages/engine/src/scene/components/PrimitiveGeometryComponent'
 import { Vector3 } from 'three'
 import { GeometryTypeEnum } from '@ir-engine/packages/engine/src/scene/constants/GeometryTypeEnum'
-import { PhysicsSystem } from '@ir-engine/packages/spatial'
 
-// Define our component
+// Define a structured component name
 export const HelloComponent = ECS.defineComponent({
-  name: 'ee.tutorial.HelloComponent',
-  jsonID: 'EE_tutorial_hello',
-  onInit: () => { return { initialized: false } }
+  name: 'ir-engine.tutorial.HelloComponent',
+  jsonID: 'IR_ENGINE_TUTORIAL_HELLO',
+  onInit: () => ({ initialized: false })
 })
 
-// Define the query that will find our Scene's Entity
+// Define the query to find entities with HelloComponent
 const helloQuery = ECS.defineQuery([HelloComponent])
 
-// Define our system
+// Define the system using arrow functions
 export const HelloSystem = ECS.defineSystem({
-  uuid: 'ee.tutorial.HelloSystem',
-  //highlight-start
+  uuid: 'ir-engine.tutorial.HelloSystem',
   execute: () => {
-    //highlight-end
     for (const entity of helloQuery()) {
-      // Check if we have already initialized our Sphere
       let { initialized } = ECS.getMutableComponent(entity, HelloComponent)
       if (initialized.value) continue
-      initialized.set(true)  // Set our initialized state to true
+      initialized.set(true)
 
-      ECS.setComponent(entity, NameComponent, 'ee.tutorial.hello-entity')
+      ECS.setComponent(entity, NameComponent, 'ir-engine.hello-entity')
       ECS.setComponent(entity, VisibleComponent)
       ECS.setComponent(entity, TransformComponent, { position: new Vector3(0, 1, 0) })
       ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: GeometryTypeEnum.SphereGeometry })
     }
-  //highlight-start
   },
-  //highlight-end
   insert: { after: PhysicsSystem }
 })
 ```
-</UnstyledDetails>
-<!-- Full Solution End -->
-</TechnicalNote>
-<!-- Solution End -->
 

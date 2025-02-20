@@ -44,11 +44,11 @@ This query **returns all entities** that have the `HelloComponent`.
 
 Here's a table to help you understand the query:
 
-| **Function**        | **Description**                                                   |
-| :------------------ | :---------------------------------------------------------------- |
-| defineQuery(\[...]) | Creates a query to filter entities based on components.           |
-| \[HelloComponent]   | The query will match **only** entities containing this component. |
-| helloQuery()        | When called, it returns **all matching entities**.                |
+| **Function**         | **Description**                                                   |
+| :------------------- | :---------------------------------------------------------------- |
+| `defineQuery([...])` | Creates a query to filter entities based on components.           |
+| `[HelloComponent]`   | The query will match **only** entities containing this component. |
+| `helloQuery()`       | When called, it returns **all matching entities**.                |
 
 At this stage, the query **does not run automatically**. You need to integrate it into your system.
 
@@ -101,10 +101,10 @@ export const HelloSystem = ECS.defineSystem({
 })
 ```
 
-### **How does this improve the system?**
+### How does this improve the system?
 
 | **Problem**                      | **Before**                     | **Now**                                       |
-| -------------------------------- | ------------------------------ | --------------------------------------------- |
+| :------------------------------- | :----------------------------- | :-------------------------------------------- |
 | Entities were processed manually | Had to store entity references | Query retrieves matching entities dynamically |
 | Inefficient execution            | System executed every frame    | Now only executes for relevant entities       |
 | No filtering mechanism           | Processed all entities         | Now limited to entities with `HelloComponent` |
@@ -199,6 +199,6 @@ By using `defineQuery()`, your system now **retrieves entities dynamically inste
 
 ## ➡️  Next steps
 
-Now that you have structured **entities, components, systems, and queries**, it's time to **recap what you've learned and move forward**.
+Now that you have structured **entities, components, systems, and queries**, it's time to recap what you've learned and move forward.
 
 📌 Continue to [Recap and next steps](./90_recap.md) .

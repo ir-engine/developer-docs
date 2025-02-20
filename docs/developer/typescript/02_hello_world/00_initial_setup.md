@@ -1,6 +1,6 @@
 # Initial setup
 
-In this tutorial, you will use the **Hello World project** to learn how to work with iR Engine. This project provides a minimal working example to help you explore the engine’s core concepts.
+In this tutorial, you will use the <a href="https://github.com/ir-engine/ir-tutorial-hello" target="_blank">Hello World project</a> to learn how to work with iR Engine. This project provides a minimal working example to help you explore the engine’s core concepts.
 
 ## Prerequisites
 
