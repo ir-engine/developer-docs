@@ -71,6 +71,6 @@ This ensures the engine loads and executes `Hello.ts` when the project starts.
 
 ## ➡️  Next steps
 
-Your project is minimal but introduces **critical engine concepts**. Next, you will explore **how iR Engine structures data and logic using the ECS pattern**.
+Your project is minimal but introduces critical engine concepts. Next, you will explore **how iR Engine structures data and logic using the ECS pattern**.
 
-Continue to [The ECS pattern](./01_ecs.md) to understand the engine’s core architecture.
+📌 Continue to [The ECS pattern](./01_ecs.md) to understand the engine’s core architecture.

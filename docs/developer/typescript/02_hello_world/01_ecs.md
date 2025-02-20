@@ -1,8 +1,8 @@
 # The ECS pattern
 
-iR Engine is built on the **Entity-Component-System (ECS)** pattern, a **modular and scalable** architecture used for game engines and simulations.
+Now that your Hello World project is set up, it is time to understand the most crucial concept of the engine: **The ECS pattern.**
 
-Understanding ECS is essential to working with iR Engine. This guide provides an overview of how ECS organizes **entities, components, and systems** to define behavior.
+This guide provides an overview of how ECS **organizes** **entities, components, and systems** to define behavior.
 
 ***
 
@@ -26,9 +26,11 @@ The **Entity-Component-System (ECS) pattern** is a **data-driven architecture** 
 
 This separation allows for **efficient, modular, and reusable** code.
 
+:::hint{type="info"}
 💡 **Why ECS?**
 
 Unlike traditional object-oriented programming, ECS avoids deep inheritance hierarchies. Instead, it **stores data separately** and **applies logic only when needed**, improving performance.
+:::
 
 ***
 
@@ -63,13 +65,14 @@ ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 
 To display an entity in a scene, iR Engine requires specific components:
 
-| **Component**                                             | **Purpose**                                                  |
-| :-------------------------------------------------------- | :----------------------------------------------------------- |
-| `NameComponent`                                           | Assigns a human-readable name to the entity.                 |
-| `VisibleComponent`                                        | Ensures the entity is **visible** in the scene.              |
-| `TransformComponent`                                      | Defines the **position, rotation, and scale** of the entity. |
-| - `PrimitiveGeometryComponent` &#xA;or:
-- `MeshComponent` | Assigns a **basic 3D shape** or a **mesh **to the entity.    |
+| **Component**                                      | **Purpose**                                                  |
+| :------------------------------------------------- | :----------------------------------------------------------- |
+| `NameComponent`                                    | Assigns a human-readable name to the entity.                 |
+| `VisibleComponent`                                 | Ensures the entity is **visible** in the scene.              |
+| `TransformComponent`                               | Defines the **position, rotation, and scale** of the entity. |
+| `PrimitiveGeometryComponent` or a  `MeshComponent` | Assigns a **basic 3D shape** or a **mesh **to the entity.    |
+
+See more details about these components in the following section.
 
 ***
 
@@ -127,6 +130,8 @@ ECS.setComponent(entity, PrimitiveGeometryComponent, { geometryType: 1 })
 
 The number `1` represents a [`SphereGeometry`](https://github.com/ir-engine/ir-engine/blob/dev/packages/engine/src/scene/constants/GeometryTypeEnum.ts#L28).
 
+***
+
 ## Understand system logic
 
 A **system** is responsible for processing logic on entities **that contain specific components**.
@@ -156,4 +161,3 @@ You will define a **system** in the following guides.
 Now that you understand **ECS**, it’s time to start your first task, **modify an entity in iR Engine**.&#x20;
 
 Continue to [Work in the engine](./02_engine.md) to modify your project’s source code**,** and start interacting with the application.
-

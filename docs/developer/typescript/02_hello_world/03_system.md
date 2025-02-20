@@ -22,7 +22,7 @@ A **system** executes logic on entities that contain specific components. Withou
 
 Currently, your **entity creation logic** runs immediately when the project loads.
 
-📌 To follow **best practices**, move it into a function.
+📌 To follow best practices, move it into a function.
 
 ```typescript
 let initialized = false // Track execution state

@@ -36,7 +36,7 @@ To restrict the sphere’s execution, you need to:
 2. **Use a query** to execute logic only when an entity has this component.
 3. **Ensure the system only runs under the right conditions**.
 
-By following this approach, your system will **only create the sphere when needed** rather than running globally.
+By following this approach, your system will only create the sphere when needed rather than running globally.
 
 ***
 
@@ -54,7 +54,7 @@ export const HelloComponent = ECS.defineComponent({
 })
 ```
 
-Right now, this component **does nothing on its own**. You will connect it to your system in the next step.
+Right now, this component does nothing on its own. You will connect it to your system in the next step.
 
 ### What does this do?
 
