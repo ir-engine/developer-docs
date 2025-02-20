@@ -1,4 +1,4 @@
-# Custom Components
+# Defining components
 
 Learn how to define custom components in iR Engine using `defineComponent()`, structure component data with `ComponentPartial`, and configure essential properties.
 
@@ -56,7 +56,9 @@ The `name` property defines a **human-readable label** for the component. This n
 name: 'ir-engine.tutorial.HelloComponent'
 ```
 
-📌 **Follow the naming conventions** outlined in [Coding Style and Best Practices](https://www.notion.so/styling#id-naming-convention).
+:::hint{type="info"}
+📌 **Follow the naming conventions** outlined in [Coding style and best practices](./01_styling_code.md).
+:::
 
 ***
 
@@ -68,9 +70,9 @@ The `jsonID` property assigns an **internal identifier** used when **serializing
 jsonID: 'IR_ENGINE_TUTORIAL_HELLO'
 ```
 
+:::hint{type="info"}
 📌 **Follow the required JSON naming format** outlined in [Coding Style and Best Practices](https://www.notion.so/styling#jsonid-naming-requirements).
-
-***
+:::
 
 ### 3. `onInit` (Optional, but commonly used)
 
@@ -82,7 +84,7 @@ onInit: () => ({ initialized: false })
 
 This function **returns an object** that describes the component’s **runtime data structure**.
 
-📌 **How does **`onInit`** work?**
+**How does **`onInit`** work?**
 
 The `onInit` function returns the shape of the component’s runtime data, which has the type `Schema`.
 
@@ -145,8 +147,8 @@ The following is the full interface for `ComponentPartial`, as defined in <a hre
 
 ***
 
-## Next steps
+## ➡️  Next steps
 
 Now that you know how to define a custom component, the next step is **using queries** to find and process entities dynamically.
 
-📌 **Continue to** Defining Queries.
+📌 Continue to [Define a Query](./../02_hello_world/05_query.md).

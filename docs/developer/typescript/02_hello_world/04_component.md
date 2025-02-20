@@ -1,4 +1,4 @@
-# Create a custom Component
+# Create a scene component
 
 So far, your **Hello World system** successfully creates a sphere. However, there is a **critical issue:**
 

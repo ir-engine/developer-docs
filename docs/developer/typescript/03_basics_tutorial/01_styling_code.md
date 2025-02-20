@@ -6,8 +6,8 @@ Structure your code effectively to make it easier to read, maintain, and collabo
 
 Use automated formatting and linting tools to keep your code clean and consistent:
 
-- <a href="https://prettier.io/docs/install" target="_blank">**Prettier**</a>: Automatically formats your code.
-- <a href="https://www.npmjs.com/package/eslint" target="_blank">**ESLint**</a>: Analyzes your code and enforces best practices.
+- <a href="https://prettier.io/docs/install" target="_blank">Prettier</a>: Automatically formats your code.
+- <a href="https://www.npmjs.com/package/eslint" target="_blank">ESLint</a>: Analyzes your code and enforces best practices.
 
 Ensure both tools are installed and enabled in your development environment.
 
@@ -170,3 +170,6 @@ export const HelloSystem = ECS.defineSystem({
 })
 ```
 
+## ➡️  Next steps
+
+Now that you’ve structured your code correctly, continue learning about [Custom Components](./02_custom_component.md).
