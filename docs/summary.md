@@ -105,3 +105,5 @@
       - [02_testDrivenDevelopment.md](developer/typescript/60_mastery/60_testing/02_testDrivenDevelopment.md) 
   - [98_contributing](developer/typescript/98_contributing/index.md) 
   - [99_community](developer/typescript/99_community/index.md) 
+
+- [API Reference](https://ir-engine-mt-dev-api.theinfinitereality.io/swagger.json)
