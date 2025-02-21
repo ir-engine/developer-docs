@@ -1,11 +1,9 @@
 # Introduction
 
 :::hint{type="warning"}
-🚧 **Site under maintenance and updates**
+🚧 **Site under maintenance**
 
-This documentation has recently been migrated from a different tool and is currently being manually adjusted. You may encounter format issues, such as React components not rendering correctly or code blocks not displaying as expected. We are actively working to resolve these issues, and everything should be fixed soon.
-
-Additionally, this documentation is undergoing a comprehensive update as subject matter experts (SMEs) review and update each page. We appreciate your patience while we improve the site for a better experience.
+This documentation is undergoing a comprehensive update as subject matter experts (SMEs) review and update each page. We appreciate your patience while we improve the site for a better experience.
 :::
 
 **Welcome to the iR Developers documentation!👋**&#x20;

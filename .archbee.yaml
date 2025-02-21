@@ -2,14 +2,4 @@ root: ./docs
 structure:
   readme: introduction.md
   summary: summary.md
-  docTreeOptions:
-  openApiTryIt: false
-  showDownloadOpenApiFile: true
-  shouldCreateSchemaCategory: true
-  shouldCreateIntro: true
-  openApiLanguageExamples:
-    - value: python
-      label: py
-    - value: javascript
-      label: js
 publishSpace: true
