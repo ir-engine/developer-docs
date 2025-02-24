@@ -12,11 +12,12 @@ This guide uses the Hello.ts file from the [Hello World tutorial](./../02_hello_
 
 In iR Engine, entities do not have physics properties by default. If you want an entity to interact with forces like gravity, collisions, and movement, you need to explicitly define its physics behavior.&#x20;
 
-For this excersice we'll work with the last implementation of the Hello.ts file from [Hello World tutorial](./../02_hello_world/index.md):
+For this excersice we'll work with the last implementation of the `Hello.ts` file from [Hello World tutorial](./../02_hello_world/index.md):
 
-::::codedrawer{title="Hello.ts file"}
-:::codeblocktabs-examples
-```javascript
+:::expandable-heading
+`Hello.ts`** file latest version**
+
+```typescript
 import { ECS } from '@ir-engine/packages/ecs'
 import { NameComponent } from '@ir-engine/packages/spatial/src/common/NameComponent'
 import { VisibleComponent } from '@ir-engine/packages/spatial/src/renderer/components/VisibleComponent'
@@ -58,12 +59,6 @@ export const HelloSystem = ECS.defineSystem({
 })
 ```
 :::
-
-:::codeblocktabs-responses
-```javascript
-```
-:::
-::::
 
 ***
 
@@ -231,13 +226,8 @@ export const PhysicsSystem = ECS.defineSystem({
 
 ✅ Use `ColliderComponent` to specify how an entity collides.
 
-✅ Adjust the **spawn position** to test gravity and movement.
-
-✅ The entity should now **fall** and **collide with the avatar** in the scene.
-
 ***
 
 ## ➡️  Next steps
 
 [State Management](./05_state_management.md)&#x20;
-
