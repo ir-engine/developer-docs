@@ -1,21 +1,42 @@
 # Locations
 
-**Locations** can be thought of as instantiations of a scene.  
-They allow scenes to be connected to a session that can be shared between multiple devices at the same time.
+Locations in **iR Engine** serve as **instances of a scene**, enabling **real-time multi-user interactions**. They provide a structured way to manage **shared virtual environments**, supporting **scalability** and **session persistence**.
 
-An **instance** is an individual session running at a location, in which users are connected together in real time. This allows the deployment to scale events and locations to potentially millions of concurrent users without having to support them all on a single instance. 
+## **Understanding Locations**
 
-There are two types of instances:
-- **World** instances: Handle the spatial objects in the scene.
-  _(such as avatars, vehicles and grabbables)_
-- **Media** instances: Handle realtime audio, video and screenshare.
+A **location** is a **persistent virtual environment** where multiple users can interact in **real time**.
 
-Media instances can be tied to a location, or exist ephemerally as a group call (called `parties`).
+Each location consists of **one or more instances**, which handle different types of data processing. This architecture allows **multiple users** to participate in scalable environments.
 
-Instances can also be customised with the `matchmaker` functionality to create private rooms.
+## Instances
 
-Locations can be loaded via the `/location/<locationName>` route, where `locationName` is the name of the location.
-iR Engine always adds locations `default`, `apartment` and `sky-station` by default to new projects.
+An **instance** is a single session running at a **location**. Users in the same instance share the **same environment** and can see and interact with each other.
 
 Adding a new location is done from the `/admin/locations` route, and live instances can be viewed from `/admin/instances`.
 
+### Types of instances
+
+There are two types of instances:
+
+| Instance Type      | Functionality                                                                             |
+| :----------------- | :---------------------------------------------------------------------------------------- |
+| **World Instance** | Handles all **spatial interactions** within the scene (e.g., avatars, vehicles, objects). |
+| **Media Instance** | Manages **real-time audio, video, and screen sharing**.                                   |
+
+Media instances can either belong to a location or exist as ephemeral group calls, known as parties.
+
+## Default locations
+
+Every new iR Engine project includes three predefined locations:
+
+| Location name | Description                            |
+| :------------ | :------------------------------------- |
+| `default`     | The default entry point for iR Engine. |
+| `apartment`   | A sample indoor environment.           |
+| `sky-station` | A sample outdoor environment.          |
+
+You can modify these locations or create new ones based on your project’s needs.
+
+## **Matchmaker functionalities**
+
+iR Engine allows custom instance configuration using `matchmaker` rules. This feature provides flexibility in controlling how users join and interact within locations.
