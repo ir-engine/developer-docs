@@ -1,46 +1,87 @@
 # Projects
 
-Projects are folders that contain all your custom code, assets and scenes.
-They are version controlled using git & github, and can be installed to any deployment
-with a single click.  
-_(more information about this on the [Locations chapter](/manual/concepts/locations) of the `Creator Manual`)_
+This guide explains the project structure, configuration, and key functionalities.
 
-Pictured below is an example of 4 projects installed.
-By default, only the `default-project` is installed, which in a production environment is read only.
-You can find the default project under `/packages/projects/default-project/`
+***
 
-In a production environment:
-- The builder process will install all projects according to the `project` database table
-- The builder process will download files from the storage provider.
+## Overview
 
-In a local development environment:
-- The local file system is always the source of truth.
+Projects in iR Engine are modular, **Git-based repositories** containing **custom code, assets, and scenes**. They enable developers to create, modify, and manage their own features, scenes, and content. Each project can be installed, updated, or removed independently, making it easy to **extend and customize** the engine.&#x20;
 
-To ensure that there is no accidental loss of data, any project folders added or removed from the file system will be automatically added or removed from the database. These project folders are also git repositories.
+Projects are stored in the `/packages/projects/` directory and can be managed in both **production** and **local development** environments.
 
-![](./images/projects-folder.png)
+### Project management by environment
 
-## File Structure
-Projects have a few conventions.
-- `assets/` is where files uploaded from the editor will be uploaded to
-- `src/` is where code assets can be served from
-- `tests/` is where test files can be run
-- `sceneName.scene.json` is a scene file
-- `sceneName.thumbnail.png` is an auto-generated scene thumbnail file
-- `xrengine.config.ts` the project configuration, where client routes, database models, feathers services and the project thumbnail can be defined
+The way projects are managed differs between **production** and **local development** environments.
 
-A project must also have a package.json to provide custom dependencies, and to define the project name, project version, and iR Engine version it is known to work with.
+| **Environment**       | **Project Management**                                                                                                                       |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Production**        | Projects are installed based on the `projects` database table, and assets are downloaded from a **storage provider**.                        |
+| **Local development** | The **local file system** is the source of truth. Any project folders added or removed are **automatically synchronized** with the database. |
 
-Systems imported from a scene MUST have their filename end with `System.ts` and be in the `/src/systems` folder.
-This is to optimize vite's code-splitting bundling process, as each potentially dynamically importable file will result in a new bundle with it's own copy of all of it's import dependencies.
+By default, only the **default-project** is installed. In production environments, it is **read-only** and is located at:
 
-`@ir-engine/*` monorepo dependencies will be symlinked and not needed, but some package managers _(such as pnpm)_ require these to be defined.
-If so, they should be defined in `peerDependencies` and kept up to date with the current engine version.
+```text
+/packages/projects/default-project/
+```
 
-## Config
-The iR Engine config file has the following options:
+Each project is also a **Git repository**, allowing for version control and seamless collaboration.
 
-```ts
+***
+
+## Project structure
+
+Projects follow a **standardized folder structure** to ensure consistency and maintainability.
+
+```text
+/packages/projects/[github-org]/[your-project]/
+│── assets/                # Uploaded files
+│── src/                   # Source code for custom logic and components
+│── tests/                 # Test files for automated testing
+│── [sceneName].scene.json # Scene configuration file
+│── [sceneName].thumbnail.png # Auto-generated scene preview
+│── xrengine.config.ts     # Project configuration file
+│── package.json           # Project metadata and dependencies
+```
+
+:::image{src="https://archbee-doc-uploads.s3.amazonaws.com/_ccd8qducXixEhn6az5xD/cOzkgVLoHf89Bqr087Jye_projects-folder.png" signedSrc="https://archbee-doc-uploads.s3.amazonaws.com/_ccd8qducXixEhn6az5xD/cOzkgVLoHf89Bqr087Jye_projects-folder.png" size="28" width="263" height="241" position="center" caption alt}
+
+:::
+
+### Key directories and files
+
+Before diving into project configuration, let’s break down the essential directories and files inside a project.
+
+| **Path**                    | **Description**                                            |
+| :-------------------------- | :--------------------------------------------------------- |
+| `assets/`                   | Stores **uploaded files** from the editor.                 |
+| `src/`                      | Contains **source code** for project logic.                |
+| `tests/`                    | Includes **test files** for validation.                    |
+| `[sceneName].scene.json`    | Defines **scene data** and object positions.               |
+| `[sceneName].thumbnail.png` | Stores an auto-generated **preview image** of a scene.     |
+| `xrengine.config.ts`        | The **main project configuration file**.                   |
+| `package.json`              | Defines **dependencies and compatibility** with iR Engine. |
+
+### Code organization
+
+To maintain optimal performance and efficient code-splitting, projects should follow these best practices:
+
+- **Scene-related systems** must be stored in `/src/systems/` and **end with** `System.ts`.
+  - This ensures that **Vite’s bundling process** properly handles dynamic imports.
+- Dependencies from `@ir-engine/*` are **symlinked** and do not need to be explicitly listed.
+  - However, **package managers like pnpm** may require them in `peerDependencies`.
+
+***
+
+## Project configuration (`xrengine.config.ts`)
+
+The `xrengine.config.ts` file defines how a project interacts with the engine. It allows customization of **routes, services, database settings, and world behavior**.
+
+### Configuration interface
+
+Below is the structure of the configuration file:
+
+```typescript
 export interface ProjectConfigInterface {
   onEvent?: string
   thumbnail?: string
@@ -61,63 +102,147 @@ export interface ProjectConfigInterface {
 }
 ```
 
-### Hooks
-The `onEvent` property is a relative path string that points to a file which 
-must expose an object with properties as follows:
+***
 
-```ts
+## Configuration properties
+
+Each property inside `xrengine.config.ts` defines specific behaviors for the project.
+
+### Event hooks (`onEvent`)
+
+The `onEvent` property specifies a **relative path** to a file that defines project lifecycle hooks. These hooks allow developers to execute **custom logic** when a project is installed, updated, or removed.
+
+```tsx
 export interface ProjectEventHooks {
   onInstall?: (app: Application) => Promise<any>
   onLoad?: (app: Application) => Promise<any>
   onUpdate?: (app: Application) => Promise<any>
   onUninstall?: (app: Application) => Promise<any>
-  /**
-   * get oEmbed for active routes that match URL
-   * return that project's onOEmbedRequest()
-   * if null, return default
-   */
   onOEmbedRequest?: (app: Application, url: URL, currentOEmbed: OEmbed) => Promise<OEmbed | null>
 }
 ```
 
-These functions are called when the project they belong to are installed, 
-updated (such as scenes saved) or uninstalled respectively. This is used in the 
-default iR Engine project to install the default avatars. 
-See `/packages/projects/default-project/projectEventHooks.ts`.
+| **Hook**          | **Trigger**                                                   |
+| :---------------- | :------------------------------------------------------------ |
+| `onInstall`       | When the project is **installed**.                            |
+| `onLoad`          | When the project is **loaded**.                               |
+| `onUpdate`        | When the project is **updated** (e.g., after saving a scene). |
+| `onUninstall`     | When the project is **removed**.                              |
+| `onOEmbedRequest` | When an **oEmbed preview** is requested for a project URL.    |
 
-### Thumbnail
-The `thumbnail` property is a string that must contain a URL to an image that will be used as the Studio thumbnail for the project.
+The **default iR Engine project** uses `onInstall` to install default avatars. You can find this implementation at:
 
-### Routes
-The `routes` property enables users to customise the various URL paths of their website utilizing dynamic loading of modules.
-- Key: Represents the path _(with leading forward slash included)_ to the resource,
-- Value: Represents a react component object which gets wrapped with `React.lazy()`
-- `props`: Passes options into the `react-dom-router.Route` component corresponding to the route.
+```text
+/packages/projects/default-project/projectEventHooks.ts
+```
 
-### Webapp Injection
-The `webappInjection` property allows logic to be run on all pages, and it is loaded before any routes are loaded.
-This will soon be extended to allow easy stylesheet injection and other configurables of the webapp.
+🔗 <a href="https://github.com/ir-engine/ir-engine/blob/dev/packages/projects/default-project/projectEventHooks.ts" target="_blank">Link to the file.</a>&#x20;
 
-### World Injection
-The `worldInjection` property allows logic to be run every time a new world is created  
-_(note: currently only when the engine is initialised)_.  
-This logic is loaded on all instances of the engine, such as a location and the editor.  
+### Thumbnail (`thumbnail`)
+
+The `thumbnail` property is used to specify a **URL to an image**, which will be displayed as the **project’s Studio thumbnail**.
+
+Example:
+
+```tsx
+thumbnail: "/static/thumbnail.jpg"
+```
+
+***
+
+### Custom routes (`routes`)
+
+The `routes` property enables projects to define **custom web routes**, dynamically loading React components.
+
+```typescript
+routes: {
+  '/': {
+    component: () => import('@ir-engine/client/src/pages/index'),
+    props: {
+      exact: true
+    }
+  },
+  '/admin': {
+    component: () => import('@ir-engine/client/src/pages/admin')
+  },
+  '/location': {
+    component: () => import('@ir-engine/client/src/pages/location/location')
+  },
+  '/studio': {
+    component: () => import('@ir-engine/client/src/pages/editor')
+  },
+  '/room': {
+    component: () => import('@ir-engine/client/src/pages/room')
+  },
+  '/capture': {
+    component: () => import('@ir-engine/client/src/pages/capture')
+  },
+  '/chat': {
+    component: () => import('@ir-engine/client/src/pages/chat/chat')
+  }
+}
+```
+
+| **Key**        | **Description**                                       |
+| :------------- | :---------------------------------------------------- |
+| **Route path** | The **URL path** for the route (must start with `/`). |
+| **Component**  | A **React component** dynamically loaded on demand.   |
+
+***
+
+### Webapp injection (`webappInjection`)
+
+The `webappInjection` property runs **before web routes are loaded**, allowing projects to initialize logic globally.
+
+```typescript
+**webappInjection: () => import('./webappInjection')**
+```
+
+***
+
+### World injection (`worldInjection`)
+
+The `worldInjection` property allows logic to be run every time a new world is created. This logic is loaded on all instances of the engine, such as a location and the editor.
 
 An example use case of this property would be registering custom scene loader and editor prefabs.
 
-### Services
-The `services` property is a relative path that points to a file which:
-- Must return the type `((app: Application) => Promise<any>)[]`  
-  This return type will be run on all instanceservers and api servers at startup.
+```typescript
+worldInjection: () => import('./src/Hello')
+```
 
-This property allows users to expose custom Feathers services, or whatever other functionality they may need.
+***
 
-### Database Seeding
-The `databaseSeed` property is:
-- A relative path that points to a file which must return the type `ServicesSeedConfig`  
-  _from `../packages/common/src/interfaces/ServicesSeedConfig.ts`_  
-  This return type is run when the database seeder is run.
+### Services (`services`)
 
-### Internationalization _(i18n)_
-Internationalization can be added by using the pattern `./i18n/<language>/<namespace>.json`.  
-An example of the format can be found in [the base i18n files](https://github.com/ir-engine/ir-engine/tree/dev/packages/client-core/i18n).
+The `services` property defines **Feathers.js services** for APIs and game logic.
+
+It is a relative path that points to a file which must return the type `((app: Application) => Promise<any>)[]`. This return type will be run on all instance servers and api servers at startup.
+
+```typescript
+services: './services/services.ts'
+```
+
+***
+
+### Database seeding (`databaseSeed`)
+
+The `databaseSeed` property points to a **database seed file** for initial data population.
+
+```typescript
+databaseSeed: './services/seeder-config.ts'
+```
+
+***
+
+## Internationalization (i18n)
+
+Projects can support **multiple languages** using **i18n files** located in `/i18n/[language]/[namespace].json`.
+
+Example structure:
+
+```text
+/i18n/en/admin.json
+/i18n/fr/admin.json
+```
+
+You can find example i18n files in the [iR Engine i18n repository](https://github.com/ir-engine/ir-engine/tree/dev/packages/client-core/i18n).
