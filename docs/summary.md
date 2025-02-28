@@ -15,7 +15,6 @@
     - [03_locations.md](manual/02_concepts/03_locations.md) 
   - [02_scene](manual/02_scene/index.md) 
     - [01_studio](manual/02_scene/01_studio/index.md) 
-      - [01_overview](manual/02_scene/01_studio/01_overview/index.md) 
     - [05_management](manual/02_scene/05_management/index.md) 
   - [03_modules](manual/03_modules/index.md) 
     - [01_engine](manual/03_modules/01_engine/index.md) 

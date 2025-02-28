@@ -1,6 +1,7 @@
 <!-- import DocCardList from '@theme/DocCardList' -->
 
-# Concepts 
-In this section you will learn how to use iR Engine.  
+# Concepts
+
+This section covers fundamental principles of iR Engine, providing the necessary understanding to work efficiently with its features and systems.
 
 <!-- <DocCardList /> -->
