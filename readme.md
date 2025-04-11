@@ -1,18 +1,20 @@
-# Documentation
+# iR Engine documentation
 
-- [Installation instructions](./docs/manual/01_install/index.md)
-- [Projects API](./docs/manual/01_projects.md)
-- [Scene Editor, Locations, Instances and other Concepts](./docs/manual/02_concepts)
-- [Entity Component System Overview (ECS)](./docs/manual/03_modules/01_engine/04_ecs.md)
-- [Testing guide](./docs/manual/03_modules/01_engine/07_testing/index.md)
-  - [Writing Reasonable & Testable Code](./docs/manual/03_modules/01_engine/07_testing/01_reasonableCode.md)
-  - [Test-driven Development](./docs/manual/03_modules/01_engine/07_testing/02_testDrivenDevelopment.md)
-- DevOps
-  - [Database Migration](./docs/manual/03_modules/05_infrastructure/03_devopsDeployment/04_databaseMigrations.md)
-  - [Deploying Ethereal Engine on minikube](./docs/manual/03_modules/05_infrastructure/03_devopsDeployment/02_minikube.md)
-- See also [Ethereal Engine Wiki](https://github.com/etherealengine/etherealengine/wiki/)
+> **Important:** Use the web version of this documentation at [https://docs.ir.world/developers](https://docs.ir.world/developers).  
+> It is the most up-to-date source and includes custom formatting optimized for readability. Prefer it over browsing this repository.
 
-## Contributing Guidelines: Documentation Repository
-The [Get Involved: Documentation](https://etherealengine.github.io/etherealengine-docs/manual/contributing/documentation/) section contains the set of guidelines and rules that this website follows.  
-They must be read before contributing to this repository.  
-> _Alternative [link](./docs/manual/98_contributing/06_documentation/)_
+This repository contains the source files for the iR Engine developer documentation. It includes technical references and guides for working with the engine, primarily in TypeScript. The content here is published through Archbee and reflects the structure of the deployed documentation.
+
+## Quick links to local docs
+
+If you need to browse specific topics locally, here are a few useful starting points:
+
+- [Installation instructions](./docs/manual/01_install/index.md)  
+- [Project structure and concepts](./docs/manual/02_concepts/01_projects.md)  
+- [Entity Component System (ECS)](./docs/manual/03_modules/01_engine/04_ecs.md)  
+- [Database migrations](./docs/manual/03_modules/05_infrastructure/03_devopsDeployment/04_databaseMigrations.md)  
+- [Deploying on Minikube](./docs/manual/03_modules/05_infrastructure/03_devopsDeployment/02_minikube.md)  
+
+## Contributing
+
+Contribution guidelines will be added soon.
