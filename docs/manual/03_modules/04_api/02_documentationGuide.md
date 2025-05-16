@@ -1,4 +1,4 @@
-# API Documentation Guide
+# API documentation guide
 
 This guide provides step-by-step instructions for documenting API endpoints in the iR Engine codebase.
 
