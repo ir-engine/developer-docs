@@ -16,7 +16,7 @@ Before proceeding, stop any active instances of iR Engine by pressing **Ctrl + C
 To install and run the tutorial project locally, execute the following commands inside your iR Engine installation folder:
 
 ```bash
-git clone -b Step0 https://github.com/ir-engine/ir-tutorial-hello packages/projects/projects/ir-tutorial-hello
+npm run clone-project -- --url https://github.com/ir-engine/ir-tutorial-hello
 npm run dev
 ```
 
