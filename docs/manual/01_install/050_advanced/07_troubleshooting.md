@@ -2,11 +2,11 @@
 
 Find here the solution to most common issues you might run into when working with the engine.
 
-### Browser Debug
+### Browser debug
 
 `p key` debug colliders view
 
-### Invalid Certificate errors in local environment
+### Invalid certificate errors in local environment
 
 As of this writing, the cert provided in the iR Engine package for local use is not adequately signed.
 Browsers will throw up warnings about going to insecure pages.
@@ -15,7 +15,7 @@ You should be able to tell the browser to ignore it, usually by clicking on some
 Chrome sometimes does not show a clickable option on the warning. If so, just type `badidea` or `thisisunsafe` when on that page.
 You don't enter that into the address bar or into a text box, Chrome is just passively listening for those commands.
 
-### Allow instanceserver address connection via installing local Certificate Authority
+### Allow instanceserver address connection via installing local certificate authority
 
 For more detailed instructions check: [https://github.com/FiloSottile/mkcert](https://github.com/FiloSottile/mkcert)
 
@@ -65,7 +65,7 @@ You can kill any running process with `sudo kill <ID>`
 Check which process is using port 3030 and kill
 
 ```bash
-killall -9 node 
+killall -9 node
 ```
 
 Or
@@ -97,7 +97,7 @@ Type in terminal
      npm i <packagename> -w @ir-engine/packages/editor
 ```
 
-### Using Local Storage instead of MinIO
+### Using local storage instead of MinIO
 
 Currently MinIO is used as default storage for local development. If you want to use local storage then do following steps:
 
@@ -136,7 +136,7 @@ npm run dev-reinit
 Try
 
 ```bash
-npm run dev-reinit 
+npm run dev-reinit
 ```
 
 or
