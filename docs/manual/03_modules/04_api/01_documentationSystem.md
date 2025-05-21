@@ -59,6 +59,43 @@ The OpenAPI documentation in iR Engine is generated through the following proces
 
 This process ensures that the API documentation stays in sync with the actual implementation, as it's generated directly from the code. The quality and usefulness of the documentation depend on the effort put into step 2.
 
+### API Documentation Workflow Diagram
+
+```mermaid
+graph TD
+    subgraph "Developer Actions"
+        A[Define Schema] -->|Creates| B[Schema File<br>*.schema.ts]
+        C[Write Documentation] -->|Creates| D[Documentation File<br>*.docs.ts]
+        E[Implement Service] -->|Creates| F[Service File<br>*.ts]
+        G[Implement Hooks] -->|Creates| H[Hooks File<br>*.hooks.ts]
+    end
+
+    subgraph "Documentation Generation"
+        B -->|Provides Structure| I[Service Registration]
+        D -->|Provides Details| I
+        F -->|Connects Components| I
+        H -->|Adds Logic| I
+        I -->|Feeds into| J[feathers-swagger]
+        K[OpenAPI Config] -->|Global Settings| J
+        J -->|Generates| L[OpenAPI Documentation]
+    end
+
+    subgraph "User Access"
+        L -->|Served at| M[/openapi Endpoint]
+        M -->|Viewed in| N[Swagger UI]
+    end
+
+    classDef files fill:#f9f,stroke:#333,stroke-width:1px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:1px;
+    classDef output fill:#bfb,stroke:#333,stroke-width:1px;
+
+    class B,D,F,H files;
+    class I,J,K process;
+    class L,M,N output;
+```
+
+The diagram above illustrates how different components work together to generate the API documentation in iR Engine. It shows the flow from developer-created files through the documentation generation process to the final user-accessible documentation.
+
 ## OpenAPI configuration
 
 The global OpenAPI configuration is set up in `packages/server-core/src/createApp.ts`. This is where you can configure the Swagger UI and define global settings for your API documentation:
