@@ -4,7 +4,7 @@ This guide provides step-by-step instructions for documenting API endpoints in t
 
 ## Introduction
 
-This guide shows you how to document API endpoints in the iR Engine codebase. For an overview of how the API documentation system works, see the [Documentation System](./01_documentationSystem.md) guide.
+This guide shows you how to document API endpoints in the iR Engine codebase. For an overview of how the API documentation system works, see the [documentation system](./01_documentationSystem.md) guide.
 
 While feathers-swagger automatically generates API documentation from your service definitions, custom descriptions, examples, and parameter details are essential for creating useful documentation. Without these, the documentation will contain only generic placeholders (e.g., "Creates a new resource with data") that provide little value to API consumers.
 
@@ -488,9 +488,9 @@ These generic descriptions:
 - Don't describe expected behavior or side effects
 - Offer no guidance on how to use the API effectively
 
-### Example: Generic vs. Custom Documentation
+### Example: Generic vs. custom documentation
 
-#### Generic (Auto-generated) Documentation:
+#### Generic (auto-generated) documentation:
 
 ```json
 {
@@ -506,7 +506,7 @@ These generic descriptions:
 }
 ```
 
-#### Improved Documentation:
+#### Improved documentation:
 
 ```json
 {
@@ -574,8 +574,8 @@ When documenting APIs, consider how they relate to each other based on their loc
 
 ## Additional resources
 
-- [API Documentation System](./01_documentationSystem.md) - Overview of the API documentation system
-- [Feathers.js Documentation](https://feathersjs.com/api/) - Official Feathers.js documentation
+- [API documentation system](./01_documentationSystem.md) - Overview of the API documentation system
+- [Feathers.js documentation](https://feathersjs.com/api/) - Official Feathers.js documentation
 - [Feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api) - Complete reference for all available options
-- [OpenAPI Specification](https://swagger.io/specification/) - The official OpenAPI specification
+- [OpenAPI specification](https://swagger.io/specification/) - The official OpenAPI specification
 - [Swagger UI](https://swagger.io/tools/swagger-ui/) - Documentation on the Swagger UI interface

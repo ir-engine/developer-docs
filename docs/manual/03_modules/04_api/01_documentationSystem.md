@@ -102,6 +102,6 @@ For more information on configuring the OpenAPI documentation, see the [feathers
 ## Additional resources
 
 - [Feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api) - Complete reference for all available options
-- [OpenAPI Specification](https://swagger.io/specification/) - The official OpenAPI specification
+- [OpenAPI specification](https://swagger.io/specification/) - The official OpenAPI specification
 - [Swagger UI](https://swagger.io/tools/swagger-ui/) - Documentation on the Swagger UI interface
-- [API Documentation Guide](./02_documentationGuide.md) - Step-by-step guide for documenting API endpoints
+- [API documentation guide](./02_documentationGuide.md) - Step-by-step guide for documenting API endpoints

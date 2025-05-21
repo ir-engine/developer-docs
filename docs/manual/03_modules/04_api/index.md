@@ -10,13 +10,13 @@ The iR Engine uses [Feathers.js](https://feathersjs.com/) and [feathers-swagger]
 
 ::::link-array
 :::link-array-item{headerImage headerColor}
-[Documentation System](./01_documentationSystem.md)&#x20;
+[Documentation system](./01_documentationSystem.md)&#x20;
 
 Learn about the API documentation architecture, key components, and generation process.
 :::
 
 :::link-array-item{headerImage headerColor}
-[Documentation Guide](./02_documentationGuide.md)&#x20;
+[Documentation guide](./02_documentationGuide.md)&#x20;
 
 Step-by-step instructions for documenting API endpoints in the iR Engine codebase.
 :::
@@ -43,7 +43,7 @@ This workflow ensures consistency across all API endpoints and makes it easier f
 
 ## Additional resources
 
-- [Feathers.js Documentation](https://feathersjs.com/api/) - Official Feathers.js documentation
+- [Feathers.js documentation](https://feathersjs.com/api/) - Official Feathers.js documentation
 - [Feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api) - Complete reference for all available options
-- [OpenAPI Specification](https://swagger.io/specification/) - The official OpenAPI specification
+- [OpenAPI specification](https://swagger.io/specification/) - The official OpenAPI specification
 - [Swagger UI](https://swagger.io/tools/swagger-ui/) - Documentation on the Swagger UI interface
