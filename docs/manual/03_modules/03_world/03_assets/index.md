@@ -1,4 +1,4 @@
-# Asset Import Pipeline
+# Asset import pipeline
 
 # Omniverse
 
@@ -8,9 +8,9 @@
 
 # Blender
 
-## WARNING: This page is out of date
+## Warning: This page is out of date
 
-The simplest pipeline uses Blender & the Studio's inbuilt transformation tool. 
+The simplest pipeline uses Blender & the Studio's inbuilt transformation tool.
 
 Scenes that contain colliders should have these colliders exported separately.
 Visible meshes should not have collider metadata, instead a copy should be created.
@@ -24,7 +24,7 @@ The process of moving from Blender to iR Engine looks like the following:
 5. Optimize visible glb with transformation tool
 6. Use final transformed visible glb & collider glb for live scene
 
-## Collider Metadata
+## Collider metadata
 
 All fixed colliders should be a child of a separate root hierarchy.
 

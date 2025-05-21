@@ -1,4 +1,4 @@
 <!-- import DocCardList from '@theme/DocCardList' -->
 
-# World Module
+# World module
 <!-- <DocCardList /> -->
