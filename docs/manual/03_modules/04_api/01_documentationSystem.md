@@ -59,30 +59,30 @@ The OpenAPI documentation in iR Engine is generated through the following proces
 
 This process ensures that the API documentation stays in sync with the actual implementation, as it's generated directly from the code. The quality and usefulness of the documentation depend on the effort put into step 2.
 
-### API Documentation Workflow Diagram
+### API documentation workflow
 
 ```mermaid
 graph TD
-    subgraph "Developer Actions"
-        A[Define Schema] -->|Creates| B[Schema File<br>*.schema.ts]
-        C[Write Documentation] -->|Creates| D[Documentation File<br>*.docs.ts]
-        E[Implement Service] -->|Creates| F[Service File<br>*.ts]
-        G[Implement Hooks] -->|Creates| H[Hooks File<br>*.hooks.ts]
+    subgraph "Developer actions"
+        A[Define schema] -->|Creates| B[Schema file<br>*.schema.ts]
+        C[Write docs] -->|Creates| D[Docs file<br>*.docs.ts]
+        E[Implement service] -->|Creates| F[Service file<br>*.ts]
+        G[Implement hooks] -->|Creates| H[Hooks file<br>*.hooks.ts]
     end
 
-    subgraph "Documentation Generation"
-        B -->|Provides Structure| I[Service Registration]
-        D -->|Provides Details| I
-        F -->|Connects Components| I
-        H -->|Adds Logic| I
-        I -->|Feeds into| J[feathers-swagger]
-        K[OpenAPI Config] -->|Global Settings| J
-        J -->|Generates| L[OpenAPI Documentation]
+    subgraph "Documentation generation"
+        B -->|Structure| I[Service registration]
+        D -->|Details| I
+        F -->|Connection| I
+        H -->|Logic| I
+        I -->|Feeds| J[feathers-swagger]
+        K[OpenAPI config] -->|Settings| J
+        J -->|Generates| L[OpenAPI docs]
     end
 
-    subgraph "User Access"
-        L -->|Served at| M[/openapi Endpoint]
-        M -->|Viewed in| N[Swagger UI]
+    subgraph "User access"
+        L -->|Served at| M["OpenAPI endpoint"]
+        M -->|Displays in| N[Swagger UI]
     end
 
     classDef files fill:#f9f,stroke:#333,stroke-width:1px;
@@ -94,7 +94,7 @@ graph TD
     class L,M,N output;
 ```
 
-The diagram above illustrates how different components work together to generate the API documentation in iR Engine. It shows the flow from developer-created files through the documentation generation process to the final user-accessible documentation.
+This diagram shows how components work together to generate API documentation, from developer files to the Swagger UI.
 
 ## OpenAPI configuration
 
