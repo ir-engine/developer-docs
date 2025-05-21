@@ -1,22 +1,22 @@
-# Installing Projects
-## Local Install Flow
+# Installing projects
+## Local install flow
 
-To install a project locally, clone the repository you wish to install to the 
+To install a project locally, clone the repository you wish to install to the
 `/packages/projects/projects/` folder. You can do this with the follow commands:
 
 ```
 cd packages/projects/projects/
 git clone https://github.com/myorg/myrepo
-cd myrepo 
+cd myrepo
 code .
 ```
 
 This will create a folder name `myrepo` which must contain an `xrengine.config.ts`
-file, and open the project in a new vscode window (such that git commands can be 
+file, and open the project in a new vscode window (such that git commands can be
 handled by the new window). All you need to do now to run this project is re-run
 the stack (with `npm run dev`).
 
-## Graphical Install Flow
+## Graphical install flow
 
 Projects can also be installed and managed from the /admin/projects route. You must be
 an admin and must have a linked GitHub account, which can be attained by having your
@@ -51,8 +51,8 @@ but one can set `RELEASE_NAME` locally to something else in your .env.local file
 
 ![](./images/projects-admin-install-select-branch.png)
 
-After the branch is selected, you also need to select a tagged commit from that branch, 
-or the most recent commit. As of this writing, you must manually tag project commits yourself, 
+After the branch is selected, you also need to select a tagged commit from that branch,
+or the most recent commit. As of this writing, you must manually tag project commits yourself,
 though tags are copied over from the source repository when installing or updating a project.
 
 ![](./images/projects-admin-install-select-tag.png)
@@ -78,17 +78,17 @@ the project.
 
 ![](./images/projects-admin-install-valid-submit.png)
 
-Adding a project through this interface runs `git clone` in the background, same as above, 
-but will then upload all of the repository's files to the storage provider. These files will then be 
-downloaded and installed to the deployment's file system each time the docker builder 
+Adding a project through this interface runs `git clone` in the background, same as above,
+but will then upload all of the repository's files to the storage provider. These files will then be
+downloaded and installed to the deployment's file system each time the docker builder
 pod runs. This allows full version controlled access for local development flow
 and version locking for production deployment. The source project code will then be force-pushed
 to the branch `<RELEASE_NAME>-deployment`, so make sure that there is no work in that branch
 that might get overwritten, and make a backup in another branch you do want to save it.
 
 The Push to GitHub button will push the current code for that project to the `<RELEASE_NAME>-deployment`
-branch if possible; it will *never* push to the main branch. If there are merge conflicts, it will instead 
-make a Pull Request on that branch with the changes; it will NOT force-push anything to this branch, 
+branch if possible; it will *never* push to the main branch. If there are merge conflicts, it will instead
+make a Pull Request on that branch with the changes; it will NOT force-push anything to this branch,
 unlike adding or updating a project.
 
 The Update button opens the same drawer as adding a new project, just with the destination repository locked in.
@@ -98,12 +98,12 @@ repository.
 ![](./images/projects-admin-update-valid-submit.png)
 
 The GitHub Repo Link button also opens this drawer, but you can only select the destination repository, not
-the source repository, and no code is pushed anywhere. 
+the source repository, and no code is pushed anywhere.
 
 The remove button will remove the folder containing that project. This will not delete the deployment
 branch. WARNING: Any uncommitted & unpushed files will be lost.
 
-### Updating the Engine Version and Rebuilding Projects
+### Updating the engine version and rebuilding projects
 
 Making changes to a project is not always reflected immediately in the running code. As of this writing,
 project code is built into the client-side and backend files, and changes to project code require that
@@ -112,7 +112,7 @@ In a production environment, this requires that the builder process be restarted
 rebuild the client and backend code with the new project code.
 
 Changes to scenes in projects do not require a rebuild - since they are stored external to the codebase
-in the storage provider, and are downloaded anew by a client each time the scene is loaded, changes to 
+in the storage provider, and are downloaded anew by a client each time the scene is loaded, changes to
 scenes will always be immediately available. The act of saving a project will clear any cached version
 of the scene's static files, so the client will get the new version.
 
@@ -125,8 +125,8 @@ linked image repository.
 
 ![](./images/projects-admin-engine-update-select-tag.png)
 
-After selecting an engine version, if you click Submit now, you will just rebuild with the 
-newly-selected version of the main codebase, plus whatever versions of your projects are currently 
+After selecting an engine version, if you click Submit now, you will just rebuild with the
+newly-selected version of the main codebase, plus whatever versions of your projects are currently
 in your linked repositories.
 
 ![](./images/projects-admin-engine-update-solo.png)
