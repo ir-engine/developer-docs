@@ -139,7 +139,7 @@ When accessing the iR Engine for the first time, browsers block access due to **
 
 :::::workflow-block
 :::workflow-block-item
-**Open Developer Tools**
+**Open developer tools**
 
 - **Chrome/Edge:** Click the three-dot menu → *More tools* → *Developer tools*
 - **Shortcut:** Press `Ctrl+Shift+I` or `F12`

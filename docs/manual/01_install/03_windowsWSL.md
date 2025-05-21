@@ -7,7 +7,7 @@
 
 This guide has been tested on Windows 10 (22H2) and Windows 11.
 
-## Install Windows Subsystem for Linux (WSL). 
+## Install Windows Subsystem for Linux (WSL)
 Remember to run Powershell in Administrator mode either by right clicking and selecting `Run as administrator` or by typing PowerShell in `Run` dialog box of Windows and pressing `Ctrl+Shift+Enter` key combination.
 
 Install Ubuntu distribution of Linux with one of these options:
@@ -26,7 +26,7 @@ Once WSL is installed, make sure to:
 Install docker desktop with the WSL 2 backend.
 You can find the instructions [here](https://docs.docker.com/desktop/install/windows-install/).
 
-Make sure to enable your WSL distribution once docker desktop is installed and running.  
+Make sure to enable your WSL distribution once docker desktop is installed and running.
 You can do so from Docker Desktop App by visiting `Settings > Resources > WSL Integration`.
 Enable integration with Ubuntu, and make sure to hit `Apply & Restart`.
 
@@ -34,12 +34,12 @@ Enable integration with Ubuntu, and make sure to hit `Apply & Restart`.
 
 ## Install Node
 If Node is not already installed on your machine _(check with `node --version`)_, you can do so by first installing `nvm` and then installing Node with nvm.
-> **Important**:   
-> Make sure that the commands in this section are run inside Ubuntu WSL.  
+> **Important**:
+> Make sure that the commands in this section are run inside Ubuntu WSL.
 > To ensure that this is the case, there are two options:
-> 1. Launch WSL manually:  
->     1. Run Powershell in Administrator mode and run Ubuntu using the command: `wsl`.  
->     2. After logging in to Ubuntu, run the command: `cd ~/`  
+> 1. Launch WSL manually:
+>     1. Run Powershell in Administrator mode and run Ubuntu using the command: `wsl`.
+>     2. After logging in to Ubuntu, run the command: `cd ~/`
 > 2. Open your application menu and search for `Ubuntu Terminal`
 
 To install `nvm`, run the following commands in your WSL Ubuntu terminal:
@@ -51,7 +51,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 ```
-Verify that `nvm` was installed correctly by using the command: `nvm --version`.  
+Verify that `nvm` was installed correctly by using the command: `nvm --version`.
 Afterwards, install Node 22 with:
 ```bash
 nvm install 22
@@ -86,8 +86,8 @@ Clone iR Engine repo on your machine by running the following command from your 
 ```bash
 git clone https://github.com/ir-engine/ir-engine --depth 1
 ```
-> **Warning**:  
-> Adding `--depth=1` will significantly reduce the amount of data downloaded when cloning, but it will also create a `Shallow Copy` of the engine's repository.  
+> **Warning**:
+> Adding `--depth=1` will significantly reduce the amount of data downloaded when cloning, but it will also create a `Shallow Copy` of the engine's repository.
 If you need to download any branch other than `dev`, or go back in git history into an older commit, you will have to unshallow the repository first, or else any branches and older commits won't be accessible. The command to undo cloning with `--depth=N` is either `git fetch --unshallow` or `git pull --unshallow`
 
 <!-- End of partial: CloneInstructions -->
@@ -118,20 +118,20 @@ You will need to initialize the engine's database with tables and data if you ar
 npm run dev-reinit
 ```
 
-## Start the Engine
+## Start the engine
 Run the iR Engine's stack with:
 ```bash
 npm run dev
 ```
-If everything went well, you will now be able to open iR Engine in your browser by navigating to [https://localhost:3000/location/default](https://localhost:3000/location/default).  
+If everything went well, you will now be able to open iR Engine in your browser by navigating to [https://localhost:3000/location/default](https://localhost:3000/location/default).
 
-## Accept Certificates
+## Accept certificates
 <!-- Start of partial: AcceptCertificates -->
 When accessing the iR Engine for the first time, browsers block access due to **self-signed certificates**. This prevents you from accessing the Admin panel and the Editor. To bypass this, manually accept the certificates:
 
 :::::workflow-block
 :::workflow-block-item
-**Open Developer Tools**
+**Open developer tools**
 
 - **Chrome/Edge:** Click the three-dot menu → *More tools* → *Developer tools*
 - **Shortcut:** Press `Ctrl+Shift+I` or `F12`
