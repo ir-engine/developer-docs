@@ -6,7 +6,7 @@ This guide explains how the API documentation system works in the iR Engine code
 
 The iR Engine uses [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files. This creates a declarative approach where documentation is generated from code rather than maintained separately.
 
-The system provides a foundation by automatically generating basic API structure, but developers must enhance it with custom descriptions, examples, and parameter details. **Well-documented APIs are critical for developer experience** - without these enhancements, your documentation will contain only generic placeholders that provide little practical value to API users.
+For detailed guidance on creating effective API documentation, see the [API documentation guide](./02_documentationGuide.md).
 
 ### API documentation workflow
 
@@ -133,17 +133,6 @@ export const configureOpenAPI = () => (app: Application) => {
 ```
 
 For more information on configuring the OpenAPI documentation, see the [feathers-swagger documentation on swaggerOptions](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api?id=swaggeroptions).
-
-## How to document an API endpoint
-
-To create effective API documentation, follow these steps:
-
-1. **Create a schema file** that defines the data structure and methods
-2. **Create a documentation file** with detailed descriptions, examples, and parameter information
-3. **Register the service** with the documentation options
-4. **Test your documentation** by viewing it in the Swagger UI at `/openapi`
-
-For detailed instructions and examples, see the [API documentation guide](./02_documentationGuide.md).
 
 ## Additional resources
 
