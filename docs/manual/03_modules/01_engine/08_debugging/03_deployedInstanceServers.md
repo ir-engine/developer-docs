@@ -1,4 +1,4 @@
-# Debugging Deployed InstanceServers (and other Kubernetes pods)
+# Debugging deployed instanceservers (and other Kubernetes pods)
 
 Because of the nature of Kubernetes, logs of fatal errors on instanceserver or API pods can sometimes disappear
 before one has a chance to view them, as the pods that they were on are deleted, along with their logs.
@@ -6,14 +6,14 @@ before one has a chance to view them, as the pods that they were on are deleted,
 One way to catch these errors is to tail the logs of existing pods from a local machine and then trigger the error.
 The tail of the logs will persist in your terminal even after the pod has been deleted.
 
-You should already have kubectl set up and pointing to your cluster, but if not, do so. 
+You should already have kubectl set up and pointing to your cluster, but if not, do so.
 (see [here](/manual/modules/infrastructure/devopsDeployment/managingRemoteKubernetes) for links to do that)
 Make sure you don't have a browser tab with the offending location(s) open already, as you want to be tailing
 the logs before the instance starts.
 
 Next, run `kubectl get gs`. If the cluster is fully installed, this will get all of the running instanceserver
-pods (`kubectl get pods` will get all pods, if you need to find the names of API pods, etc.) 
-Select the Name of a pod and copy it (in Linux, highlight it and press CTRL+SHIFT+C), then run 
+pods (`kubectl get pods` will get all pods, if you need to find the names of API pods, etc.)
+Select the Name of a pod and copy it (in Linux, highlight it and press CTRL+SHIFT+C), then run
 `kubectl logs <pod_name> -c <RELEASE_NAME>-instanceserver -f`,
 e.g. `kubectl logs prod-instanceserver-vhwh2-9vqrv -c prod-instanceserver -f`. It should output something like this for
 and instanceserver pod:

@@ -7,7 +7,7 @@ Learn how the engine uses actions to manage event sourcing.
 Event sourcing is a method for managing state changes by recording a series of discrete actions instead of directly modifying the application state. This approach ensures that all peers in a networked environment maintain a consistent and synchronized state.
 
 :::hint{type="info"}
-For an overview of state management and how event sourcing integrates with Hyperflux, refer to the [State Management documentation](https://docs.ir.world/developers/state-management).
+For an overview of state management and how event sourcing integrates with Hyperflux, refer to the [state management documentation](https://docs.ir.world/developers/state-management).
 :::
 
 ## Actions definition
@@ -78,7 +78,7 @@ Following best practices ensures efficient and reliable event sourcing:
 - Handle **out-of-order actions** correctly to prevent state desynchronization.
 
 :::hint{type="info"}
-For a deeper understanding of how actions integrate with state management, visit the [State Management documentation](https://docs.ir.world/developers/state-management).
+For a deeper understanding of how actions integrate with state management, visit the [state management documentation](https://docs.ir.world/developers/state-management).
 :::
 
 ##

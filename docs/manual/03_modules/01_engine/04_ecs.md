@@ -1,33 +1,33 @@
-# Entities, Components and Systems
+# Entities, components and systems
 
 ## What is an ECS?
 ECS refers to the "**Entity Component System**" architecture paradigm, that is characterized by these three key elements:
-- **Entities** are simply collections of components identified by a number.  
-- **Components** are abstract objects that contain data.  
-  They allow data to be structured with composition instead of inheritance.  
-- **Systems** are functions that operate on these entities and components.  
+- **Entities** are simply collections of components identified by a number.
+- **Components** are abstract objects that contain data.
+  They allow data to be structured with composition instead of inheritance.
+- **Systems** are functions that operate on these entities and components.
 
 <!--
 TODO: Explain the concept of "controlled context"
 
 ## Controlled Context
-There are two types of controlled contexts: Synchronous and Asynchronous  
-Execute runs every frame (or fixed frame)  
-Reactors run as per the react scheduler, asynchronously  
+There are two types of controlled contexts: Synchronous and Asynchronous
+Execute runs every frame (or fixed frame)
+Reactors run as per the react scheduler, asynchronously
 Reactors come in 3 types:
 - UI _(aka "normal" react)_
 - Component reactors
-- System reactors  
-  _(and custom reactors, which are functionally equivalent to system reactors)_  
+- System reactors
+  _(and custom reactors, which are functionally equivalent to system reactors)_
 -->
 
-## Component Data Types
+## Component data types
 Components support two types of data:
 - Structure of Arrays
 - Array of Structures
 
-### Structure of Arrays: Component Data
-Structure of Arrays is a data layout that stores data in a way that is more cache friendly.  
+### Structure of arrays: component data
+Structure of Arrays is a data layout that stores data in a way that is more cache friendly.
 It is a good choice for data that is accessed often and in a predictable way, such as transform data.
 ```ts
 const TransformComponent = defineComponent({
@@ -40,13 +40,13 @@ const TransformComponent = defineComponent({
 })
 ```
 
-### Array of Structures: Reactive Component Data
-Reactive Component Data is an implementation unique to iR Engine, using `React` and `Hookstate` under the hood.  
+### Array of structures: reactive component data
+Reactive component data is an implementation unique to iR Engine, using `React` and `Hookstate` under the hood.
 
 Its key benefits are:
-- It allows for reactive data binding.  
-  When a property is changed, all effects depending on that data will be triggered.  
-- It is a good choice for data that is accessed infrequently and in an unpredictable way.  
+- It allows for reactive data binding.
+  When a property is changed, all effects depending on that data will be triggered.
+- It is a good choice for data that is accessed infrequently and in an unpredictable way.
   _(especially when react style logic is associated with it)_.
 
 ```ts
@@ -75,10 +75,10 @@ const DebugArrowComponent = defineComponent({
 ## Examples
 
 ### Timer
-In the following code snippets we will define a `component` and a `system`.  
+In the following code snippets we will define a `component` and a `system`.
 
-The **TimerComponent** will hold a property to store the current elapsed time rounded down.  
-In the **initializer** of the system, we will create a new entity and adds the time component to it.  
+The **TimerComponent** will hold a property to store the current elapsed time rounded down.
+In the **initializer** of the system, we will create a new entity and adds the time component to it.
 In the **execute** function of the system, we will set the property `time` on the component of the entity.
 
 This example uses the _`Structure of Arrays`_ (SoA) Component Data syntax, from **bitECS**.

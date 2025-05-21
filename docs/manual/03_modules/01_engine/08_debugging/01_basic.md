@@ -1,6 +1,6 @@
-# Basic Debugging
-This setup can be used to debug instance server & backend server code.  
-1. Navigate to `Run & Debug` tab of vscode.
+# Basic debugging
+This setup can be used to debug instance server & backend server code.
+1. Navigate to `Run & Debug` tab of VSCode.
 2. Add a breakpoint to the desired line of code.
 3. Select `Debug Dev` from debug config dropdown.
 4. Hit the run/play button to start debugging.

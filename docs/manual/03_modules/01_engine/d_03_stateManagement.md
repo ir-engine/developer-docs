@@ -1,4 +1,4 @@
-# State Management
+# State management
 <!--
 TODO:
 Explain how Hyperflux, etc works internally
