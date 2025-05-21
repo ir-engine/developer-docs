@@ -6,9 +6,9 @@
 # Community
 <!--
 TODO: Divide the page into sections when they become relevant in the futures
-## Community Channels
-## Community Tutorials
-## Community Assets
+## Community channels
+## Community tutorials
+## Community assets
 -->
 
 <!-- Start of partial: CommunityIntro -->
@@ -35,7 +35,7 @@ You can join iR Engine's community on:
 - [Facebook](https://www.facebook.com/xrengine/)
 - [Discord](https://discord.gg/xrf)
 
-Feel free to ask any questions that may come up.  
+Feel free to ask any questions that may come up.
 We are here to help!
 
 
@@ -47,14 +47,14 @@ We are here to help!
 <!------------------------------------------->
 <!-- Start of partial: CommunityAssets -->
 <!--
-## Community Assets
+## Community assets
 This section will contain a list of third-party assets created by the community.
 -->
 
 <!-- End of partial: CommunityAssets -->
 <!-- Start of partial: CommunityTutorials -->
 <!--
-## Community Tutorials
+## Community tutorials
 This section will contain a list of third-party tutorials and resources created by the community.
 -->
 

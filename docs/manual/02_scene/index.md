@@ -1,4 +1,4 @@
 <!-- import DocCardList from '@theme/DocCardList' -->
 
-# Scene Composition
+# Scene composition
 <!-- <DocCardList /> -->

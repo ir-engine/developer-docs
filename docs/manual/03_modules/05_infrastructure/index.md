@@ -1,4 +1,4 @@
 <!-- import DocCardList from '@theme/DocCardList' -->
 
-# Infrastructure Module
+# Infrastructure module
 <!-- <DocCardList /> -->

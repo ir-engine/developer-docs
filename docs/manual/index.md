@@ -16,7 +16,7 @@ This site serves as a reference for understanding complex concepts and configura
 :::
 
 :::link-array-item{headerImage headerColor}
-[Scene Composition](./02_scene/index.md)&#x20;
+[Scene composition](./02_scene/index.md)&#x20;
 :::
 
 :::link-array-item{headerImage headerColor}
@@ -24,7 +24,7 @@ This site serves as a reference for understanding complex concepts and configura
 :::
 
 :::link-array-item{headerImage headerColor}
-[Get Involved](./98_contributing/index.md)
+[Get involved](./98_contributing/index.md)
 :::
 
 :::link-array-item{headerImage headerColor}

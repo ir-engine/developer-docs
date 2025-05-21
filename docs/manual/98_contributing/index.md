@@ -8,7 +8,7 @@
 <!-- import Translate from '@site/docs/_partials/contributing/translate.md' -->
 <!-- import Donate from '@site/docs/_partials/contributing/donate.md' -->
 
-# Get Involved
+# Get involved
 <!--
 TODO List of things to contribute:   (This page should explain all of them)
 - TODO:extend: Participate in the community
@@ -29,13 +29,13 @@ TODO
 
 ## Participate in the community
 <!-- Start of partial: Participate -->
-The easiest way to get involved is to participate in iR Engine's community.  
-Join us on your favorite [community channel](/manual/community) and become a part of the conversation.  
+The easiest way to get involved is to participate in iR Engine's community.
+Join us on your favorite [community channel](/manual/community) and become a part of the conversation.
 Ask any questions that you may have and/or help other users with their questions.
 
 <!-- End of partial: Participate -->
 
-## Create and Host your own worlds
+## Create and host your own worlds
 <!-- Start of partial: Host -->
 iR Engine is a platform aimed at helping you achieve your goals.
 And nothing showcases a great tool better than some great projects made with it!
@@ -47,7 +47,7 @@ Complete the **Getting Started** tutorials, learn to use the engine with the [iR
 
 ## Promote iR Engine
 <!-- Start of partial: Promote -->
-Talk about the engine with people you know. Let them know about those cool projects that you have created, or those locations that you like the most. Being a user and overall advocate of iR Engine is a great way to help growing the community.  
+Talk about the engine with people you know. Let them know about those cool projects that you have created, or those locations that you like the most. Being a user and overall advocate of iR Engine is a great way to help growing the community.
 <!-- TODO: Improve the copywriting quality of this paragraph with better marketing information, based on Ethereal's marketing strategy. -->
 
 <!-- End of partial: Promote -->
@@ -70,13 +70,13 @@ Search for the issue in our [Issues List](https://github.com/ir-engine/ir-engine
 
 ## Contribute to iR Engine's documentation
 <!-- Start of partial: Documentation -->
-Documentation tasks are a great way to get started if you are new to the engine and/or development in general.  
+Documentation tasks are a great way to get started if you are new to the engine and/or development in general.
 
-If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/ir-engine/ir-engine).  
+If you are comfortable with code, the engine uses `JSDoc` and `TypeDoc` for generating its [API documentation](https://etherealengine.github.io/etherealengine-docs/typedoc), which is generated form the source code of the main iR Engine's [source code repository](https://github.com/ir-engine/ir-engine).
 
 For an easier task, the documentation website you are reading right now is maintained from its own [GitHub repository](https://github.com/ir-engine/developer-docs). Find something that you think could be improved in this website, and either open an issue or send a PR with your proposed changes.
 
-Get started by reading the [Get Involved: Documentation Guidelines](/manual/contributing/documentation).
+Get started by reading the [Get involved: Documentation guidelines](/manual/contributing/documentation).
 
 <!-- End of partial: Documentation -->
 

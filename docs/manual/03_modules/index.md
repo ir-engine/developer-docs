@@ -26,7 +26,7 @@ World management and assets.
 :::
 
 :::link-array-item{headerImage headerColor}
-[API Documentation System](./04_api/index.md)&#x20;
+[API documentation system](./04_api/index.md)&#x20;
 
 Learn how to document APIs in the iR Engine codebase.
 :::
