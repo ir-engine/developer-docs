@@ -1,6 +1,6 @@
-# Rendering Scenes
+# Rendering scenes
 
-The `RendererComponent` defines the parameters for rendering a scene to render target (such as an HTML canvas or WebXR layer). 
+The `RendererComponent` defines the parameters for rendering a scene to render target (such as an HTML canvas or WebXR layer).
 
 Scenes are simply defined as entity hierarchies. The `SceneComponent` is used to specify which scene entities to render. Only the root of an entity hierarchy needs to be specified.
 
