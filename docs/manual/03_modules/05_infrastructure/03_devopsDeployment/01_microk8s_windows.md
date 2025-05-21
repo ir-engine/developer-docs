@@ -1,5 +1,3 @@
-<!-- import AcceptCertificates from './_acceptCertificates.md' -->
-
 # iR Engine on MicroK8s (Windows)
 
 This guide is intended for local environment and currently tested on Windows 11.

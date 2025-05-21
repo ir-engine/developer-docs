@@ -1,5 +1,3 @@
-<!-- import AcceptCertificates from './_acceptCertificates.md' -->
-
 # iR Engine on Minikube
 
 ## Install kubectl, Helm, Docker, and VirtualBox

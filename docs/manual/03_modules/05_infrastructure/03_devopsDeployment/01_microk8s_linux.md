@@ -1,7 +1,3 @@
-<!-- import AcceptCertificates from '../../../_partials/acceptCertificates.md' -->
-<!-- import PythonUbuntu from '../../../_partials/pythonUbuntu.md' -->
-<!-- import MakeUbuntu from '../../../_partials/makeUbuntu.md' -->
-
 # iR Engine on MicroK8s (Linux)
 
 This guide has been tested on Ubuntu, and it is intended for local deployment only.

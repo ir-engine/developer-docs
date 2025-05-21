@@ -1,5 +1,3 @@
-<!-- import AcceptCertificates from './_acceptCertificates.md' -->
-
 # iR Engine on Docker Desktop
 **NOTE**: _UDP networking does not work properly on Docker Desktop as of this writing, as Docker Desktop does not expose the IP addresses/ports of the node publicly, so mediasoup cannot connect over UDP. If you want to test audio/video calling or networked movements, please use minikube._
 
