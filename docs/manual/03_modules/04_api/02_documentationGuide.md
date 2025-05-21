@@ -4,9 +4,53 @@ This guide provides step-by-step instructions for documenting API endpoints in t
 
 ## Introduction
 
-This guide shows you how to document API endpoints in the iR Engine codebase. For an overview of how the API documentation system works, see the [documentation system](./01_documentationSystem.md) guide.
+For an overview of how the API documentation system works, see the [documentation system](./01_documentationSystem.md) guide.
 
-While feathers-swagger automatically generates API documentation from your service definitions, custom descriptions, examples, and parameter details are essential for creating useful documentation. Without these, the documentation will contain only generic placeholders (e.g., "Creates a new resource with data") that provide little value to API consumers.
+### Why good documentation matters
+
+While feathers-swagger automatically generates basic API documentation, the default output contains only generic placeholders like "Creates a new resource with data" that provide little practical value.
+
+**Well-documented APIs are critical for developer experience.** Custom descriptions, examples, and parameter details transform generic documentation into a valuable resource that helps developers understand and use your API effectively.
+
+### Generic vs. custom documentation example
+
+#### Generic (auto-generated):
+```json
+{
+  "description": "Authentication service",
+  "operations": {
+    "create": {
+      "description": "Creates a new resource with data"
+    },
+    "remove": {
+      "description": "Removes a resource with id from the service"
+    }
+  }
+}
+```
+
+#### Improved documentation:
+```json
+{
+  "description": "Authentication service for user login, token validation, and logout",
+  "operations": {
+    "create": {
+      "description": "Authenticates a user with credentials and returns a JWT token",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "example": {
+              "strategy": "local",
+              "email": "user@example.com",
+              "password": "password123"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## Documenting an API endpoint
 
@@ -187,8 +231,6 @@ export default createSwaggerServiceOptions({
 })
 ```
 
-For a complete reference of all available options in the documentation file, see the [feathers-swagger documentation on serviceDocs](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api?id=servicedocs).
-
 ### Step 4: Add examples and response documentation
 
 For more comprehensive documentation, add examples of request and response data. Examples help API consumers understand how to use your API correctly. Continuing with our `build-status` example:
@@ -257,56 +299,6 @@ export default createSwaggerServiceOptions({
             }
           }
         }
-      },
-      create: {
-        description: 'Creates a new build status record',
-        requestBody: {
-          description: 'Data for the new build status',
-          content: {
-            'application/json': {
-              example: {
-                status: 'pending',
-                dateStarted: '2023-04-01T12:00:00Z',
-                commitSHA: '5d6e7b2a9c0d1e2f3a4b5c6d7e8f9a0b8f4b3a1c'
-              }
-            }
-          }
-        },
-        responses: {
-          '201': {
-            description: 'Successfully created build status',
-            content: {
-              'application/json': {
-                example: {
-                  id: 3,
-                  status: 'pending',
-                  dateStarted: '2023-04-01T12:00:00Z',
-                  dateEnded: null,
-                  logs: '',
-                  commitSHA: '5d6e7b2a9c0d1e2f3a4b5c6d7e8f9a0b8f4b3a1c',
-                  createdAt: '2023-04-01T12:00:00Z',
-                  updatedAt: '2023-04-01T12:00:00Z'
-                }
-              }
-            }
-          },
-          '400': {
-            description: 'Invalid data provided',
-            content: {
-              'application/json': {
-                example: {
-                  name: 'BadRequest',
-                  message: 'Invalid data',
-                  code: 400,
-                  errors: [
-                    { path: 'status', message: 'Status is required' },
-                    { path: 'commitSHA', message: 'Commit SHA is required' }
-                  ]
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
@@ -345,6 +337,18 @@ export default (app: Application): void => {
   service.hooks(hooks)
 }
 ```
+
+### Step 6: Test your documentation
+
+After updating the documentation:
+
+1. Start the server with `npm run dev`
+2. Navigate to `https://localhost:3030/openapi` in your browser
+3. Find your service in the UI
+4. Verify that all descriptions, parameters, and examples are correct
+5. Try out the API using the "Try it out" feature
+
+Note that changes to the OpenAPI documentation require a server restart to be visible in the Swagger UI, as Feathers needs to rebuild the OpenAPI specification with your changes.
 
 ## Special cases and advanced options
 
@@ -403,13 +407,9 @@ export default createSwaggerServiceOptions({
 
 For more information on custom schemas and other documentation options, see the [feathers-swagger documentation on serviceDocs](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api?id=servicedocs).
 
-## Complete examples
+## Special case example: Authentication service
 
-This section provides complete, real-world examples of API documentation in the iR Engine codebase. These examples demonstrate how to handle special cases and can be used as templates for your own documentation.
-
-### Example: Authentication service (special case)
-
-The authentication service is a special case because it uses custom parameter names:
+The authentication service demonstrates how to handle custom parameter names:
 
 ```tsx
 // In packages/server-core/src/user/authentication.doc.ts
@@ -456,121 +456,31 @@ export default createSwaggerServiceOptions({
 })
 ```
 
-## Testing your documentation
+This example shows:
+- Custom parameter naming with `idNames`
+- Schema definition directly in the docs object
+- Reference mapping with `refs`
+- Clear operation descriptions
 
-After updating the documentation:
+## Documentation organization
 
-1. Start the server with `npm run dev`
-2. Navigate to `https://localhost:3030/openapi` in your browser
-3. Find your service in the UI
-4. Verify that all descriptions, parameters, and examples are correct
-5. Try out the API using the "Try it out" feature
+The folder structure in the codebase provides a natural way to organize API endpoints. Services are grouped by category in the `packages/server-core/src/` directory, which should be reflected in your documentation.
 
-Note that changes to the OpenAPI documentation require a server restart to be visible in the Swagger UI, as Feathers needs to rebuild the OpenAPI specification with your changes.
-
-## The importance of custom descriptions
-
-### Why generic descriptions are insufficient
-
-By default, feathers-swagger generates documentation with generic descriptions for each operation:
-
-- `find`: "Retrieves a list of all resources from the service"
-- `get`: "Retrieves a single resource with the given id from the service"
-- `create`: "Creates a new resource with data"
-- `update`: "Updates a resource with id using data"
-- `patch`: "Updates a resource with id using data"
-- `remove`: "Removes a resource with id from the service"
-
-These generic descriptions:
-- Provide no context about what the service actually does
-- Don't explain what the resource represents
-- Lack information about required parameters
-- Don't describe expected behavior or side effects
-- Offer no guidance on how to use the API effectively
-
-### Example: Generic vs. custom documentation
-
-#### Generic (auto-generated) documentation:
-
-```json
-{
-  "description": "Authentication service",
-  "operations": {
-    "create": {
-      "description": "Creates a new resource with data"
-    },
-    "remove": {
-      "description": "Removes a resource with id from the service"
-    }
-  }
-}
-```
-
-#### Improved documentation:
-
-```json
-{
-  "description": "Authentication service for user login, token validation, and logout",
-  "operations": {
-    "create": {
-      "description": "Authenticates a user with credentials and returns a JWT token. Supports multiple strategies including local (username/password), JWT (token refresh), and OAuth providers.",
-      "requestBody": {
-        "description": "Authentication credentials",
-        "content": {
-          "application/json": {
-            "example": {
-              "strategy": "local",
-              "email": "user@example.com",
-              "password": "password123"
-            }
-          }
-        }
-      }
-    },
-    "remove": {
-      "description": "Logs out a user by invalidating their access token. This operation blacklists the token to prevent further use.",
-      "parameters": [
-        {
-          "in": "path",
-          "name": "accessToken",
-          "description": "JWT access token to invalidate",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ]
-    }
-  }
-}
-```
-
-The improved documentation provides:
-- Clear context about the service's purpose
-- Detailed explanation of each operation
-- Examples of request data
-- Information about parameters and their requirements
-- Insights into the behavior and side effects
+When documenting APIs, consider how they relate to each other based on their location in the folder structure. Services in the same category often serve related purposes and may be documented together for better context.
 
 ## Best practices
 
-1. **Be consistent** in your terminology and formatting
-2. **Use sentence case** for all headings and descriptions
-3. **Use clear, concise language** that's easy to understand
-4. **Include examples** for complex operations
-5. **Document all parameters** with clear descriptions
-6. **Include error responses** with helpful error messages
-7. **Keep documentation up-to-date** when the API changes
-8. **Think from the API consumer's perspective** - what would they need to know?
-9. **Avoid generic descriptions** - replace auto-generated placeholders
-10. **Explain the "why"** not just the "what" - describe the purpose and use cases
-11. **Document edge cases and limitations** to help prevent misuse
-
-## API organization
-
-The folder structure in the codebase provides a natural way to organize API endpoints. The services are grouped by category in the `packages/server-core/src/` directory, which can be used as a starting point for organizing the API documentation.
-
-When documenting APIs, consider how they relate to each other based on their location in the folder structure. Services in the same category often serve related purposes and may be documented together for better context.
+1. **Be specific and contextual** - Replace generic descriptions with meaningful, context-specific information
+2. **Include examples** - Provide request and response examples for all operations
+3. **Document parameters thoroughly** - Explain all parameters with clear descriptions
+4. **Include error responses** - Document possible error cases with examples
+5. **Use consistent terminology** - Be consistent in your naming and formatting
+6. **Use sentence case** - For all headings and descriptions
+7. **Be concise** - Use clear, simple language that's easy to understand
+8. **Explain the "why"** - Describe the purpose and use cases, not just the mechanics
+9. **Document edge cases** - Include limitations and special considerations
+10. **Keep it updated** - Maintain documentation when the API changes
+11. **Think like a user** - Consider what information would be most helpful to API consumers
 
 ## Additional resources
 

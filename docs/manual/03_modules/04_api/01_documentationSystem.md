@@ -4,15 +4,65 @@ This guide explains how the API documentation system works in the iR Engine code
 
 ## Overview
 
-While feathers-swagger automatically generates API documentation from your service definitions, custom descriptions, examples, and parameter details are essential for creating useful documentation. Without these, the documentation will contain only generic placeholders that provide little value to API consumers.
+The iR Engine uses [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files. This creates a declarative approach where documentation is generated from code rather than maintained separately.
 
-The iR Engine uses [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files. The documentation is served through Swagger UI at the `/openapi` endpoint. For a complete reference of all available options, see the [feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api).
+The system provides a foundation by automatically generating basic API structure, but developers must enhance it with custom descriptions, examples, and parameter details. **Well-documented APIs are critical for developer experience** - without these enhancements, your documentation will contain only generic placeholders that provide little practical value to API users.
 
-## API documentation architecture
+### API documentation workflow
 
-The API documentation system in iR Engine consists of several key components that work together to generate the OpenAPI documentation. This architecture allows for a declarative approach to API documentation, where the documentation is generated automatically from the code rather than maintained separately.
+```mermaid
+graph TD
+    subgraph "Developer actions"
+        A[Define schema] -->|Creates| B[Schema file<br>*.schema.ts]
+        C[Write docs] -->|Creates| D[Docs file<br>*.docs.ts]
+        E[Implement service] -->|Creates| F[Service file<br>*.ts]
+        G[Implement hooks] -->|Creates| H[Hooks file<br>*.hooks.ts]
+    end
+
+    subgraph "Documentation generation"
+        B -->|Structure| I[Service registration]
+        D -->|Details| I
+        F -->|Connection| I
+        H -->|Logic| I
+        I -->|Feeds| J[feathers-swagger]
+        K[OpenAPI config] -->|Settings| J
+        J -->|Generates| L[OpenAPI docs]
+    end
+
+    subgraph "User access"
+        L -->|Served at| M["OpenAPI endpoint"]
+        M -->|Displays in| N[Swagger UI]
+    end
+
+    classDef files fill:#553366,stroke:#aa77aa,stroke-width:1px,color:#ffffff;
+    classDef process fill:#335566,stroke:#7799aa,stroke-width:1px,color:#ffffff;
+    classDef output fill:#335533,stroke:#779955,stroke-width:1px,color:#ffffff;
+
+    class B,D,F,H files;
+    class I,J,K process;
+    class L,M,N output;
+```
+
+This diagram shows how components work together to generate API documentation, from developer files to the Swagger UI.
+
+## Documentation generation process
+
+The OpenAPI documentation in iR Engine is generated through the following process:
+
+1. **Schema definition**: Each service has a schema file that defines its data structure and available methods
+2. **Documentation enhancement**: Each service also has a documentation file that provides additional details
+   - Without custom descriptions in this step, your API documentation will only contain generic placeholders
+   - Replace default descriptions with meaningful, context-specific information
+   - Include examples and parameter descriptions to help API consumers understand how to use your API
+3. **Service registration**: When a service is registered, it includes its documentation
+4. **Automatic generation**: The `feathers-swagger` package automatically generates the OpenAPI documentation based on these components
+5. **Documentation serving**: The documentation is served at the `/openapi` endpoint (`localhost:3030/openapi` in your local deployment)
+
+This process ensures that the API documentation stays in sync with the actual implementation, as it's generated directly from the code. The quality and usefulness of the documentation depend on the effort put into step 2.
 
 ## Key components
+
+The API documentation system in iR Engine consists of several key components:
 
 1. **Schema files** (`packages/common/src/schemas/[category]/[name].schema.ts`):
    - Define data structures, available methods, and validation rules
@@ -43,58 +93,6 @@ The API documentation system in iR Engine consists of several key components tha
 6. **OpenAPI configuration** (`packages/server-core/src/createApp.ts`):
    - Set up the Swagger UI and define global OpenAPI settings
    - Configures the `/openapi` endpoint that serves the documentation
-
-## Documentation generation process
-
-The OpenAPI documentation in iR Engine is generated through the following process:
-
-1. **Schema definition**: Each service has a schema file that defines its data structure and available methods
-2. **Documentation enhancement**: Each service also has a documentation file that provides additional details
-   - Without custom descriptions in this step, your API documentation will only contain generic placeholders
-   - Replace default descriptions with meaningful, context-specific information
-   - Include examples and parameter descriptions to help API consumers understand how to use your API
-3. **Service registration**: When a service is registered, it includes its documentation
-4. **Automatic generation**: The `feathers-swagger` package automatically generates the OpenAPI documentation based on these components
-5. **Documentation serving**: The documentation is served at the `/openapi` endpoint (`localhost:3030/openapi` in your local deployment)
-
-This process ensures that the API documentation stays in sync with the actual implementation, as it's generated directly from the code. The quality and usefulness of the documentation depend on the effort put into step 2.
-
-### API documentation workflow
-
-```mermaid
-graph TD
-    subgraph "Developer actions"
-        A[Define schema] -->|Creates| B[Schema file<br>*.schema.ts]
-        C[Write docs] -->|Creates| D[Docs file<br>*.docs.ts]
-        E[Implement service] -->|Creates| F[Service file<br>*.ts]
-        G[Implement hooks] -->|Creates| H[Hooks file<br>*.hooks.ts]
-    end
-
-    subgraph "Documentation generation"
-        B -->|Structure| I[Service registration]
-        D -->|Details| I
-        F -->|Connection| I
-        H -->|Logic| I
-        I -->|Feeds| J[feathers-swagger]
-        K[OpenAPI config] -->|Settings| J
-        J -->|Generates| L[OpenAPI docs]
-    end
-
-    subgraph "User access"
-        L -->|Served at| M["OpenAPI endpoint"]
-        M -->|Displays in| N[Swagger UI]
-    end
-
-    classDef files fill:#f9f,stroke:#333,stroke-width:1px;
-    classDef process fill:#bbf,stroke:#333,stroke-width:1px;
-    classDef output fill:#bfb,stroke:#333,stroke-width:1px;
-
-    class B,D,F,H files;
-    class I,J,K process;
-    class L,M,N output;
-```
-
-This diagram shows how components work together to generate API documentation, from developer files to the Swagger UI.
 
 ## OpenAPI configuration
 
@@ -135,6 +133,17 @@ export const configureOpenAPI = () => (app: Application) => {
 ```
 
 For more information on configuring the OpenAPI documentation, see the [feathers-swagger documentation on swaggerOptions](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api?id=swaggeroptions).
+
+## How to document an API endpoint
+
+To create effective API documentation, follow these steps:
+
+1. **Create a schema file** that defines the data structure and methods
+2. **Create a documentation file** with detailed descriptions, examples, and parameter information
+3. **Register the service** with the documentation options
+4. **Test your documentation** by viewing it in the Swagger UI at `/openapi`
+
+For detailed instructions and examples, see the [API documentation guide](./02_documentationGuide.md).
 
 ## Additional resources
 
