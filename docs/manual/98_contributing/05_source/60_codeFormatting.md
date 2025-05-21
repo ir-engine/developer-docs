@@ -1,27 +1,27 @@
-# Code Formatting
+# Code formatting
 
 Prettier helps us maintain consistent code formatting across our projects.
 
 ## Setting up Prettier in VS Code
 
-### Step 1. Install the Prettier Extension
+### Step 1. Install the Prettier extension
    1. Press `Ctrl` + `P` to open the command palette.
    2. Type `ext install esbenp.prettier-vscode` and press `Enter`.
    3. Follow the prompts to install the Prettier extension.
 
-### Step 2. Open VS Code Settings
+### Step 2. Open VS Code settings
 Press `Ctrl` + `,` together to open the VS Code settings.
 
-### Step 3. Enable Format on Save
+### Step 3. Enable format on save
    1. In the search bar at the top, type `Format on Save`.
    2. You will see three tabs: **User**, **Remote**, and **Workspace**.
-   3. Check the box next to **Editor: Format on Save** under the User and Remote tabs. 
-   
+   3. Check the box next to **Editor: Format on Save** under the User and Remote tabs.
+
    :::note
    Do not check the box under the **Workspace** tab.
    :::
 
-### Step 4. Set Prettier as the Default Formatter
+### Step 4. Set Prettier as the default formatter
    1. Open any file in your workspace.
    2. Right-click within the file editor.
    3. Select **Format Document With...**.
@@ -30,7 +30,7 @@ Press `Ctrl` + `,` together to open the VS Code settings.
 
 
 
-## Verifying Your Setup
+## Verifying your setup
 
 To ensure code is automatically formatted upon saving:
 1. Open a file with some unformatted code.
