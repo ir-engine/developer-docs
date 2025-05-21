@@ -2,7 +2,7 @@
 
 Locations in **iR Engine** serve as **instances of a scene**, enabling **real-time multi-user interactions**. They provide a structured way to manage **shared virtual environments**, supporting **scalability** and **session persistence**.
 
-## **Understanding Locations**
+## **Understanding locations**
 
 A **location** is a **persistent virtual environment** where multiple users can interact in **real time**.
 
