@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# Frequently asked questions
 
 ## Is it free to use?
 iR Engine is a general purpose engine and platform that can be used by creators to provide access to fully customizable experiences.
@@ -13,7 +13,7 @@ Examples:
 - A free-to-play videogame that anyone can play on their phone.
 
 ## Do I need a powerful computer?
-Performance on each individual device will depend on its hardware and how each individual experience was created. Some experiences will require more resources than others.  
+Performance on each individual device will depend on its hardware and how each individual experience was created. Some experiences will require more resources than others.
 But in all cases, iR Engine will automatically adapt to your device to ensure a good balance between quality and performance.
 
 ## What devices do I need to use?
@@ -26,5 +26,5 @@ iR Engine is built to be compatible across all devices including desktop, mobile
 Try turning off ad blocker, and make sure your browser is up to date.
 
 ## What is the maximum concurrent users?
-The maximum concurrent users depends on the complexity and fidelity of your environment and avatars. iR Engine can support up to several thousand users with scaled avatars, or just a dozen for a high-definition intimate experience. 
+The maximum concurrent users depends on the complexity and fidelity of your environment and avatars. iR Engine can support up to several thousand users with scaled avatars, or just a dozen for a high-definition intimate experience.
 
