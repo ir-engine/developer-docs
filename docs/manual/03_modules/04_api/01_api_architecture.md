@@ -1,12 +1,12 @@
-# API documentation system
+# API architecture
 
-This guide explains how the API documentation system works in the iR Engine codebase, including its architecture and key components.
+This guide explains how the API documentation architecture works in the iR Engine codebase, including its components and generation process.
 
 ## Overview
 
 The iR Engine uses [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files. This creates a declarative approach where documentation is generated from code rather than maintained separately.
 
-For detailed guidance on creating effective API documentation, see the [API documentation guide](./02_documentationGuide.md).
+For detailed guidance on creating effective API documentation, see the [Documenting endpoints](./02_documenting_endpoints.md) guide.
 
 ### API documentation workflow
 
@@ -139,4 +139,4 @@ For more information on configuring the OpenAPI documentation, see the [feathers
 - [Feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api) - Complete reference for all available options
 - [OpenAPI specification](https://swagger.io/specification/) - The official OpenAPI specification
 - [Swagger UI](https://swagger.io/tools/swagger-ui/) - Documentation on the Swagger UI interface
-- [API documentation guide](./02_documentationGuide.md) - Step-by-step guide for documenting API endpoints
+- [Documenting endpoints](./02_documenting_endpoints.md) - Step-by-step guide for documenting API endpoints

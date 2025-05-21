@@ -1,10 +1,10 @@
-# API documentation guide
+# Documenting endpoints
 
 This guide provides step-by-step instructions for documenting API endpoints in the iR Engine codebase.
 
 ## Introduction
 
-For an overview of how the API documentation system works, see the [documentation system](./01_documentationSystem.md) guide.
+For an overview of how the API documentation system works, see the [API architecture](./01_api_architecture.md) guide.
 
 ### Why good documentation matters
 
@@ -484,7 +484,7 @@ When documenting APIs, consider how they relate to each other based on their loc
 
 ## Additional resources
 
-- [API documentation system](./01_documentationSystem.md) - Overview of the API documentation system
+- [API architecture](./01_api_architecture.md) - Overview of the API documentation architecture
 - [Feathers.js documentation](https://feathersjs.com/api/) - Official Feathers.js documentation
 - [Feathers-swagger API documentation](https://feathersjs-ecosystem.github.io/feathers-swagger/#/api) - Complete reference for all available options
 - [OpenAPI specification](https://swagger.io/specification/) - The official OpenAPI specification
