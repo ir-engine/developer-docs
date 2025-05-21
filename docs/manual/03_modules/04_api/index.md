@@ -1,10 +1,8 @@
 # API documentation
 
-This section explains how to document APIs in the iR Engine codebase. It covers the API documentation architecture, implementation guides, and best practices for creating and maintaining API documentation.
+This section explains how to document APIs in the iR Engine codebase. The iR Engine uses [Feathers.js](https://feathersjs.com/) and [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files.
 
-While feathers-swagger automatically generates API documentation from your service definitions, custom descriptions, examples, and parameter details are essential for creating useful documentation. Without these, the documentation will contain only generic placeholders that provide little value to API consumers.
-
-The iR Engine uses [Feathers.js](https://feathersjs.com/) and [feathers-swagger](https://github.com/feathersjs-ecosystem/feathers-swagger) to automatically generate OpenAPI documentation from service definitions and schema files.
+The guides below will help you understand the architecture and provide practical steps for creating effective API documentation.
 
 ## Quick navigation
 
